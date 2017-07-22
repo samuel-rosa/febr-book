@@ -1,0 +1,23 @@
+--- 
+title: "Repositório Brasileiro de Dados de Ferro do Solo"
+author: |
+  | ALESSANDRO SAMUEL-ROSA
+  | Universidade Federal de Santa Maria
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+#bibliography: [book.bib, packages.bib, ~/Dropbox/jabref/biblio.bib]
+csl: abnt.csl
+# biblio-style: apalike
+link-citations: yes
+#github-repo: samuel-rosa/pedologia-quantitativa
+---
+
+```{r}
+knitr::opts_chunk$set(dev.args = list(bg = 'transparent'))
+```
+
+
+# Prefácio {-}
+
