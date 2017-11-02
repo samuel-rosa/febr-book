@@ -19,5 +19,7 @@ link-citations: yes
 knitr::opts_chunk$set(dev.args = list(bg = 'transparent'))
 ```
 
+```{r, echo=FALSE, child = '00-apresentacao.Rmd'}
+```
 
-# Apresentação {-}
+
