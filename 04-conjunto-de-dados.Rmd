@@ -186,15 +186,6 @@ itens codificados usando o padrão `organizacao_<...>`, onde `<...>` representa 
 responsável (Tabela \@ref(tab:organizacao)). Fundamentalmente, esses itens armazenam dados básicos sobre os
 endereços físico e eletrônico da organização.
 
-Quando o conjunto de dados é provido por organização outra que não aquela responsável pela sua geração, 
-pode-se identificar a organização que atualmente detém responsabilidade técnica sobre o conjunto de dados, ou
-seja, a organização provedora do conjunto de dados. Isso é especialmente importante caso modificações
-consideráveis no conjunto de dados tenham sido feitas por essa organização. O mesmo pode ser aplicado aos
-conjuntos de dados gerados por duas ou mais organizações. No caso de conjuntos de dados gerados ou sob
-responsabilidade de organizações como a Embrapa, que possuem várias unidades, identifica-se a unidade da
-organização responsável pelo conjunto de dados, nunca apenas a organização. Em todo caso, é fundamental
-garantir que ambos endereços físico e eletrônico sejam válidos e atuais.
-
 ```{r, echo=FALSE}
 organizacao <- 
   rbind(
@@ -212,6 +203,15 @@ pander(organizacao,
                        "responsável pelo conjunto de dados."))
 ```
 
+Quando o conjunto de dados é provido por organização outra que não aquela responsável pela sua geração, 
+pode-se identificar a organização que atualmente detém responsabilidade técnica sobre o conjunto de dados, ou
+seja, a organização provedora do conjunto de dados. Isso é especialmente importante caso modificações
+consideráveis no conjunto de dados tenham sido feitas por essa organização. O mesmo pode ser aplicado aos
+conjuntos de dados gerados por duas ou mais organizações. No caso de conjuntos de dados gerados ou sob
+responsabilidade de organizações como a Embrapa, que possuem várias unidades, identifica-se a unidade da
+organização responsável pelo conjunto de dados, nunca apenas a organização. Em todo caso, é fundamental
+garantir que ambos endereços físico e eletrônico sejam válidos e atuais.
+
 ## Autoria {#autor}
 
 Os autores e/ou responsáveis pela geração do conjunto de dados são identificados usando os itens `autor_nome` 
@@ -219,14 +219,6 @@ e `autor_email` (Tabela \@ref(tab:autor)). Quando o acesso aos autores é imposs
 as pessoas que atualmente detém responsabilidade técnica sobre o conjunto de dados. No caso de trabalhos
 acadêmicos, como monografias, dissertações e teses, identifica-se tanto o autor como o orientador principal do
 trabalho acadêmico.
-
-Sempre que um conjunto de dados tiver dois ou mais autores, insere-se os respectivos dados de identificação 
-separados por ponto e vírgula. Assim como no caso da identificação da organização responsável, é importante 
-garantir que o endereço de e-mail dos autores do conjunto de dados seja válido e atual. Isso é fundamental 
-para permitir o contato com os autores sempre que surgirem dúvidas sobre o conjunto de dados. O conhecimento 
-do nome completo dos autores também é fundamental para permitir que os devidos créditos lhes sejam atribuídos
-sempre que o conjunto de dados for distribuido, remixado, adaptado ou usado para criar outros produtos 
-(Seção \@ref(licenca)).
 
 ```{r, echo=FALSE}
 autor <- 
@@ -238,6 +230,14 @@ colnames(autor) <- c("**item**", "**dado**")
 pander(autor, 
        caption = "(\\#tab:autor) Itens utilizados para a identificação dos autores do conjunto de dados.")
 ```
+
+Sempre que um conjunto de dados tiver dois ou mais autores, insere-se os respectivos dados de identificação 
+separados por ponto e vírgula. Assim como no caso da identificação da organização responsável, é importante 
+garantir que o endereço de e-mail dos autores do conjunto de dados seja válido e atual. Isso é fundamental 
+para permitir o contato com os autores sempre que surgirem dúvidas sobre o conjunto de dados. O conhecimento 
+do nome completo dos autores também é fundamental para permitir que os devidos créditos lhes sejam atribuídos
+sempre que o conjunto de dados for distribuido, remixado, adaptado ou usado para criar outros produtos 
+(Seção \@ref(licenca)).
 
 ## Contribuições {#contribuidor}
 
@@ -268,7 +268,7 @@ permite atribuir o devido crédito quando se deseja referenciar uma versão espe
 Contudo, recomenda-se sempre dar crédito aos autores originais do conjunto de dados, independentemente da sua
 versão (Seção \@ref(autor)).
 
-## Referência
+## Referências
 
 Uma referência permanente e válida a documento ou artigo científico onde a versão original e/ou a versão atual
 do conjunto de dados foi usado, preferencialmente, pela primeira vez é informada usando o item
