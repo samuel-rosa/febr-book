@@ -1,0 +1,82 @@
+# Observações no espaço e no tempo
+
+## Tabela *observacao*
+
+Nesta aba são inseridas as informações espaciais mais fundamentais sobre as observações do solo.
+
+### `observacao_id`
+
+Identificador exclusivo da observação usado no conjunto de dados de origem. Como se trata de um código, não 
+devem ser usados espaços ou caracteres especiais. Espaços são substituídos por um *underscore*, `_`, ou traço,
+`-`. Caracteres especiais devem ser substituídos pelo caractere correspondente simplificado, ou seja, `á`
+torna-se `a`, `ç` torna-se `c`, e assim por diante. Exemplo: `observacao_id = Perfil-01`.
+
+### `observacao_date`
+
+Data da observação no formato dd-mm-aaaa. A data de observação é um dos atributos que, juntamente com as
+coordenadas espaciais, definem uma observação em um conjunto de dados. Isso significa que a observação 
+repetida, ao longo do tempo, de um mesmo local no espaço, caracteriza a constituição de uma nova observação,
+portanto, a definição de uma nova `observacao_id`. O valor padrão, para os casos em que a data de observação é
+desconhecida, é `observacao_date = xx-xx-xxxx`. Quando somente o dia e/ou o mês de observação são 
+desconhecidos, usa-se o primeiro valor da sequência, ou seja, `dd = 01` e `mm = 01`.
+
+### `coord_sistema`
+
+Sistema de referência de coordenadas (SRC) utilizado para o georreferenciamento das observações do solo. A
+especificação do SRC é fundamental para possibilitar o uso apropriado de dados espaciais, especialmente para 
+fins de correlação/cruzamento com outros dados espaciais. Como a especificação do SRC pode ser feita de 
+diversas maneiras, são aceitas quaiquer descrições mais populares, não padronizadas, como WGS 84 / UTM zone 
+23S. Contudo, para fins de organização dos dados e posterior automatização de processos computacionais, o 
+Fe-BR adota os códigos padronizados e aceitos internacionalmente do European Petroleum Survey Group (EPSG).
+Assim, a partir da descrição fornecida com o conjunto de dados, identifica-se o código EPSG correspondente, 
+que é usado em substituição daquela.
+
+### `coord_x`; `coord_y`
+
+Coordenada X e Y, ou seja, o mesmo que Longitude e Latitude, desde que em coordenadas geográficas.
+
+### `coord_precisao`; `coord_fonte`
+
+Precisão com que as coordenadas espaciais foram determinadas (em metros).
+
+Código | Definição
+------ | -------------------------------
+GPS    | Aparelho GPS
+MAPA   | Mapa analógico ou digital
+WEB    | Serviço web como o Google Maps
+
+### `pais_id`; `estado_id`; `municipio_id`
+
+Identificação do município, estado -- ou unidade federativa -- e país onde a observação foi realizada. Como o
+Fe-BR  trata apenas de conjuntos de dados produzidos no Brasil, usa-se o código ISO 3166-1 alpha-2 do Brasil, 
+ou seja, BR. No caso do estado -- ou unidade federativa --, usa-se a abreviação da respectiva unidade 
+federativa (UF). O nome do município é escrito por extenso, conforme encontrado na fonte.
+
+### `amostra_<...>`
+
+Tipo de amostragem. Opções: SIMPLES ou COMPOSTA.
+
+Número de amostras. Um (1) quando o valor da variável anterior é SIMPLES ou mais para COMPOSTA. Expressar o valor com números inteiros.
+
+Área amostral (m^2^). Por exemplo, a área de uma trincheira costuma ser de 1 m^2^.
+
+### `taxon_<sistema>_<ano>`
+
+Identificação do sistema de classificação -- taxonomia -- utilizado para classificar a observação do solo,
+incluindo nome e ano, bem a classificação -- táxon -- atribuída à observação, incluíndo nome e sigla. Tanto o
+nome como o ano de publicação do sistema de classificação utilizado auxilia na verificação de possíveis
+inconsistências na classificação da observação e no processo de harmonização dos dados. O nome da 
+classificação atribuída à observação do solo deve ser escrito por extenso, mantendo quaisquer espaços e
+caracteres especiais presentes, prefere
+
+Código     | Sistema taxonômico
+---------- | -------------------------------------------
+fao-unesco | Legend of the World Soil Map
+fao-wrb    | World Reference Base for Soil Resources
+sibcs      | Sistema Brasileiro de Classificação do Solo
+st         | Soil Taxonomy
+usc        | Universal Soil Classification
+
+Para os conjuntos de dados que incluem observações do solo classificadas usando dois ou mais sistemas de
+classificação, ou diferentes versões do mesmo sistema de classificação, insere-se tantas colunas quantas
+forem necessárias.
