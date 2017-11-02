@@ -28,4 +28,9 @@ github-repo: samuel-rosa/febr-book
 
 ```{r, echo=FALSE}
 knitr::opts_chunk$set(dev.args = list(bg = 'transparent'))
+library(magrittr)
+library(pander)
+panderOptions('table.alignment.default', 'left')
+panderOptions('decimal.mark', ',')
+panderOptions('table.split.table', Inf)
 ```

@@ -21,22 +21,28 @@ conjunto de dados no **febr**, a segunda ao título do conjunto de dados, e assi
 linhas, dedicadas aos termos usados para a descrição de características chave e indexação do conjunto de 
 dados.
 
-**item**            | **dado**
-------------------- | --------
-`dataset_id`        | <???>
-`dataset_titulo`    | <???>
-`dataset_descricao` | <???>
-`...`               | <???>
-`palavras_chave`    | <???>
-`categoria_vcge`    | <???>
+```{r, echo=FALSE}
+dataset <- 
+  rbind(
+    c("`dataset_id`", "<???>"),
+    c("`dataset_titulo`", "<???>"),
+    c("`dataset_descricao`", "<???>"),
+    c("`...` ", "<???>"),
+    c("`palavras_chave`", "<???>"),
+    c("`categoria_vcge`", "<???>")
+  )
+colnames(dataset) <- c("**item**", "**dado**")
+pander(dataset, caption = "(\\#tab:dataset) Representação da estrutura da tabela *dataset*.")
+```
 
-Table: Representação da estrutura da tabela *dataset* com os items das suas primeiras três e últimas duas
-linhas. O símbolo `...` indica a existência de outros items nas linhas intermediárias, enquanto <???>
-indica os respectivos espaços para entrada de dados pelo usuário.
+com os items das suas primeiras três e
+últimas duas linhas. O símbolo `...` indica a existência de outros items nas linhas intermediárias, enquanto
+<???> indica os respectivos espaços para entrada de dados pelo usuário.
+
 
 Os itens da tabela *dataset* são descritos em detalhe nas seções a seguir.
 
-## Identificação
+## Identificação {#titulo}
 <!-- ## `dataset_id` -->
 
 Código identificador único do conjunto de dados. Esse código é usado para identificar cada uma dos conjuntos 
@@ -50,7 +56,15 @@ No caso dos conjuntos de dados obtidos diretamente do Sistema de Informação de
 naquele sistema. Isso possibilita estabelecer comunicação direta do SISB com o **febr**, o que permite atualizar 
 os dados do primeiro caso ajustes nos dados sejam feitos durante o seu processamento no **febr**.
 
-<!-- ## `dataset_titulo` -->
+```{r, echo=FALSE}
+titulo <- 
+  rbind(
+    c("`dataset_id`", "código de identificação do conjunto de dados"),
+    c("`dataset_titulo`", "título do conjunto de dados")
+  )
+colnames(titulo) <- c("**item**", "**dado**")
+pander(titulo, caption = "(\\#tab:titulo) Itens utilizados para a identificação do conjunto de dados.")
+```
 
 Título do conjunto de dados, geralmente relacionado ao título do projeto, tese, dissertação, etc que o gerou. 
 Preferência é dada ao uso de título específico para o conjunto de dados, o que identifica melhor o seu 
@@ -109,6 +123,16 @@ Sempre que uma nova versão de um conjunto de dados é preparada, uma descriçã
 ser incluída na descrição do conjunto de dados em `dataset_descricao`. Os responsáveis pelas modificações 
 devem ser identificados conforme descrito [abaixo](#contribuidor).
 
+```{r, echo=FALSE}
+versao <- 
+  rbind(
+    c("`dataset_versao`", "versão atual do conjunto de dados"),
+    c("`publicacao_data`", "data de publicação da versão atual do conjunto de dados")
+  )
+colnames(versao) <- c("**item**", "**dado**")
+pander(versao, caption = "(\\#tab:versao) Itens utilizados para o versionamento do conjunto de dados.")
+```
+
 <!-- ## `publicacao_data` -->
 
 Data de publicação do conjunto de dados. A data de publicação do conjunto de dados não é necessariamente a 
@@ -148,7 +172,7 @@ Creative Commons [CC-BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)
 possui praticamente os mesmos termos da licença CC-BY 4.0, exceto pelo fato de que a distribuição, remixação, 
 adaptação e derivação de outros produtos não podem ser usados para fins comerciais.
 
-## Instituição
+## Organização responsável {#organizacao}
 <!-- ## `organizacao_<...>` -->
 
 Identificação e endereços físico e eletrônico da organização responsável pela geração do conjunto de dados. 
@@ -161,15 +185,24 @@ organizações como a Embrapa, que possuem várias unidades, identifica-se a uni
 pelo conjunto de dados, nunca apenas a organização. Em todo caso, é fundamental que ambos endereço físico e
 eletrônico sejam válidos e atuais.
 
-Os dados necessários para a indentificação da organização responsável pelo conjunto de dados são os seguintes:
+Os dados necessários para a indentificação da organização responsável pelo conjunto de dados são os seguintes (Tabela \@ref(tab:organizacao)):
 
-* `organizacao_nome`, o nome da organização,
-* `organizacao_url`, o endereço da organização na Internet,
-* `organizacao_pais_id`, o país da organização,
-* `organizacao_municipio_id`, a cidade da organização,
-* `organizacao_codigo_postal`, o código postal da organização,
-* `organizacao_rua_nome`, a rua da organização,
-* `organizacao_rua_numero`, o número da organização em sua rua.
+```{r, echo=FALSE}
+organizacao <- 
+  rbind(
+    c("`organizacao_nome`", "nome da organização responsável"),
+    c("`organizacao_url`", "endereço da organização responsável na Internet"),
+    c("`organizacao_pais_id`", "país da organização responsável"),
+    c("`organizacao_municipio_id`", "cidade da organização responsável"),
+    c("`organizacao_codigo_postal`", "código postal da organização responsável"),
+    c("`organizacao_rua_nome`", "rua da organização responsável"),
+    c("`organizacao_rua_numero`", "número da organização responsável em sua rua")
+  )
+colnames(organizacao) <- c("**item**", "**dado**")
+pander(organizacao, 
+       caption = paste("(\\#tab:organizacao) Itens utilizados para a identificação da organização ",
+                       "responsável pelo conjunto de dados."))
+```
 
 ## Autoria {#autor}
 <!-- ## `autor_<...>` {#autor} -->
@@ -181,15 +214,23 @@ autor e o orientador principal do trabalho acadêmico.
 
 Os dados necessários para a indentificação dos autores do conjunto de dados são os seguintes:
 
-* `autor_nome`, o nome completo dos autores, e
-* `autor_email`, o endereço de e-mail atual dos autores. 
-
 Sempre que um conjunto de dados tiver dois ou mais autores, insere-se os respectivos dados de identificação 
 separados por ponto e vírgula. É importante que o endereço de e-mail dos autores do conjunto de dados seja 
 válido e atual. Isso é fundamental para permitir o contato com os autores sempre que surgirem dúvidas sobre o
 conjunto de dados. O conhecimento do nome completo dos autores também é fundamental para permitir os devidos 
 [créditos](#licenca) lhes sejam atribuídos sempre que o conjunto de dados for distribuido, remixado, adaptado
 ou usado para criar outros produtos.
+
+```{r, echo=FALSE}
+autor <- 
+  rbind(
+    c("`autor_nome`", "nome completo dos autores"),
+    c("`autor_email`", "endereço de e-mail atual dos autores")
+  )
+colnames(autor) <- c("**item**", "**dado**")
+pander(autor, 
+       caption = "(\\#tab:autor) Itens utilizados para a identificação dos autores do conjunto de dados.")
+```
 
 ## Contribuições {#contribuidor}
 <!-- ## `contribuidor_<...>` {#contribuidor} -->
@@ -203,9 +244,18 @@ autores de contribuições à sua melhoria.
 Os dados necessários para a indentificação dos responsáveis pelas modificações feitas num conjunto de dados 
 são os seguintes:
 
-* `contribuidor_nome`, o nome dos autores das modificações,
-* `contribuidor_email`, o endereço de e-mail atual dos autores das modificações, e
-* `contribuidor_organizacao`, a organização à qual os autores das modificações estão afiliados.
+```{r, echo=FALSE}
+contribuidor <- 
+  rbind(
+    c("`contribuidor_nome`", "nome dos autores das contribuições"),
+    c("`contribuidor_email`", "endereço de e-mail atual dos autores das contribuições"),
+    c("`contribuidor_organizacao`", "organização à qual os autores das contribuições estão afiliados")
+  )
+colnames(contribuidor) <- c("**item**", "**dado**")
+pander(contribuidor,
+       caption = paste("(\\#tab:contribuidor) Itens utilizados para a identificação dos autores de ",
+                       "contribuições para o conjunto de dados."))
+```
 
 A apropriada identificação dos autores das modificações no conjunto de dados é fundamental para permitir o 
 contato com os mesmos sempre que surgirem dúvidas sobre as novas versões do conjunto de dados. Além disso, 
@@ -231,7 +281,7 @@ onde a nova versão tenha sido usada pela primeira vez também deve ser inserida
 referências, basta inserir, na sequência, novas linhas na tabela `dataset`, usando o `i` para indicar sua
 ordem.
 
-## Indexação
+## Indexação {#indexa}
 <!-- ## `area_conhecimento` -->
 
 Área de especialidade da Agronomia -- Ciência do Solo à qual o conjunto de dados está relacionado. São seis as
@@ -260,3 +310,14 @@ O VCGE é um esquema padronizado de assuntos e categorias usado para facilitar a
 dos serviços disponibilizados em uma estrutura de diretórios *online*. O objetivo do VCGE é ajudar os cidadãos
 a encontrar informações em catálogos de dados públicos sem a necessidade de conhecer a organização responsável
 pelo assunto ou categoria.
+
+```{r, echo=FALSE}
+indexa <- 
+  rbind(
+    c("`area_conhecimento`", "área da especialidade segundo CAPES e CNPq"),
+    c("`palavras_chave`", "termos descritores do conjunto de dados"),
+    c("`categoria_vcge`", "classificação dentre as atividades de orgãos públicos")
+  )
+colnames(indexa) <- c("**item**", "**dado**")
+pander(indexa, caption = "(\\#tab:indexa) Itens utilizados para a indexação do conjunto de dados.")
+```
