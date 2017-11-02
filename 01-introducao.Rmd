@@ -5,3 +5,16 @@ Nós acreditamos que o uso sustentável do solo para aplicações ambientais no 
 Os óxidos de ferro são bem conhecidos por sua forte interação com a matéria orgânica do solo, influenciando assim a quantidade de carbono que o solo consegue armazenar de forma estável. Os óxidos de ferro também são bem conhecidos pela sua forte afinidade com íons fosfato, determinando assim a disponibilidade de fósforo para as plantas. A intrincada relação entre fósforo e matéria orgânica reforça a necessidade do conhecimento da variação tridimensional do teor de ferro do solo em todo o território brasileiro. Tal conhecimento poderia ajudar, por exemplo, na melhoria dos sistemas de classificação do solo, no desenvolvimento de sistemas avançados de recomendação que assegurem o uso mais eficiente de fertilizantes fosfatados, e na construção de políticas públicas de uso e ocupação do solo que respeitem as reais capacidades desse precioso e não-renovável bem natural.
 
 Foi pensando na necessidade de impulsionar o avanço do conhecimento para o uso sustentável do solo brasileiro que decidimos desenvolver um projeto inovador. O objetivo: a construção colaborativa de um repositório de dados de ferro do solo com cobertura nacional que fosse público, gratuito e, sobretudo, fácil de usar e manter. Lançado em dezembro de 2016, o Repositório Brasileiro de Dados de Ferro do Solo (Fe-BR) já conta com a impressionante soma de 232 conjuntos de dados oriundos de todas as vinte e sete unidades federativas do Brasil. Muitos dos conjuntos de dados já foram processados e estão aqui, à sua inteira disposição, esperando para serem usados. Contribua você também!
+
+## Organização dos Dados
+
+Os dados são organizados em tabelas bidimensionais usando planilhas eletrônicas padronizadas construídas a
+partir de experiências de iniciativas tanto locais como globais. São quatro as tabelas utilizadas, com nomes:
+
+1. *dataset*, para os dados sobre o conjunto de dados,
+2. *observacao*, para os dados das observações do solo,
+3. *camada*, para os dados das camadas e horizontes, e
+4. *metadado*, para os dados sobre os dados.
+
+Uma descrição detalhada do propósito e conteúdo específico de cada uma dessas tabelas é apresentado nas 
+sessões que seguem.

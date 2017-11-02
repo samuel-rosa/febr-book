@@ -1,15 +1,4 @@
-# Organização dos Dados
 
-Os dados são organizados em tabelas bidimensionais usando planilhas eletrônicas padronizadas construídas a
-partir de experiências de iniciativas tanto locais como globais. São quatro as tabelas utilizadas, com nomes:
-
-1. *dataset*, para os dados sobre o conjunto de dados,
-2. *observacao*, para os dados das observações do solo,
-3. *camada*, para os dados das camadas e horizontes, e
-4. *metadado*, para os dados sobre os dados.
-
-Uma descrição detalhada do propósito e conteúdo específico de cada uma dessas tabelas é apresentado nas 
-sessões que seguem.
 
 ## Tabela *observacao*
 
