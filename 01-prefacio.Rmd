@@ -1,7 +1,15 @@
 # Prefácio {-}
 
+\lipsum[1]
+
 ## Estrutura do boletim técnico {-}
+
+\lipsum[1]
 
 ## Convenções {-}
 
+\lipsum[1]
+
 ## Agradecimentos {-}
+
+\lipsum[1]
