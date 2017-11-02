@@ -35,26 +35,20 @@ colnames(dataset) <- c("**item**", "**dado**")
 pander(dataset, caption = "(\\#tab:dataset) Representação da estrutura da tabela *dataset*.")
 ```
 
-com os items das suas primeiras três e
-últimas duas linhas. O símbolo `...` indica a existência de outros items nas linhas intermediárias, enquanto
-<???> indica os respectivos espaços para entrada de dados pelo usuário.
-
-
 Os itens da tabela *dataset* são descritos em detalhe nas seções a seguir.
 
 ## Identificação {#titulo}
-<!-- ## `dataset_id` -->
 
 Código identificador único do conjunto de dados. Esse código é usado para identificar cada uma dos conjuntos 
 de dados incluídos no **febr**. Em geral, o código de identificação de um novo conjunto de dados inserido no 
 **febr** é definido pela sua posição (ordem das contribuições) em relação aos demais conjunto de dados já 
-inseridos no **febr**. Por exemplo, o código de identificação do primeiro conjunto de dados contribuído (`ctb`) 
-para o **febr** é `dataset_id = ctb0001`.
+inseridos no **febr**. Por exemplo, o código de identificação do primeiro conjunto de dados contribuído 
+(`ctb`) para o **febr** é `dataset_id = ctb0001`.
 
 No caso dos conjuntos de dados obtidos diretamente do Sistema de Informação de Solos Brasileiros
-([SISB](https://www.sisolos.cnptia.embrapa.br/)), o código de identificação utilizado no **febr** é o mesmo usado
-naquele sistema. Isso possibilita estabelecer comunicação direta do SISB com o **febr**, o que permite atualizar 
-os dados do primeiro caso ajustes nos dados sejam feitos durante o seu processamento no **febr**.
+([SISB](https://www.sisolos.cnptia.embrapa.br/)), o código de identificação utilizado no **febr** é o mesmo
+usado naquele sistema. Isso possibilita estabelecer comunicação direta do SISB com o **febr**, o que permite
+atualizar os dados do primeiro caso ajustes nos dados sejam feitos durante o seu processamento no **febr**.
 
 ```{r, echo=FALSE}
 titulo <- 
@@ -149,28 +143,37 @@ conjunto de dados seja completamente desconhecida, usa-se a data de publicação
 utilizou pela primeira vez.
 
 ## Licença de uso {#licenca}
-<!-- ## `dataset_licenca` {#licenca} -->
 
-Licença de uso do conjunto de dados. Dado que define como o conjunto de dados pode ser usado a partir da sua
-publicação no **febr**.
+A licença de uso do conjunto de dados -- especificada usando o item `dataset_licenca` -- define como o 
+conjunto de dados pode ser usado por outras pessoas a partir do momento da sua publicação no **febr**.
 
 A legislação brasileira ainda não especifica, exatamente, qual deve ser a licença de uso dos conjuntos de 
-dados gerados por projetos mantidos via financiamento público. Contudo, existe algum
-[consenso](http://wiki.dados.gov.br/Produto-GT1-Levantamento-Juridico-Licenciamento-Dados-Abertos.ashx) de que
-uma licença de uso apropriada para esse tipo de conjuntos de dados é a licença Creative Commons 
-[CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/). A licença CC-BY 4.0 permite que um conjunto de 
-dados seja distribuido, remixado, adaptado e usado para criar outros produtos, mesmo que para fins comerciais, 
-desde que seja atribuido o devido crédito aos autores/responsáveis pelo conjunto de dados original. Assim, 
-trata-se de uma das licença mais flexível dentre as licenças Creative Commons disponíveis, maximizando a
-disseminação e uso dos conjuntos de dados. Assim, a licença CC-BY 4.0 é a licença padrão do **febr**. Maiores
-informações sobre as licenças de uso recomendadas para conjuntos de dados públicos podem ser encontradas no
-[fórum](https://groups.google.com/forum/#!forum/inda-br) da Infraestrutura Nacional de Dados Abertos (INDA).
+dados gerados em projetos conduzidos via financiamento público. Contudo, parece existir algum
+[consenso](http://wiki.dados.gov.br/Produto-GT1-Levantamento-Juridico-Licenciamento-Dados-Abertos.ashx) entre
+os diferentes órgãos da administração pública de que uma licença de uso apropriada para esse tipo de 
+conjuntos de dados é a licença Creative Commons CC-BY 4.0 (https://creativecommons.org/licenses/by/4.0/). A
+licença CC-BY 4.0 permite que um conjunto de dados seja distribuido, remixado, adaptado e usado para criar 
+outros produtos, mesmo que para fins comerciais, desde que seja atribuido o devido crédito aos autores e/ou 
+responsáveis pelo conjunto de dados original. Assim, trata-se de uma das licença mais flexível dentre as
+licenças Creative Commons disponíveis, permitindo a maximização da disseminação e uso dos conjuntos de dados.
+Assim sendo, a licença CC-BY 4.0 é a licença adotada como padrão no **febr**. Maiores informações sobre as
+licenças de uso sugeridas para conjuntos de dados públicos podem ser encontradas no fórum de discussão online
+(https://groups.google.com/forum/#!forum/inda-br) mantido pela Infraestrutura Nacional de Dados Abertos
+(INDA).
 
-Para os conjuntos de dados gerados por projetos mantidos via financiamento privado, onde as partes envolvidas
-têm interesse em compartilhar os dados desde que não para fins comerciais, recomenda-se usar a licença 
-Creative Commons [CC-BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/). A licença CC-BY-NC 4.0 
-possui praticamente os mesmos termos da licença CC-BY 4.0, exceto pelo fato de que a distribuição, remixação, 
-adaptação e derivação de outros produtos não podem ser usados para fins comerciais.
+Para os conjuntos de dados gerados em projetos conduzidos via financiamento privado, onde as partes
+envolvidas têm interesse em compartilhar os dados desde que não para fins comerciais, sugere-se usar a
+licença Creative Commons CC-BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/). A licença CC-BY-NC 
+4.0 possui praticamente os mesmos termos da licença CC-BY 4.0, exceto pelo fato de que a distribuição, 
+remixação, adaptação e derivação de outros produtos não podem ser usados para fins comerciais.
+
+Os interessados em utilizar os conjuntos de dados disponíveis no **febr** devem prestar muita atenção à 
+licença de uso, devendo sempre dar crédito aos autores e/ou responsáveis pelo conjunto de dados, ou então à
+organização responsável. Atenção também é necessária quando do uso dos conjuntos de dados originalmente 
+descarregados do Sistema de Informação de Solos Brasileiros (https://www.sisolos.cnptia.embrapa.br/), mantido
+pela Embrapa, para alimentar o **febr**. Segundo a Embrapa, o emprego dos dados disponíveis em seu Sistema de
+Informação de Solos Brasileiros para "*finalidades profissionais e/ou comerciais deve ser precedido de
+estabelecimento de licença de uso específica por parte da Embrapa*".
 
 ## Organização responsável {#organizacao}
 <!-- ## `organizacao_<...>` -->
