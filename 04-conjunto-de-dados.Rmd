@@ -213,21 +213,20 @@ pander(organizacao,
 ```
 
 ## Autoria {#autor}
-<!-- ## `autor_<...>` {#autor} -->
 
-Identificação dos autores ou responsáveis pela geração do conjunto de dados. Quando o acesso aos autores é
-impossível ou limitado, identifica-se as pessoas que atualmente detém responsabilidade técnica sobre o 
-conjunto de dados. No caso de trabalhos acadêmicos, como monografias, dissertações e teses, identifica-se o 
-autor e o orientador principal do trabalho acadêmico.
-
-Os dados necessários para a indentificação dos autores do conjunto de dados são os seguintes:
+Os autores e/ou responsáveis pela geração do conjunto de dados são identificados usando os itens `autor_nome` 
+e `autor_email` (Tabela \@ref(tab:autor)). Quando o acesso aos autores é impossível ou limitado, identifica-se
+as pessoas que atualmente detém responsabilidade técnica sobre o conjunto de dados. No caso de trabalhos
+acadêmicos, como monografias, dissertações e teses, identifica-se tanto o autor como o orientador principal do
+trabalho acadêmico.
 
 Sempre que um conjunto de dados tiver dois ou mais autores, insere-se os respectivos dados de identificação 
-separados por ponto e vírgula. É importante que o endereço de e-mail dos autores do conjunto de dados seja 
-válido e atual. Isso é fundamental para permitir o contato com os autores sempre que surgirem dúvidas sobre o
-conjunto de dados. O conhecimento do nome completo dos autores também é fundamental para permitir os devidos 
-[créditos](#licenca) lhes sejam atribuídos sempre que o conjunto de dados for distribuido, remixado, adaptado
-ou usado para criar outros produtos.
+separados por ponto e vírgula. Assim como no caso da identificação da organização responsável, é importante 
+garantir que o endereço de e-mail dos autores do conjunto de dados seja válido e atual. Isso é fundamental 
+para permitir o contato com os autores sempre que surgirem dúvidas sobre o conjunto de dados. O conhecimento 
+do nome completo dos autores também é fundamental para permitir que os devidos créditos lhes sejam atribuídos
+sempre que o conjunto de dados for distribuido, remixado, adaptado ou usado para criar outros produtos 
+(Seção \@ref(licenca)).
 
 ```{r, echo=FALSE}
 autor <- 
