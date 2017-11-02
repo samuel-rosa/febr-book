@@ -12,8 +12,16 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
+papersize: a5
+fontsize: 11pt
+classoption: twoside
+toc: true
+lof: true
+lot: true
+secnumdepth: 3
+geometry: top=13mm,bottom=13mm,inner=13mm,outer=10mm
 bibliography: biblio.bib
-csl: abnt.csl
+# csl: abnt.csl
 link-citations: yes
 github-repo: samuel-rosa/febr-book
 ---

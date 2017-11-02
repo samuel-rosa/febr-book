@@ -1,4 +1,40 @@
 \usepackage[portuguese]{babel}
 \usepackage{booktabs}
-\usepackage{fancyhdr}
-\pagestyle{fancy}
+
+\usepackage{lipsum} % texto aleatório
+
+\pagestyle{plain}
+
+% Definição do estilo do título do capítulo
+% Fonte: http://zoonek.free.fr/LaTeX/LaTeX_samples_chapter/0.html
+
+\makeatletter
+\def\thickhrulefill{\leavevmode \leaders \hrule height 1ex \hfill \kern \z@}
+\def\@makechapterhead#1{%
+  \vspace*{10\p@}%
+  {\parindent \z@ 
+    {\raggedleft \reset@font
+      \fontsize{15ex}{15ex}\selectfont %Problème avec les substitutions...
+      \bfseries\thechapter\par\nobreak}%
+    \par\nobreak
+    \interlinepenalty\@M
+    {\raggedright \LARGE \bfseries #1}%
+    \par\nobreak
+    \hrulefill
+    \par\nobreak
+    \vskip 100\p@
+  }}
+\def\@makeschapterhead#1{%
+  \vspace*{10\p@}%
+  {\parindent \z@ 
+    {\raggedleft \reset@font
+      \fontsize{15ex}{15ex}\selectfont %Problème avec les substitutions...
+      \bfseries\vphantom{\thechapter}\par\nobreak}%
+    \par\nobreak
+    \interlinepenalty\@M
+    {\raggedright \LARGE \bfseries #1}%
+    \par\nobreak
+    \hrulefill
+    \par\nobreak
+    \vskip 100\p@
+  }}
