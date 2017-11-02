@@ -1,6 +1,6 @@
 # Conjunto de dados
 
-## Tabela *dataset*
+<!-- ## Tabela *dataset* -->
 
 A maximização da disseminação e uso de um conjunto de dados, o apropriado reconhecimento de seus autores ou 
 autoras e instituição responsável, bem como a identificação que alterações e ajustes feitos após a publicação
@@ -32,7 +32,9 @@ categoria_vcge    | ...
 
 Os itens da tabela *dataset* são descritos em detalhe a seguir.
 
-### `dataset_id`
+
+## Identificação
+<!-- ## `dataset_id` -->
 
 Código identificador único do conjunto de dados. Esse código é usado para identificar cada uma dos conjuntos 
 de dados incluídos no Fe-BR. Em geral, o código de identificação de um novo conjunto de dados inserido no 
@@ -45,7 +47,7 @@ No caso dos conjuntos de dados obtidos diretamente do Sistema de Informação de
 naquele sistema. Isso possibilita estabelecer comunicação direta do SISB com o Fe-BR, o que permite atualizar 
 os dados do primeiro caso ajustes nos dados sejam feitos durante o seu processamento no Fe-BR.
 
-### `dataset_titulo`
+<!-- ## `dataset_titulo` -->
 
 Título do conjunto de dados, geralmente relacionado ao título do projeto, tese, dissertação, etc que o gerou. 
 Preferência é dada ao uso de título específico para o conjunto de dados, o que identifica melhor o seu 
@@ -57,7 +59,8 @@ preferidos -- e caracteres em caixa baixa, com exceção da primeira letra do t�
 exemplo, *Conjunto de dados da tese 'Matéria orgânica e características físicas, químicas, mineralógicas e 
 espectrais de Latossolos de diferentes ambientes'*.
 
-### `dataset_descricao` {#descricao}
+## Descrição {#descricao}
+<!-- ## `dataset_descricao` {#descricao} -->
 
 Descrição do conjunto de dados, contendo dados básicos para maximizar o reuso futuro do conjunto de dados sem
 que seja necessário entrar em contato com os seus autores/responsáveis. A descrição do conjunto de dados 
@@ -90,7 +93,8 @@ caracterização do solo segundo procedimentos descritos no Manual de Descriçã
 selecionados foram submetidas à determinação do conteúdo de ferro total. Em alguns casos, apenas os horizontes 
 B diagnósticos foram analisados, em outros o primeiro horizonte A e um ou mais horizontes subsuperficiais.
 
-### `dataset_versao` {#versao}
+## Versionamento {#versao}
+<!-- ## `dataset_versao` {#versao} -->
 
 Versão do conjunto de dados. Dado necessário para identificar os casos em que o conjunto de dados foi
 modificado por uma razão técnica e/ou científica. Por exemplo, um conjunto de dados contendo inúmeros perfis
@@ -102,7 +106,23 @@ Sempre que uma nova versão de um conjunto de dados é preparada, uma descriçã
 ser incluída na descrição do conjunto de dados em `dataset_descricao`. Os responsáveis pelas modificações 
 devem ser identificados conforme descrito [abaixo](#contribuidor).
 
-### `dataset_licenca` {#licenca}
+<!-- ## `publicacao_data` -->
+
+Data de publicação do conjunto de dados. A data de publicação do conjunto de dados não é necessariamente a 
+mesma data de publicação do trabalho que o gerou ou utilizou pela primeira vez, mas sim a data em que o 
+conjunto de dados foi tornado efetivamente público e disponível para acesso. Quando modificações são feitas
+no conjunto de dados durante ou após a sua inserção no Fe-BR, resultando assim em uma nova versão, então a 
+data de publicação é a data em que essa nova do conjunto de dados foi disponibilizada no Fe-BR.
+
+A data de publicação é apresentada na sequência dia, mês e ano, usando formato numérico dd-mm-aaaa ou 
+dd/mm/aaaa, ou seja, dois dígitos para o dia e mês, e quatro dígitos para o ano. Preferência é dada à inserção
+dos dados de ambos dia, mês e ano. Contudo, dentre os três dados, o mais importante é aquele relativo ao ano.
+Quando algum dos dados não é conhecido, usa-se o símbolo `xx` em substituição. Caso a data de publicação do 
+conjunto de dados seja completamente desconhecida, usa-se a data de publicação do trabalho que o gerou ou 
+utilizou pela primeira vez.
+
+## Licença de uso {#licenca}
+<!-- ## `dataset_licenca` {#licenca} -->
 
 Licença de uso do conjunto de dados. Dado que define como o conjunto de dados pode ser usado a partir da sua
 publicação no Fe-BR.
@@ -125,22 +145,8 @@ Creative Commons [CC-BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)
 possui praticamente os mesmos termos da licença CC-BY 4.0, exceto pelo fato de que a distribuição, remixação, 
 adaptação e derivação de outros produtos não podem ser usados para fins comerciais.
 
-### `publicacao_data`
-
-Data de publicação do conjunto de dados. A data de publicação do conjunto de dados não é necessariamente a 
-mesma data de publicação do trabalho que o gerou ou utilizou pela primeira vez, mas sim a data em que o 
-conjunto de dados foi tornado efetivamente público e disponível para acesso. Quando modificações são feitas
-no conjunto de dados durante ou após a sua inserção no Fe-BR, resultando assim em uma nova versão, então a 
-data de publicação é a data em que essa nova do conjunto de dados foi disponibilizada no Fe-BR.
-
-A data de publicação é apresentada na sequência dia, mês e ano, usando formato numérico dd-mm-aaaa ou 
-dd/mm/aaaa, ou seja, dois dígitos para o dia e mês, e quatro dígitos para o ano. Preferência é dada à inserção
-dos dados de ambos dia, mês e ano. Contudo, dentre os três dados, o mais importante é aquele relativo ao ano.
-Quando algum dos dados não é conhecido, usa-se o símbolo `xx` em substituição. Caso a data de publicação do 
-conjunto de dados seja completamente desconhecida, usa-se a data de publicação do trabalho que o gerou ou 
-utilizou pela primeira vez.
-
-### `organizacao_<...>`
+## Instituição
+<!-- ## `organizacao_<...>` -->
 
 Identificação e endereços físico e eletrônico da organização responsável pela geração do conjunto de dados. 
 Quando o conjunto de dados é provido por organização outra que não aquela responsável pela sua geração, 
@@ -162,7 +168,8 @@ Os dados necessários para a indentificação da organização responsável pelo
 * `organizacao_rua_nome`, a rua da organização,
 * `organizacao_rua_numero`, o número da organização em sua rua.
 
-### `autor_<...>` {#autor}
+## Autoria {#autor}
+<!-- ## `autor_<...>` {#autor} -->
 
 Identificação dos autores ou responsáveis pela geração do conjunto de dados. Quando o acesso aos autores é
 impossível ou limitado, identifica-se as pessoas que atualmente detém responsabilidade técnica sobre o 
@@ -181,7 +188,8 @@ conjunto de dados. O conhecimento do nome completo dos autores também é fundam
 [créditos](#licenca) lhes sejam atribuídos sempre que o conjunto de dados for distribuido, remixado, adaptado
 ou usado para criar outros produtos.
 
-### `contribuidor_<...>` {#contribuidor}
+## Contribuições {#contribuidor}
+<!-- ## `contribuidor_<...>` {#contribuidor} -->
 
 Identificação dos autores ou responsáveis por modificações no conjunto de dados. Modificações constituem
 contribuições à melhoria do conjunto de dados, sendo assim apresentadas na sua [descrição](#descricao) e 
@@ -202,7 +210,8 @@ permite atribuir o devido crédito quando se deseja referenciar uma versão espe
 Contudo, recomenda-se sempre dar crédito aos [autores](#autor) originais do conjunto de dados, 
 independentemente da sua versão.
 
-### `dataset_referencia_i`
+## Referências
+<!-- ## `dataset_referencia_i` -->
 
 Referência permanente e válida a documentos ou artigos científicos onde a versão original e/ou a versão atual
 do conjunto de dados foi usado, preferencialmente, pela primeira vez. Preferência é dada ao uso de um Digital 
@@ -219,7 +228,8 @@ onde a nova versão tenha sido usada pela primeira vez também deve ser inserida
 referências, basta inserir, na sequência, novas linhas na tabela `dataset`, usando o `i` para indicar sua
 ordem.
 
-### `area_conhecimento`
+## Indexação
+<!-- ## `area_conhecimento` -->
 
 Área de especialidade da Agronomia -- Ciência do Solo à qual o conjunto de dados está relacionado. São seis as
 áreas de especialidade definidas pelo Conselho Nacional de Desenvolvimento Científico e Tecnológico
@@ -234,13 +244,13 @@ Aperfeiçoamento de Pessoal de Nível Superior
 * Fertilidade do Solo e Adubação
 * Manejo e Conservação do Solo
 
-### `palavras_chave`
+<!-- ## `palavras_chave` -->
 
 Lista de termos que descrevem aspectos importantes do conjunto de dados, preferencialmente diferentes daqueles
 constantes no título, sendo separados por ponto e vírgula. Uma lista de termos bem elaborada aumenta o 
 potencial de descoberta do conjunto de dados por mecanismos de busca.
 
-### `categoria_vcge`
+<!-- ## `categoria_vcge` -->
 
 Categoria do Vocabulário Controlado do Governo Eletrônico ([VCGE](http://vocab.e.gov.br/2011/03/vcge#esquema)).
 O VCGE é um esquema padronizado de assuntos e categorias usado para facilitar a apresentação e identificação 
