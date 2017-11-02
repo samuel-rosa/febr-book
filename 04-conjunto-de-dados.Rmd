@@ -39,16 +39,9 @@ Os itens da tabela *dataset* são descritos em detalhe nas seções a seguir.
 
 ## Identificação {#titulo}
 
-Código identificador único do conjunto de dados. Esse código é usado para identificar cada uma dos conjuntos 
-de dados incluídos no **febr**. Em geral, o código de identificação de um novo conjunto de dados inserido no 
-**febr** é definido pela sua posição (ordem das contribuições) em relação aos demais conjunto de dados já 
-inseridos no **febr**. Por exemplo, o código de identificação do primeiro conjunto de dados contribuído 
-(`ctb`) para o **febr** é `dataset_id = ctb0001`.
-
-No caso dos conjuntos de dados obtidos diretamente do Sistema de Informação de Solos Brasileiros
-([SISB](https://www.sisolos.cnptia.embrapa.br/)), o código de identificação utilizado no **febr** é o mesmo
-usado naquele sistema. Isso possibilita estabelecer comunicação direta do SISB com o **febr**, o que permite
-atualizar os dados do primeiro caso ajustes nos dados sejam feitos durante o seu processamento no **febr**.
+Um conjunto de dados no **febr** é identificado por dois itens principais (Tabela \@ref(tab:titulo)). O 
+primeiro deles, `dataset_id`, é o código identificador único do conjunto de dados, o que significa que não há
+qualquer `dataset_id` repetido no **febr**.
 
 ```{r, echo=FALSE}
 titulo <- 
@@ -60,15 +53,28 @@ colnames(titulo) <- c("**item**", "**dado**")
 pander(titulo, caption = "(\\#tab:titulo) Itens utilizados para a identificação do conjunto de dados.")
 ```
 
-Título do conjunto de dados, geralmente relacionado ao título do projeto, tese, dissertação, etc que o gerou. 
-Preferência é dada ao uso de título específico para o conjunto de dados, o que identifica melhor o seu 
-conteúdo do que o título do trabalho ou projeto que o gerou. Isso é importante para aumentar as chances de o
-conjunto de dados ser identificado em ferramentas de busca e assim potencializar o seu reuso.
+Em geral, o código de identificação de um novo conjunto de dados inserido no **febr** é definido pela sua
+posição (ordem das contribuições, `ctb`) em relação aos demais conjuntos de dados presentes no **febr**. Por
+exemplo, o código de identificação do primeiro conjunto de dados inserido no **febr** é 
+`dataset_id = ctb0001`, enquanto que do trigésimo terceiro conjunto de dados é `dataset_id = ctb0033`.
 
-Quanto à formatação do título, usa-se a mesma língua da fonte -- apesar de títulos em língua portuguesa serem 
-preferidos -- e caracteres em caixa baixa, com exceção da primeira letra do título e dos nomes próprios. Por 
-exemplo, *Conjunto de dados da tese 'Matéria orgânica e características físicas, químicas, mineralógicas e 
-espectrais de Latossolos de diferentes ambientes'*.
+No caso dos conjuntos de dados obtidos diretamente do SISB, o código de identificação utilizado no **febr** é 
+o mesmo usado naquele sistema, independente da sua ordem de entrada no **febr**. Por exemplo, 
+`dataset_id = ctb0770`, onde `770` é o código de identificação usado no SISB. Essa estratégia possibilita que, 
+no futuro, e em havendo interesse por parte dos mantenedores do SISB, seja estabelecida comunicação direta do
+SISB com o **febr**. Assim seria possível atualizar os dados no SISB à medida que ajustes e correções nos 
+dados forem feitos no **febr**.
+
+O segundo identificador de um conjunto de dados é o seu título -- `dataset_titulo` --, geralmente relacionado
+ao título do projeto, tese, dissertação, etc que o gerou. Em geral, sugere-se que seja usado um título 
+específico para o conjunto de dados, o que identifica melhor o seu conteúdo, ao invés do título do trabalho ou
+projeto que o gerou. Isso é importante para aumentar as chances de o conjunto de dados ser identificado em
+ferramentas de busca e assim potencializar o seu reuso.
+
+Quanto à formatação do título, procura-se usar a mesma língua da fonte e caracteres em caixa baixa, com 
+exceção da primeira letra do título e dos nomes próprios. Por exemplo, *Conjunto de dados da tese 'Matéria 
+orgânica e características físicas, químicas, mineralógicas e espectrais de Latossolos de diferentes 
+ambientes'*.
 
 ## Descrição {#descricao}
 
