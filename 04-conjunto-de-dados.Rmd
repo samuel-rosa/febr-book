@@ -287,13 +287,11 @@ usada pela primeira vez também deve ser inserida. Para adicionar novas referên
 sequência, novas linhas na tabela `dataset`, usando o índice `i` para indicar sua ordem.
 
 ## Indexação {#indexa}
-<!-- ## `area_conhecimento` -->
 
-Área de especialidade da Agronomia -- Ciência do Solo à qual o conjunto de dados está relacionado. São seis as
-áreas de especialidade definidas pelo Conselho Nacional de Desenvolvimento Científico e Tecnológico
-([CNPq](http://cnpq.br/documents/10157/186158/TabeladeAreasdoConhecimento.pdf)) e a Coordenação de
-Aperfeiçoamento de Pessoal de Nível Superior
-([CAPES](http://www.capes.gov.br/avaliacao/instrumentos-de-apoio/tabela-de-areas-do-conhecimento-avaliacao)):
+Três itens são usados para indexação dos conjuntos de dados e sua otimização para ferramentas de busca 
+(Tabela \@ref(tab:indexa)). O primeiro deles é a área de especialidade da Agronomia-Ciência do Solo à qual o
+conjunto de dados está relacionado. São seis as áreas de especialidade definidas pelo Conselho Nacional de Desenvolvimento Científico e Tecnológico ([CNPq][cnpq]) e a Coordenação de Aperfeiçoamento de Pessoal de Nível
+Superior ([CAPES][capes]):
 
 * Gênese, Morfologia e Classificação dos Solos
 * Física do Solo
@@ -302,19 +300,8 @@ Aperfeiçoamento de Pessoal de Nível Superior
 * Fertilidade do Solo e Adubação
 * Manejo e Conservação do Solo
 
-<!-- ## `palavras_chave` -->
-
-Lista de termos que descrevem aspectos importantes do conjunto de dados, preferencialmente diferentes daqueles
-constantes no título, sendo separados por ponto e vírgula. Uma lista de termos bem elaborada aumenta o 
-potencial de descoberta do conjunto de dados por mecanismos de busca.
-
-<!-- ## `categoria_vcge` -->
-
-Categoria do Vocabulário Controlado do Governo Eletrônico ([VCGE](http://vocab.e.gov.br/2011/03/vcge#esquema)).
-O VCGE é um esquema padronizado de assuntos e categorias usado para facilitar a apresentação e identificação 
-dos serviços disponibilizados em uma estrutura de diretórios *online*. O objetivo do VCGE é ajudar os cidadãos
-a encontrar informações em catálogos de dados públicos sem a necessidade de conhecer a organização responsável
-pelo assunto ou categoria.
+[cnpq]: http://cnpq.br/documents/10157/186158/TabeladeAreasdoConhecimento.pdf
+[capes]: http://www.capes.gov.br/avaliacao/instrumentos-de-apoio/tabela-de-areas-do-conhecimento-avaliacao
 
 ```{r, echo=FALSE}
 indexa <- 
@@ -326,3 +313,15 @@ indexa <-
 colnames(indexa) <- c("**item**", "**dado**")
 pander(indexa, caption = "(\\#tab:indexa) Itens utilizados para a indexação do conjunto de dados.")
 ```
+
+O segundo item consiste de uma lista de termos que descrevem aspectos importantes do conjunto de dados, 
+preferencialmente diferentes daqueles constantes no título, sendo separados por ponto e vírgula. Uma lista de
+termos bem elaborada aumenta o potencial de descoberta do conjunto de dados por mecanismos de busca.
+
+O terceiro item é a Categoria do Vocabulário Controlado do Governo Eletrônico ([VCGE][vcge]). O VCGE é um
+esquema padronizado de assuntos e categorias usado para facilitar a apresentação e identificação dos serviços
+disponibilizados em uma estrutura de diretórios online. O objetivo do VCGE é ajudar os cidadãos a encontrar
+informações em catálogos de dados públicos sem a necessidade de conhecer a organização responsável pelo
+assunto ou categoria.
+
+[vcge]: http://vocab.e.gov.br/2011/03/vcge#esquema
