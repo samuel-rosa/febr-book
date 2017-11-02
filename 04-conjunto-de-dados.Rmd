@@ -4,7 +4,7 @@
 
 A maximização da disseminação e uso de um conjunto de dados, o apropriado reconhecimento de seus autores ou 
 autoras e instituição responsável, bem como a identificação que alterações e ajustes feitos após a publicação
-da sua primeira versão, dependem da provisão de dados mínimos sobre aquele conjunto de dados. No Fe-BR esses
+da sua primeira versão, dependem da provisão de dados mínimos sobre aquele conjunto de dados. No **febr** esses
 dados são inseridos na tabela denominada *dataset*.
 
 Por conter dados essenciais sobre um conjunto de dados, a tabela *dataset* é sempre a primeira a ser revisada 
@@ -17,35 +17,38 @@ de ferro do solo.
 A tabela *dataset* possui cerca de vinte itens estruturados em uma sequência de linhas. Os dados sobre o
 conjunto de dados são inseridos na segunda coluna, imediatamente ao lado da sua respectiva identificação e 
 definição contidas na primeira coluna. A primeira linha é dedicada à identificação propriamente dita do 
-conjunto de dados no Fe-BR, a segunda ao título do conjunto de dados, e assim por diante, até as últimas 
+conjunto de dados no **febr**, a segunda ao título do conjunto de dados, e assim por diante, até as últimas 
 linhas, dedicadas aos termos usados para a descrição de características chave e indexação do conjunto de 
 dados.
 
-item              | dado
------------------ | -----
-dataset_id        | ...
-dataset_titulo    | ...
-dataset_descricao | ...
-...               | ...
-palavras_chave    | ...
-categoria_vcge    | ...
+**item**            | **dado**
+------------------- | --------
+`dataset_id`        | <???>
+`dataset_titulo`    | <???>
+`dataset_descricao` | <???>
+`...`               | <???>
+`palavras_chave`    | <???>
+`categoria_vcge`    | <???>
 
-Os itens da tabela *dataset* são descritos em detalhe a seguir.
+Table: Representação da estrutura da tabela *dataset* com os items das suas primeiras três e últimas duas
+linhas. O símbolo `...` indica a existência de outros items nas linhas intermediárias, enquanto <???>
+indica os respectivos espaços para entrada de dados pelo usuário.
 
+Os itens da tabela *dataset* são descritos em detalhe nas seções a seguir.
 
 ## Identificação
 <!-- ## `dataset_id` -->
 
 Código identificador único do conjunto de dados. Esse código é usado para identificar cada uma dos conjuntos 
-de dados incluídos no Fe-BR. Em geral, o código de identificação de um novo conjunto de dados inserido no 
-Fe-BR é definido pela sua posição (ordem das contribuições) em relação aos demais conjunto de dados já 
-inseridos no Fe-BR. Por exemplo, o código de identificação do primeiro conjunto de dados contribuído (`ctb`) 
-para o Fe-BR é `dataset_id = ctb0001`.
+de dados incluídos no **febr**. Em geral, o código de identificação de um novo conjunto de dados inserido no 
+**febr** é definido pela sua posição (ordem das contribuições) em relação aos demais conjunto de dados já 
+inseridos no **febr**. Por exemplo, o código de identificação do primeiro conjunto de dados contribuído (`ctb`) 
+para o **febr** é `dataset_id = ctb0001`.
 
 No caso dos conjuntos de dados obtidos diretamente do Sistema de Informação de Solos Brasileiros
-([SISB](https://www.sisolos.cnptia.embrapa.br/)), o código de identificação utilizado no Fe-BR é o mesmo usado
-naquele sistema. Isso possibilita estabelecer comunicação direta do SISB com o Fe-BR, o que permite atualizar 
-os dados do primeiro caso ajustes nos dados sejam feitos durante o seu processamento no Fe-BR.
+([SISB](https://www.sisolos.cnptia.embrapa.br/)), o código de identificação utilizado no **febr** é o mesmo usado
+naquele sistema. Isso possibilita estabelecer comunicação direta do SISB com o **febr**, o que permite atualizar 
+os dados do primeiro caso ajustes nos dados sejam feitos durante o seu processamento no **febr**.
 
 <!-- ## `dataset_titulo` -->
 
@@ -111,8 +114,8 @@ devem ser identificados conforme descrito [abaixo](#contribuidor).
 Data de publicação do conjunto de dados. A data de publicação do conjunto de dados não é necessariamente a 
 mesma data de publicação do trabalho que o gerou ou utilizou pela primeira vez, mas sim a data em que o 
 conjunto de dados foi tornado efetivamente público e disponível para acesso. Quando modificações são feitas
-no conjunto de dados durante ou após a sua inserção no Fe-BR, resultando assim em uma nova versão, então a 
-data de publicação é a data em que essa nova do conjunto de dados foi disponibilizada no Fe-BR.
+no conjunto de dados durante ou após a sua inserção no **febr**, resultando assim em uma nova versão, então a 
+data de publicação é a data em que essa nova do conjunto de dados foi disponibilizada no **febr**.
 
 A data de publicação é apresentada na sequência dia, mês e ano, usando formato numérico dd-mm-aaaa ou 
 dd/mm/aaaa, ou seja, dois dígitos para o dia e mês, e quatro dígitos para o ano. Preferência é dada à inserção
@@ -125,7 +128,7 @@ utilizou pela primeira vez.
 <!-- ## `dataset_licenca` {#licenca} -->
 
 Licença de uso do conjunto de dados. Dado que define como o conjunto de dados pode ser usado a partir da sua
-publicação no Fe-BR.
+publicação no **febr**.
 
 A legislação brasileira ainda não especifica, exatamente, qual deve ser a licença de uso dos conjuntos de 
 dados gerados por projetos mantidos via financiamento público. Contudo, existe algum
@@ -135,7 +138,7 @@ uma licença de uso apropriada para esse tipo de conjuntos de dados é a licenç
 dados seja distribuido, remixado, adaptado e usado para criar outros produtos, mesmo que para fins comerciais, 
 desde que seja atribuido o devido crédito aos autores/responsáveis pelo conjunto de dados original. Assim, 
 trata-se de uma das licença mais flexível dentre as licenças Creative Commons disponíveis, maximizando a
-disseminação e uso dos conjuntos de dados. Assim, a licença CC-BY 4.0 é a licença padrão do Fe-BR. Maiores
+disseminação e uso dos conjuntos de dados. Assim, a licença CC-BY 4.0 é a licença padrão do **febr**. Maiores
 informações sobre as licenças de uso recomendadas para conjuntos de dados públicos podem ser encontradas no
 [fórum](https://groups.google.com/forum/#!forum/inda-br) da Infraestrutura Nacional de Dados Abertos (INDA).
 
@@ -194,7 +197,7 @@ ou usado para criar outros produtos.
 Identificação dos autores ou responsáveis por modificações no conjunto de dados. Modificações constituem
 contribuições à melhoria do conjunto de dados, sendo assim apresentadas na sua [descrição](#descricao) e 
 geralmente resultando em uma nova [versão](#versao) do conjunto de dados. Como a inserção de um conjunto de
-dados no Fe-BR sempre requer algum tipo de modificação, os integrantes da equipe do Fe-BR sempre figuram como
+dados no **febr** sempre requer algum tipo de modificação, os integrantes da equipe do **febr** sempre figuram como
 autores de contribuições à sua melhoria.
 
 Os dados necessários para a indentificação dos responsáveis pelas modificações feitas num conjunto de dados 
