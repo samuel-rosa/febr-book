@@ -94,7 +94,7 @@ Quando for o caso, a descrição do conjunto de dados deve incluir também:
 
 Uma descrição exemplar de um conjunto de dados é a que segue:
 
-> Conjunto de dados produzido como parte da Dissertação submetida como requisito parcial para obtenção do grau
+> "Conjunto de dados produzido como parte da Dissertação submetida como requisito parcial para obtenção do grau
 de Mestre no Curso de Pós-Graduação em Agronomia da Universidade Federal Rural do Rio de Janeiro. Inclui dados
 do conteúdo de ferro total determinado via extração com solução de ácido sulfúrico para 20 perfis do solo
 observados no município de Pinheiral, Rio de Janeiro. A seleção dos locais de observação foi feita com base no
@@ -104,7 +104,7 @@ local foram abertas trincheiras para descrição dos perfis e coleta de amostras
 caracterização do solo segundo procedimentos descritos no Manual de Descrição e Coleta de Solo no Campo 
 (Santos et al., 2013). Devido à existência de limitações orçamentárias, apenas amostras de horizontes
 selecionados foram submetidas à determinação do conteúdo de ferro total. Em alguns casos, apenas os horizontes
-B diagnósticos foram analisados, em outros o primeiro horizonte A e um ou mais horizontes subsuperficiais.
+B diagnósticos foram analisados, em outros o primeiro horizonte A e um ou mais horizontes subsuperficiais."
 
 ## Versionamento {#versao}
 <!-- ## `dataset_versao` {#versao} -->
