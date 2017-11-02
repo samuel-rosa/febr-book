@@ -1,3 +1,6 @@
+\clearpage
+\tableofcontents
+
 # Introdução
 
 Nós acreditamos que o uso sustentável do solo para aplicações ambientais no Brasil exige o conhecimento da distribuição horizontal e vertical do conteúdo de ferro no solo. Por quê? Porque, em alguns locais, os óxidos de ferro podem perfazer até 80% da massa do solo!
