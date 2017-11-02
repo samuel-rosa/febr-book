@@ -1,25 +1,23 @@
 --- 
-title: "Procedimentos Adotados no Repositório Brasileiro de Dados de Ferro do Solo"
-author: |
-  | ALESSANDRO SAMUEL-ROSA
-  | Programa de Pós-Graduação em Ciência do Solo
-  | Universidade Federal de Santa Maria
-date: "`r Sys.Date()`"
+title: "Repositório Brasileiro de Dados de Ferro do Solo"
+subtitle: "Departamento de Solos -- Boletim Técnico N° 6"
+author: 
+  - Alessandro Samuel-Rosa^[Programa de Pós-graduação em Ciência do Solo, Universidade Federal de Santa Maria]
+  - Ricardo Simão Diniz Dalmolin^[Departamento de Solos, Universidade Federal de Santa Maria]
+  - Paulo Ivonir Gubiani^[Departamento de Solos, Universidade Federal de Santa Maria]
+  - Diego Gris^[Curso de Agronomia, Universidade Federal de Santa Maria]
+  - Nicolas Augusto Rosin^[Curso de Agronomia, Universidade Federal de Santa Maria]
+# lang: pt
+date: "`r format(Sys.time(), '%d %B %Y')`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
-#bibliography: [book.bib, packages.bib, ~/Dropbox/jabref/biblio.bib]
+bibliography: biblio.bib
 csl: abnt.csl
-# biblio-style: apalike
 link-citations: yes
-#github-repo: samuel-rosa/pedologia-quantitativa
+github-repo: samuel-rosa/febr-book
 ---
 
 ```{r, echo=FALSE}
 knitr::opts_chunk$set(dev.args = list(bg = 'transparent'))
 ```
-
-```{r, echo=FALSE, child = '00-apresentacao.Rmd'}
-```
-
-
