@@ -180,19 +180,20 @@ Informação de Solos Brasileiros para "*finalidades profissionais e/ou comercia
 estabelecimento de licença de uso específica por parte da Embrapa*".
 
 ## Organização responsável {#organizacao}
-<!-- ## `organizacao_<...>` -->
 
-Identificação e endereços físico e eletrônico da organização responsável pela geração do conjunto de dados. 
+A organização ou instituição responsável pela geração do conjunto de dados é identificada usando uma série de
+itens codificados usando o padrão `organizacao_<...>`, onde `<...>` representa um descritor da organização 
+responsável (Tabela \@ref(tab:organizacao)). Fundamentalmente, esses itens armazenam dados básicos sobre os
+endereços físico e eletrônico da organização.
+
 Quando o conjunto de dados é provido por organização outra que não aquela responsável pela sua geração, 
-pode-se optar por identificar a organização que atualmente detém responsabilidade técnica sobre o conjunto de
-dados, ou seja, a organização provedora do conjunto de dados. Isso é especialmente importante caso 
-modificações consideráveis tenham sido feitas nos dados. O mesmo pode ser aplicado aos conjuntos de dados
-gerados por duas ou mais organizações. No caso de conjuntos de dados gerados ou sob responsabilidade de 
-organizações como a Embrapa, que possuem várias unidades, identifica-se a unidade da organização responsável 
-pelo conjunto de dados, nunca apenas a organização. Em todo caso, é fundamental que ambos endereço físico e
-eletrônico sejam válidos e atuais.
-
-Os dados necessários para a indentificação da organização responsável pelo conjunto de dados são os seguintes (Tabela \@ref(tab:organizacao)):
+pode-se identificar a organização que atualmente detém responsabilidade técnica sobre o conjunto de dados, ou
+seja, a organização provedora do conjunto de dados. Isso é especialmente importante caso modificações
+consideráveis no conjunto de dados tenham sido feitas por essa organização. O mesmo pode ser aplicado aos
+conjuntos de dados gerados por duas ou mais organizações. No caso de conjuntos de dados gerados ou sob
+responsabilidade de organizações como a Embrapa, que possuem várias unidades, identifica-se a unidade da
+organização responsável pelo conjunto de dados, nunca apenas a organização. Em todo caso, é fundamental
+garantir que ambos endereços físico e eletrônico sejam válidos e atuais.
 
 ```{r, echo=FALSE}
 organizacao <- 
