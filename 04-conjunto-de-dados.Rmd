@@ -107,17 +107,20 @@ selecionados foram submetidas à determinação do conteúdo de ferro total. Em 
 B diagnósticos foram analisados, em outros o primeiro horizonte A e um ou mais horizontes subsuperficiais."
 
 ## Versionamento {#versao}
-<!-- ## `dataset_versao` {#versao} -->
 
-Versão do conjunto de dados. Dado necessário para identificar os casos em que o conjunto de dados foi
-modificado por uma razão técnica e/ou científica. Por exemplo, um conjunto de dados contendo inúmeros perfis
-do solo, cujas localizações originais não foram georreferenciadas -- `dataset_versao = 1` --, é modificado
-consideravelmente de maneira que todos os perfis do solo possuam coordenadas espaciais aproximadas dos locais 
-de observação -- `dataset_versao = 2`.
+O controle dos passos do processamento de um conjunto de dados é realizado usando dois itens: `dataset_versao`
+e `publicacao_data` (Tabela \@ref(tab:versao)). A versão do conjunto de dados é uma dado necessário para
+identificar os casos em que o conjunto de dados foi modificado por uma razão técnica e/ou científica. Por
+exemplo, um conjunto de dados contendo inúmeras observações do solo cuja localização não foi georreferenciada 
+(`dataset_versao = 1.0`). Uma vez no **febr**, esse conjunto de dados é modificado consideravelmente de maneira
+que todas as observações do solo possuam coordenadas espaciais aproximadas, com precisão de cerca de 1000 m
+(`dataset_versao = 2.0`). Em seguida, modificações menores são feitas, pois verifica-se que, para algumas
+observações com maior volume de informações disponível, as coordenadas espaciais mais prováveis podem ser
+inferidas com precisão de cerca de 100 m (`dataset_versao = 2.1`).
 
-Sempre que uma nova versão de um conjunto de dados é preparada, uma descrição sumária das modificações deve 
-ser incluída na descrição do conjunto de dados em `dataset_descricao`. Os responsáveis pelas modificações 
-devem ser identificados conforme descrito [abaixo](#contribuidor).
+Sempre que uma nova versão de um conjunto de dados é preparada, uma descrição sumária das modificações é 
+incluída na descrição do conjunto de dados em `dataset_descricao`. Os responsáveis pelas modificações 
+são então identificados conforme descrito abaixo na Seção \@ref(contribuidor).
 
 ```{r, echo=FALSE}
 versao <- 
@@ -129,20 +132,19 @@ colnames(versao) <- c("**item**", "**dado**")
 pander(versao, caption = "(\\#tab:versao) Itens utilizados para o versionamento do conjunto de dados.")
 ```
 
-<!-- ## `publicacao_data` -->
+A data de publicação do conjunto de dados, `publicacao_data`, não é necessariamente a mesma data de publicação
+do trabalho que o gerou ou o utilizou pela primeira vez, mas sim a data em que o conjunto de dados foi tornado
+efetivamente público e disponível para acesso. Quando modificações são feitas no conjunto de dados durante ou
+após a sua inserção no **febr**, resultando assim em uma nova versão -- conforme descrito acima --, então a
+data de publicação é a data em que essa nova versão do conjunto de dados foi disponibilizada no **febr**.
 
-Data de publicação do conjunto de dados. A data de publicação do conjunto de dados não é necessariamente a 
-mesma data de publicação do trabalho que o gerou ou utilizou pela primeira vez, mas sim a data em que o 
-conjunto de dados foi tornado efetivamente público e disponível para acesso. Quando modificações são feitas
-no conjunto de dados durante ou após a sua inserção no **febr**, resultando assim em uma nova versão, então a 
-data de publicação é a data em que essa nova do conjunto de dados foi disponibilizada no **febr**.
-
-A data de publicação é apresentada na sequência dia, mês e ano, usando formato numérico dd-mm-aaaa ou 
-dd/mm/aaaa, ou seja, dois dígitos para o dia e mês, e quatro dígitos para o ano. Preferência é dada à inserção
-dos dados de ambos dia, mês e ano. Contudo, dentre os três dados, o mais importante é aquele relativo ao ano.
-Quando algum dos dados não é conhecido, usa-se o símbolo `xx` em substituição. Caso a data de publicação do 
-conjunto de dados seja completamente desconhecida, usa-se a data de publicação do trabalho que o gerou ou 
-utilizou pela primeira vez.
+A data de publicação é apresentada na sequência dia, mês e ano, usando formato numérico `dd-mm-aaaa` ou 
+`dd/mm/aaaa`, ou seja, dois dígitos para o dia e mês, e quatro dígitos para o ano. Por exemplo, `13-06-2001` 
+identifica o dia 13 do mês de junho do ano de 2001. Sempre que possível insere-se os dados de ambos dia, mês e
+ano. Contudo, dentre os três, o mais importante é aquele relativo ao ano. Quando algum dos dados não é 
+conhecido, usa-se o símbolo `xx` em substituição, por exemplo, `xx-xx-2001`. Caso a data de publicação da 
+versão atual conjunto de dados seja completamente desconhecida, usa-se a data de publicação do trabalho que o
+gerou ou utilizou pela primeira vez.
 
 ## Licença de uso {#licenca}
 
