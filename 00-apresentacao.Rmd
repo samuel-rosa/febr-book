@@ -7,3 +7,6 @@
 Nome do Chefe do Departamento de Solos
 
 Chefe do Departamento de Solos, UFSM
+
+\clearpage
+\tableofcontents

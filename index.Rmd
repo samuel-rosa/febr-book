@@ -15,9 +15,9 @@ documentclass: book
 papersize: a5
 fontsize: 11pt
 classoption: twoside
-toc: true
-lof: true
-lot: true
+toc: false
+# lof: true
+# lot: true
 secnumdepth: 3
 geometry: top=13mm,bottom=13mm,inner=13mm,outer=10mm
 bibliography: biblio.bib
