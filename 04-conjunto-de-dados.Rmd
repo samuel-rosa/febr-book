@@ -240,16 +240,14 @@ pander(autor,
 ```
 
 ## Contribuições {#contribuidor}
-<!-- ## `contribuidor_<...>` {#contribuidor} -->
 
-Identificação dos autores ou responsáveis por modificações no conjunto de dados. Modificações constituem
-contribuições à melhoria do conjunto de dados, sendo assim apresentadas na sua [descrição](#descricao) e 
-geralmente resultando em uma nova [versão](#versao) do conjunto de dados. Como a inserção de um conjunto de
-dados no **febr** sempre requer algum tipo de modificação, os integrantes da equipe do **febr** sempre figuram como
-autores de contribuições à sua melhoria.
-
-Os dados necessários para a indentificação dos responsáveis pelas modificações feitas num conjunto de dados 
-são os seguintes:
+Os autores de modificações no conjunto de dados são identificados usando três itens similares àqueles usados
+para identificar os autores ou responsáveis pelo conjunto de dados (Tabela \@ref(tab:contribuidor)). No 
+**febr**, modificações constituem contribuições à melhoria do conjunto de dados, sendo sempre mencionadas
+na descrição do conjunto de dados (Seção \@ref(descricao)), e geralmente resultando em uma nova versão do
+do conjunto de dados (Seção \@ref(versao)). Como a inserção de um conjunto de dados no **febr** geralmente 
+requer algum tipo de modificação, por menor que seja, os integrantes da equipe do **febr** costuma figurar 
+como autores de contribuições à sua melhoria.
 
 ```{r, echo=FALSE}
 contribuidor <- 
@@ -267,26 +265,26 @@ pander(contribuidor,
 A apropriada identificação dos autores das modificações no conjunto de dados é fundamental para permitir o 
 contato com os mesmos sempre que surgirem dúvidas sobre as novas versões do conjunto de dados. Além disso, 
 permite atribuir o devido crédito quando se deseja referenciar uma versão específica do conjunto de dados. 
-Contudo, recomenda-se sempre dar crédito aos [autores](#autor) originais do conjunto de dados, 
-independentemente da sua versão.
+Contudo, recomenda-se sempre dar crédito aos autores originais do conjunto de dados, independentemente da sua
+versão (Seção \@ref(autor)).
 
-## Referências
-<!-- ## `dataset_referencia_i` -->
+## Referência
 
-Referência permanente e válida a documentos ou artigos científicos onde a versão original e/ou a versão atual
-do conjunto de dados foi usado, preferencialmente, pela primeira vez. Preferência é dada ao uso de um Digital 
-Object Identifier ([DOI](https://www.doi.org/)), mas uma URL também é aceita.
+Uma referência permanente e válida a documento ou artigo científico onde a versão original e/ou a versão atual
+do conjunto de dados foi usado, preferencialmente, pela primeira vez é informada usando o item
+`dataset_referencia_i`. Sempre que possível usa-se um Digital Object Identifier (DOI, https://www.doi.org/),
+mas uma URL costuma ser a mais usada, especialmente para documentos antigos e trabalhos acadêmicos.
 
-Tantas referências quantas forem julgadas pertinentes podem ser inseridas, numerando-as sequencialmente em 
-ordem de importância, usando para isso o índice `i`. No caso de os responsáveis atuais pelo conjunto de dados
-não serem os seus autores originais, é imprescindível que a referência principal, `i = 1`, seja a um trabalho
-dos autores do conjunto de dados. Já a referência secundária, `i = 2`, pode ser a um trabalho dos responsáveis
-atuais pelo conjunto de dados. No caso de trabalhos acadêmicos, como monografias, disserações e teses, pode-se
-inserir uma referência ao trabalho acadêmico e ao artigo onde o conjunto de dados foi utilizado pela primeira
-vez. No caso de o conjunto de dados ter passado por modificações consideráveis, uma referência ao trabalho 
-onde a nova versão tenha sido usada pela primeira vez também deve ser inserida. Para inserir novas 
-referências, basta inserir, na sequência, novas linhas na tabela `dataset`, usando o `i` para indicar sua
-ordem.
+Tantas referências quantas forem julgadas pertinentes podem ser inseridas, numeradas sequencialmente em ordem
+de importância, usando-se para isso o índice `i` do item `dataset_referencia_i`. No caso de os responsáveis
+atuais pelo conjunto de dados não serem os seus autores originais, é imprescindível que a referência
+principal, `dataset_referencia_1`, seja a um trabalho dos autores do conjunto de dados. Já a referência
+secundária, `dataset_referencia_2`, pode ser a um trabalho dos responsáveis atuais pelo conjunto de dados. No
+caso de trabalhos acadêmicos, como monografias, disserações e teses, costuma-se inserir uma referência ao
+trabalho acadêmico e ao artigo onde o conjunto de dados foi utilizado pela primeira vez. No caso de o conjunto
+de dados ter passado por modificações consideráveis, uma referência ao trabalho onde a nova versão tenha sido
+usada pela primeira vez também deve ser inserida. Para adicionar novas referências, basta inserir, na
+sequência, novas linhas na tabela `dataset`, usando o índice `i` para indicar sua ordem.
 
 ## Indexação {#indexa}
 <!-- ## `area_conhecimento` -->
