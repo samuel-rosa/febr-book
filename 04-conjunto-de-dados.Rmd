@@ -71,11 +71,10 @@ exemplo, *Conjunto de dados da tese 'Matéria orgânica e características físi
 espectrais de Latossolos de diferentes ambientes'*.
 
 ## Descrição {#descricao}
-<!-- ## `dataset_descricao` {#descricao} -->
 
-Descrição do conjunto de dados, contendo dados básicos para maximizar o reuso futuro do conjunto de dados sem
-que seja necessário entrar em contato com os seus autores/responsáveis. A descrição do conjunto de dados 
-inclui aspectos como:
+A descrição do conjunto de dados, contendo dados básicos para maximizar o seu reuso futuro sem que seja
+necessário entrar em contato com os seus autores e /ou responsáveis é incluída no item `dataset_descricao`. A
+descrição do conjunto de dados deve abordar aspectos como:
 
 1. Os motivos para a realização do estudo que levou à geração dos dados,
 2. Um resumo dos dados incluídos no conjunto de dados e dos métodos analíticos usados, e
@@ -95,13 +94,13 @@ Uma descrição exemplar de um conjunto de dados é a que segue:
 > Conjunto de dados produzido como parte da Dissertação submetida como requisito parcial para obtenção do grau
 de Mestre no Curso de Pós-Graduação em Agronomia da Universidade Federal Rural do Rio de Janeiro. Inclui dados
 do conteúdo de ferro total determinado via extração com solução de ácido sulfúrico para 20 perfis do solo
-observados no município de Pinheiral (RJ). A seleção dos locais de observação foi feita com base no 
+observados no município de Pinheiral, Rio de Janeiro. A seleção dos locais de observação foi feita com base no
 conhecimento pedogenético da área de estudo, a partir de informações prévias sobre o meio físico e solo, tendo
 sido selecionados pontos representativos que contemplassem a variação dos fatores de formação do solo. Em cada
 local foram abertas trincheiras para descrição dos perfis e coleta de amostras dos horizontes para 
 caracterização do solo segundo procedimentos descritos no Manual de Descrição e Coleta de Solo no Campo 
 (Santos et al., 2013). Devido à existência de limitações orçamentárias, apenas amostras de horizontes
-selecionados foram submetidas à determinação do conteúdo de ferro total. Em alguns casos, apenas os horizontes 
+selecionados foram submetidas à determinação do conteúdo de ferro total. Em alguns casos, apenas os horizontes
 B diagnósticos foram analisados, em outros o primeiro horizonte A e um ou mais horizontes subsuperficiais.
 
 ## Versionamento {#versao}
