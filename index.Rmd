@@ -2,11 +2,11 @@
 title: "Repositório Brasileiro de Dados de Ferro do Solo"
 subtitle: "Departamento de Solos -- Boletim Técnico N° 6"
 author: 
-  - Alessandro Samuel-Rosa^[Programa de Pós-graduação em Ciência do Solo, Universidade Federal de Santa Maria]
-  - Ricardo Simão Diniz Dalmolin^[Departamento de Solos, Universidade Federal de Santa Maria]
-  - Paulo Ivonir Gubiani^[Departamento de Solos, Universidade Federal de Santa Maria]
-  - Diego Gris^[Curso de Agronomia, Universidade Federal de Santa Maria]
-  - Nicolas Augusto Rosin^[Curso de Agronomia, Universidade Federal de Santa Maria]
+  - Alessandro Samuel-Rosa
+  - Ricardo Simão Diniz Dalmolin
+  - Paulo Ivonir Gubiani
+  - Diego José Gris
+  - Nicolas Augusto Rosin
 # lang: pt
 date: "`r format(Sys.time(), '%d %B %Y')`"
 site: bookdown::bookdown_site
