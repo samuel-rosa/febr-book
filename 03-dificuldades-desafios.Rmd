@@ -1,3 +1,0 @@
-<!-- # Dificuldades e Desafios -->
-
-Licença de uso. Item com o qual tem havido mais confusão até agora, sobretudo porque a maioria das pessoas não está familiarizada com a atribuição de licença de uso aos dados que produzem. Na maioria dos casos será necessário entrar em contato com o responsável pelo conjunto de dados para explicar o que cada licença significa.
