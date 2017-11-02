@@ -1,25 +1,24 @@
 # Conjunto de dados
 
-<!-- ## Tabela *dataset* -->
-
 A maximização da disseminação e uso de um conjunto de dados, o apropriado reconhecimento de seus autores ou 
 autoras e instituição responsável, bem como a identificação que alterações e ajustes feitos após a publicação
-da sua primeira versão, dependem da provisão de dados mínimos sobre aquele conjunto de dados. No **febr** esses
-dados são inseridos na tabela denominada *dataset*.
+da sua primeira versão, dependem da provisão de dados mínimos sobre aquele conjunto de dados. No **febr** 
+esses dados são inseridos na tabela denominada *dataset*, palavra que na língua inglesa significa 'conjunto de
+dados'.
 
 Por conter dados essenciais sobre um conjunto de dados, a tabela *dataset* é sempre a primeira a ser revisada 
 e processada. Quaisquer dados faltantes são solicitados aos autores/responsáveis pelo conjunto de dados. Da 
 mesma forma, sempre que dados incoerentes são identificados, os autores/responsáveis pelo conjunto de dados
 são consultados iterativamente até que quaisquer dúvidas sejam completamente sanadas. O devido preenchimento
-da tabela *dataset* é essencial para o posterior processamento dos dados e metadados de um conjunto de dados
-de ferro do solo.
+da tabela *dataset* é essencial para o posterior processamento dos dados e metadados de um conjunto de dados.
 
-A tabela *dataset* possui cerca de vinte itens estruturados em uma sequência de linhas. Os dados sobre o
-conjunto de dados são inseridos na segunda coluna, imediatamente ao lado da sua respectiva identificação e 
-definição contidas na primeira coluna. A primeira linha é dedicada à identificação propriamente dita do 
-conjunto de dados no **febr**, a segunda ao título do conjunto de dados, e assim por diante, até as últimas 
-linhas, dedicadas aos termos usados para a descrição de características chave e indexação do conjunto de 
-dados.
+A tabela *dataset* possui cerca de vinte itens estruturados em uma sequência de linhas (Tabela
+\@ref(tab:dataset)). Os dados sobre o conjunto de dados são inseridos na segunda coluna, imediatamente ao lado
+da sua respectiva identificação e definição contidas na primeira coluna. A primeira linha é dedicada à
+identificação propriamente dita do conjunto de dados no **febr**, a segunda ao título do conjunto de dados, e
+assim por diante, até as últimas linhas, dedicadas aos termos usados para a descrição de características chave
+e indexação do conjunto de dados. Cada um dos itens da tabela *dataset* são descritos em detalhe nas próximas 
+seções.
 
 ```{r, echo=FALSE}
 dataset <- 
@@ -34,8 +33,6 @@ dataset <-
 colnames(dataset) <- c("**item**", "**dado**")
 pander(dataset, caption = "(\\#tab:dataset) Representação da estrutura da tabela *dataset*.")
 ```
-
-Os itens da tabela *dataset* são descritos em detalhe nas seções a seguir.
 
 ## Identificação {#titulo}
 
