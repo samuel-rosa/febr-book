@@ -15,7 +15,7 @@ documentclass: book
 papersize: a5
 fontsize: 11pt
 classoption: twoside
-toc: false
+# toc: false
 # lof: true
 # lot: true
 secnumdepth: 3
