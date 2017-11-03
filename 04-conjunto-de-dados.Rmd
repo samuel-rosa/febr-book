@@ -179,7 +179,7 @@ pela Embrapa, para alimentar o **febr**. Segundo a Embrapa, o emprego dos dados 
 Informação de Solos Brasileiros para "*finalidades profissionais e/ou comerciais deve ser precedido de
 estabelecimento de licença de uso específica por parte da Embrapa*".
 
-## Organização responsável {#organizacao}
+## Organização {#organizacao}
 
 A organização ou instituição responsável pela geração do conjunto de dados é identificada usando uma série de
 itens codificados usando o padrão `organizacao_<...>`, onde `<...>` representa um descritor da organização 
