@@ -33,4 +33,11 @@ library(pander)
 panderOptions('table.alignment.default', 'left')
 panderOptions('decimal.mark', ',')
 panderOptions('table.split.table', Inf)
+
+# Nomes das colunas
+colNames <-
+  function (x, names = c("**item**", "**dado**")) {
+    colnames(x) <- names
+    x
+  }
 ```
