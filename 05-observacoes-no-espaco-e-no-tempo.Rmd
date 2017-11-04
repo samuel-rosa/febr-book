@@ -21,18 +21,48 @@ portanto, a definição de uma nova `observacao_id`. O valor padrão, para os ca
 desconhecida, é `observacao_date = xx-xx-xxxx`. Quando somente o dia e/ou o mês de observação são 
 desconhecidos, usa-se o primeiro valor da sequência, ou seja, `dd = 01` e `mm = 01`.
 
-## Coordenadas espaciais
+## Coordenadas espaciais {#coordenadas}
 
-Sistema de referência de coordenadas (SRC) (`coord_sistema`) utilizado para o georreferenciamento das
-observações do solo. A
-especificação do SRC é fundamental para possibilitar o uso apropriado de dados espaciais, especialmente para 
-fins de correlação/cruzamento com outros dados espaciais. Como a especificação do SRC pode ser feita de 
-diversas maneiras, são aceitas quaiquer descrições mais populares, não padronizadas, como WGS 84 / UTM zone 
-23S. Contudo, para fins de organização dos dados e posterior automatização de processos computacionais, o 
-**febr** adota os códigos padronizados e aceitos internacionalmente do European Petroleum Survey Group (EPSG).
-Assim, a partir da descrição fornecida com o conjunto de dados, identifica-se o código EPSG correspondente, 
-que é usado em substituição daquela.
+A localização de uma observação do solo na superfície do planeta é identificada usando coordenadas espaciais,
+também conhecidas como coordenadas geográficas. Para isso são usados os cinco itens descritos na Tabela 
+\@ref(tab:coordenadas). 
 
+```{r coordenadas, echo=FALSE}
+cap <- "(\\#tab:coordenadas) Itens de identificação da localização espacial das observações do solo."
+rbind(
+  c("`coord_sistema`", "sistema de referência de coordenadas"),
+  c("`coord_x`", "coordenada x ou longitude"),
+  c("`coord_y`", "coordenada y ou latitude"),
+  c("`coord_precisao`", "precisão das coordenadas espaciais"),
+  c("`coord_fonte`", "fonte das coordenadas espaciais")
+  ) %>% 
+  colNames() %>% 
+  pander(caption = cap)
+```
+
+O primeiro item, `coord_sistema`, refere-se ao sistema de referência de coordenadas (SRC) utilizado para o
+georreferenciamento das observações do solo. A especificação do SRC é fundamental para possibilitar o uso
+apropriado de dados espaciais, especialmente para fins de correlação/cruzamento com outros dados espaciais.
+Tradicionalmente, a especificação do SRC pode ser feita de diversas maneiras, mas a forma mais usual é aquela
+no formato de texto legível por humanos. Por exemplo, WGS84 / UTM zona 23S, que identifica o datum geodético
+WGS84 e a zona 23 do hemisfério sul da projeção cartográfica UTM. Esse tipo de identificação não é usado do
+**febr** pois ele dificulta a automatização da manipulação computacional dos conjuntos de dados. Assim, o 
+**febr** adota os códigos padronizados e aceitos internacionalmente do EPSG, os quais são legíveis por humanos
+e por máquinas. Os códigos dos quatro sistemas de referência de coordenadas geográficas mais usados no Brasil
+são mostrados na Tabela \@ref(tab:geografica).
+
+```{r geografica, echo=FALSE}
+cap <- "(\\#tab:geografica) Códigos EPSG dos sistemas de referência de coordenadas geográficas."
+rbind(
+  c("`EPSG:4326`", "WGS84"),
+  c("`EPSG:4225`", "Córrego Alegre"),
+  c("`EPSG:4618`", "SAD69"),
+  c("`EPSG:4674`", "SIRGAS 2000")
+  ) %>% 
+  colNames(names = c('**Código**', '**Definição**')) %>% 
+  pander(caption = cap)
+```
+ 
 Coordenada X (`coord_x`) e Y (`coord_y`), ou seja, o mesmo que Longitude e Latitude, desde que em coordenadas
 geográficas.
 
@@ -40,11 +70,17 @@ Precisão (`coord_precisao`) com que as coordenadas espaciais foram determinadas
 
 `coord_fonte`
 
-Código | Definição
------- | -------------------------------
-GPS    | Aparelho GPS
-MAPA   | Mapa analógico ou digital
-WEB    | Serviço web como o Google Maps
+```{r, echo=FALSE}
+cap <- "(\\#tab:coord-fonte) Fontes de coordenadas espaciais."
+rbind(
+  c("`GPS`", "aparelho GPS"),
+  c("`MAPA`", "mapa analógico ou digital"),
+  c("`WEB`", "serviço web como o Google Maps")
+  ) %>% 
+  colNames(names = c('**Código**', '**Definição**')) %>% 
+  pander(caption = cap)
+```
+
 
 ## Localização
 
