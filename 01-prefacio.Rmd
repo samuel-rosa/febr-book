@@ -8,7 +8,12 @@
 
 ## Convenções {-}
 
-\lipsum[1]
+Inúmeras siglas são utilizadas ao longo do texto. O significado de cada uma delas, bem como o respectivo 
+endereço na Internet -- quando aplicável -- são listados a seguir:
+
+* **febr**: Repositório Brasileiro de Dados de Ferro (http://coral.ufsm.br/febr/)
+* INDA: Infraestrutura Nacional de Dados Abertos (http://wiki.dados.gov.br/)
+* SISB: Sistema de Informação de Solos Brasileiros (https://www.sisolos.cnptia.embrapa.br/)
 
 ## Agradecimentos {-}
 
