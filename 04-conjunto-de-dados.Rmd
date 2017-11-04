@@ -149,21 +149,27 @@ gerou ou utilizou pela primeira vez.
 ## Licença de uso {#licenca}
 
 A licença de uso do conjunto de dados -- especificada usando o item `dataset_licenca` -- define como o 
-conjunto de dados pode ser usado por outras pessoas a partir do momento da sua publicação no **febr**.
+conjunto de dados pode ser usado por outras pessoas a partir do momento da sua publicação no **febr**. O 
+**febr** aceita apenas conjuntos de dados com licenças de uso não-restritivas, ou seja, que permitem a 
+redistribuição, modificação, adaptação e criação a partir do conjunto de dado submetido, e que não obrigam o
+licenciamento dos trabalhos derivados sob os mesmos termos. Contudo, o autor/responsável pelo conjunto de 
+dados tem reservado o direito de decidir se os produtos derivados podem ou não ter fins comerciais, desde que
+previsto pelo órgão financiador. As licenças Creative Commons (https://br.creativecommons.org/licencas/) estão
+entre as mais apropriadas para os conjuntos de dados inseridos no **febr**, segundo as quais todos os novos
+trabalhos derivados de um conjunto de dados devem atribuir o devido crédito ao autor/responsável pelo conjunto
+de dados original.
 
-A legislação brasileira ainda não especifica, exatamente, qual deve ser a licença de uso dos conjuntos de 
-dados gerados em projetos conduzidos via financiamento público. Contudo, parece existir algum
-[consenso](http://wiki.dados.gov.br/Produto-GT1-Levantamento-Juridico-Licenciamento-Dados-Abertos.ashx) entre
-os diferentes órgãos da administração pública de que uma licença de uso apropriada para esse tipo de 
-conjuntos de dados é a licença Creative Commons CC-BY 4.0 (https://creativecommons.org/licenses/by/4.0/). A
-licença CC-BY 4.0 permite que um conjunto de dados seja distribuido, remixado, adaptado e usado para criar 
-outros produtos, mesmo que para fins comerciais, desde que seja atribuido o devido crédito aos autores e/ou 
-responsáveis pelo conjunto de dados original. Assim, trata-se de uma das licença mais flexível dentre as
-licenças Creative Commons disponíveis, permitindo a maximização da disseminação e uso dos conjuntos de dados.
-Assim sendo, a licença CC-BY 4.0 é a licença adotada como padrão no **febr**. Maiores informações sobre as
-licenças de uso sugeridas para conjuntos de dados públicos podem ser encontradas no fórum de discussão online
-(https://groups.google.com/forum/#!forum/inda-br) mantido pela Infraestrutura Nacional de Dados Abertos
-(INDA).
+A legislação brasileira ainda não especifica qual deve ser a licença de uso dos conjuntos de dados gerados em
+projetos conduzidos via financiamento público. Contudo, segundo a INDA, existe consenso entre os diferentes
+órgãos da administração pública de que uma licença de uso apropriada para esse tipo de conjuntos de dados é a
+licença Creative Commons CC-BY 4.0 (https://creativecommons.org/licenses/by/4.0/). A licença CC-BY 4.0 permite
+que um conjunto de dados seja distribuido, remixado, adaptado e usado para criar outros produtos, mesmo que
+para fins comerciais, desde que seja atribuido o devido crédito aos autores/responsáveis pelo conjunto de 
+dados original. Assim, trata-se de uma das licença mais flexível dentre as licenças Creative Commons
+disponíveis, permitindo a maximização da disseminação e uso dos conjuntos de dados. Assim sendo, a licença
+CC-BY 4.0 é a licença adotada como padrão no **febr**. Maiores informações sobre as licenças de uso sugeridas
+para conjuntos de dados públicos podem ser encontradas no fórum de discussão mantido pela INDA no endereço
+https://groups.google.com/forum/#!forum/inda-br.
 
 Para os conjuntos de dados gerados em projetos conduzidos via financiamento privado, onde as partes
 envolvidas têm interesse em compartilhar os dados desde que não para fins comerciais, sugere-se usar a
@@ -171,13 +177,13 @@ licença Creative Commons CC-BY-NC 4.0 (https://creativecommons.org/licenses/by-
 4.0 possui praticamente os mesmos termos da licença CC-BY 4.0, exceto pelo fato de que a distribuição, 
 remixação, adaptação e derivação de outros produtos não podem ser usados para fins comerciais.
 
-Os interessados em utilizar os conjuntos de dados disponíveis no **febr** devem prestar muita atenção à 
-licença de uso, devendo sempre dar crédito aos autores e/ou responsáveis pelo conjunto de dados, ou então à
-organização responsável. Atenção também é necessária quando do uso dos conjuntos de dados originalmente 
-descarregados do Sistema de Informação de Solos Brasileiros (https://www.sisolos.cnptia.embrapa.br/), mantido
-pela Embrapa, para alimentar o **febr**. Segundo a Embrapa, o emprego dos dados disponíveis em seu Sistema de
-Informação de Solos Brasileiros para "*finalidades profissionais e/ou comerciais deve ser precedido de
-estabelecimento de licença de uso específica por parte da Embrapa*".
+As pessoas interessadas em utilizar os conjuntos de dados disponíveis no **febr** devem prestar atenção, não
+só à licença de uso especificada no item `dataset_licenca`, como também às determinações da política de uso de
+dados da organização autora/responsável pelo conjunto de dados. Um exemplo disso são os conjuntos de dados
+originalmente descarregados do SISB, mantido pela Embrapa, para alimentar o **febr**. Segundo a Embrapa, o
+emprego dos dados disponíveis em seu SISB para "*finalidades profissionais e/ou comerciais deve ser precedido
+de estabelecimento de licença de uso específica por parte da Embrapa*", política essa que se extende à versão
+do conjunto de dados disponível no **febr**.
 
 ## Organização {#organizacao}
 
