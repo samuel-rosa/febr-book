@@ -1,27 +1,22 @@
 --- 
-title: "Repositório Brasileiro de Dados de Ferro do Solo"
-subtitle: "Departamento de Solos -- Boletim Técnico N° 6"
-author: 
-  - Alessandro Samuel-Rosa
-  - Ricardo Simão Diniz Dalmolin
-  - Paulo Ivonir Gubiani
-  - Diego José Gris
-  - Nicolas Augusto Rosin
-# lang: pt
+title: "Repositório Brasileiro Livre para Dados Abertos do Solo"
+subtitle: "Manual do Usuário"
+author: "Alessandro Samuel-Rosa, Ricardo S. D. Dalmolin, Paulo I. Gubiani, Diego J. Gris, Nicolas A. Rosin"
+#lang: pt
 date: "`r format(Sys.time(), '%d %B %Y')`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
-documentclass: book
-papersize: a5
-fontsize: 11pt
-classoption: twoside
-# toc: false
-# lof: true
-# lot: true
-secnumdepth: 3
-geometry: top=13mm,bottom=13mm,inner=13mm,outer=10mm
+#documentclass: book
+#papersize: a5
+#fontsize: 11pt
+#classoption: twoside
+#toc: false
+#lof: true
+#lot: true
+#secnumdepth: 3
+#geometry: top=13mm,bottom=13mm,inner=13mm,outer=10mm
 bibliography: biblio.bib
-# csl: abnt.csl
+#csl: abnt.csl
 link-citations: yes
 github-repo: samuel-rosa/febr-book
 ---
@@ -40,4 +35,7 @@ colNames <-
     colnames(x) <- names
     x
   }
+
+# Repositório Brasileiro Livre para Dados Abertos do Solo
+febr <- 'Repositório Brasileiro Livre para Dados Abertos do Solo'
 ```

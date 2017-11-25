@@ -1,11 +1,13 @@
-\clearpage
-\tableofcontents
+<!-- Opções para livro em pdf -->
 
-\clearpage
-\listoffigures
+<!-- \clearpage -->
+<!-- \tableofcontents -->
 
-\clearpage
-\listoftables
+<!-- \clearpage -->
+<!-- \listoffigures -->
+
+<!-- \clearpage -->
+<!-- \listoftables -->
 
 # Introdução
 
