@@ -1,3 +1,5 @@
+<!-- Opções para livro em pdf -->
+
 \clearpage
 \tableofcontents
 

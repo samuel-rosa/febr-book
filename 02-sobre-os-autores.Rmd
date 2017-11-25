@@ -13,7 +13,7 @@ recentemente alguns artigos relevantes sobre esses tópicos em revistas internac
 autor de dois pacotes para o R, os quais são amplamente utilizados, cada um com mais de 200 downloads por mês.
 (Saiba mais [aqui](http://lattes.cnpq.br/1609751519717461))
 
-## Ricardo Simão Diniz Dalmolin {-}
+## Ricardo S. D. Dalmolin {-}
 
 Ricardo possui graduação e mestrado em Agronomia pela UFSM e doutorado em Ciências do Solo pela Universidade
 Federal do Rio Grande do Sul (UFRGS). Atualmente é professor associado da UFSM, atuando no Programa de
@@ -26,14 +26,26 @@ presidente do Núcleo Regional Sul da Sociedade Brasileira de Ciência do Solo, 
 Sociedade Brasileira de Ciência do Solo, e responsável pelo Museu de Solos do RS. (Saiba mais 
 [aqui](http://lattes.cnpq.br/3735884911693854))
 
-## Diego José Gris {-}
+## Paulo I. Gubiani {-}
+
+Paulo possui graduação em Agronomia, e mestrado e doutorado em Ciência do Solo pela UFSM, tendo sido foco de
+sua formação acadêmica o estudo da compactação do solo e seu efeito sobre o desenvolvimento e produtividade 
+das culturas agrícolas. Atualmente Paulo é professor da área de Física do Solo na UFSM, desenvolvendo estudos, 
+principalmente, sobre os seguintes temas: 'estrutura do solo', 'compactação do solo', 'compressibilidade do
+solo', 'relação entre propriedades físicas do solo e crescimento de plantas' e 'balanço hídrico'. Paulo também
+tem grande experiência no uso e desenvolvimento de aplicativos em VBA para planilhas eletrônicas como o 
+Microsoft Office Excel. Recentemente, Paulo publicou importante revisão bibliográfica sobre indicadores 
+físicos de qualidade do solo, numa tentativa de apontar para novos caminhos para a pesquisa em Física do Solo
+no Brasil. (Saiba mais [aqui](http://lattes.cnpq.br/7251203817503318))
+
+## Diego J. Gris {-}
 
 Diego é acadêmico do curso de Agronomia da Universidade Federal de Santa Maria (UFSM). Bolsista de Iniciação
 Científica no grupo de Pedologia da UFSM. Estudou por um ano (2013) na Cornell University - EUA, com bolsa de
 graduação sanduíche (CAPES) do programa Ciência sem Fronteiras. 
 (Saiba mais [aqui](http://lattes.cnpq.br/0248016063663067))
 
-## Nicolas Augusto Rosin {-}
+## Nicolas A. Rosin {-}
 
 Nícolas é acadêmico do curso de Agronomia na Universidade Federal de Santa Maria (UFSM) e bolsista de 
 Iniciação Científica no Laboratório de Pedologia, atuando na área de levantamento e classificação de solos, 

@@ -7,8 +7,7 @@ bookdown::gitbook:
     code_folding: hide
     toc:
       before: |
-        <li><a href="./">Repositório Brasileiro de Dados de Ferro do Solo</a></li>
-        <li><a href="https://www.researchgate.net/profile/Alessandro_Samuel-Rosa">Alessandro Samuel-Rosa</a></li>
+        <li><a href="./">Repositório Brasileiro Livre para Dados Abertos do Solo</a></li>
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado com bookdown</a></li>
     edit:
