@@ -32,13 +32,13 @@ pre code {
 
 .book .book-summary {
   background: #fffff9;
-  font-family: "Computer Modern", serif;
+  /* font-family: "Computer Modern", serif; */
 }
 
 /* Use Computer Modern font-family */
 
 .book.font-family-0 {
-  font-family: "Computer Modern", serif;
+  /* font-family: "Computer Modern", serif; */
 }
 
 /* Set text page width */
