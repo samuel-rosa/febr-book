@@ -1,6 +1,6 @@
 --- 
 title: "Repositório Brasileiro Livre para Dados Abertos do Solo"
-subtitle: "Manual do Usuário"
+subtitle: "Manual de Uso"
 author: "Alessandro Samuel-Rosa, Ricardo S. D. Dalmolin, Paulo I. Gubiani, Diego J. Gris, Nicolas A. Rosin"
 #lang: pt
 date: "`r format(Sys.time(), '%d %B %Y')`"
@@ -42,9 +42,9 @@ febr <- 'Repositório Brasileiro Livre para Dados Abertos do Solo'
 
 # Apresentação {-}
 
-<!-- \lipsum[1-2] -->
+\lipsum[1-2]
 
-<!-- \lipsum[1-2] -->
+\lipsum[1-2]
 
 Nome do Chefe do Departamento de Solos
 
