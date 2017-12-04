@@ -1,3 +1,5 @@
-This is a minimal example of a book based on R Markdown and **bookdown** (https://github.com/rstudio/bookdown). Open this repository in RStudio, then open `index.Rmd`, and click the `Knit` button to compile the book.
+# Repositório Brasileiro Livre para Dados Abertos do Solo - manual de uso
 
-You can find the preview of this example at https://bookdown.org/yihui/bookdown-demo/
+Olá! Esse é o ambiente de desenvolvimento do *manual de uso* do Repositório Brasileiro Livre para Dados Abertos
+do Solo, também conhecido como **febr**. Sinta-se à vontade para propor melhorias e estudar o código fonte. 
+Afinal de contas, o **febr** é um repositório livre!
