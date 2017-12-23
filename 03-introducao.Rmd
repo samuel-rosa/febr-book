@@ -11,6 +11,60 @@
 
 # Introdução
 
+Uma parte importante do empreendimento científico consiste em limpar e estrutura os dados que produzimos
+[@Sestoft2011, @Wickham2014]. Se decidimos usar dados produzidos por outros, então a padronização e 
+harmonização dos dados também se tornam necessárias [@BatjesEtAl2017]. Em todo caso, a organização adequada 
+dos dados é crucial para a execução de análises e modelagem dos dados. Infelizmente, essa tarefa geralmente 
+leva mais tempo do que gostaríamos, às vezes mais da metade do nosso tempo de trabalho [@CrowdFlower2017].
+Talvez isso seja ainda pior para nós, cientistas do solo, haja vista nossa conhecimento geralmente limitado 
+sobre tecnologia da informação e a falta generalizada de padrões. Felizmente, o número de perguntas sobre como
+organizar os dados do solo tende a diminuir à medida que ganhamos experiência. Mas a questão de se organizamos
+os dados do solo de uma maneira razoável, que pode ser verdadeiramente compreendida e efetivamente reutilizada 
+por outros cientistas do solo -- e nós mesmos no futuro -- permanece sem resposta.
+
+A ciência do solo já produziu grandes quantidades de dados. Ainda assim, as práticas que costumamos adotar para
+armazenar e compartilhar dados do solo são subóptimas. Subótimas porque elas limitam a 'descobertabilidade' 
+(do inglês, *discoverability*) dos dados do solo, isto é, a habilidade que um determinado conjunto de dados do
+solo tem de ser descoberto por outra pessoas. No Brasil, muitos conjunto de dados são difíceis de serem 
+descobertos porque estão disponíveis somente em documentos impressos ou (mal) escanerizados. Quando os 
+conjuntos de dados do solo são altamente 'descobríveis', talvez eles precisem ser digitalizados ou podem estar 
+contidos em mídias protegidas por senha ou em bancos de dados que são difíceis de usar e/ou dependem de 
+programas de computador proprietários. Quando não existem barreiras tecnológicas, então os conjuntos de dados 
+do solo podem conter dados de apenas algumas variáveis do solo ou profundidades do solo selecionadas do 
+conjunto original de dados do solo, ou apenas uma versão agregada dos dados do solo está disponível. E quando 
+um conjunto de dados do solo está totalmente disponível, os metadados podem estar incompletos ou ausentes. 
+Esses aspectos, juntamente com uma pobre organização dos dados do solo, limitam a 'reusabilidade' (do inglês,
+*reusability*) dos dados do solo, isto é, a habilidade que um determinado conjunto de dados do solo tem de ser
+usado novamente por seu produtor e/ou outra pessoa. Por fim, uma limitada descobertabilidade e reusabilidade 
+dos dados do solo dificulta a observância de um dos princípios básicos do método científico, ou seja, a
+reprodutibilidade da pesquisa.
+
+O cenário aqui ilustrado não se limita à ciência do solo brasileira ou à ciência do solo ou à própria atividade
+científica. Na verdade, a sociedade pós-moderna entendeu que um volume considerável de dados produzidos pela
+humanidade está sendo subutilizado ou está sob o risco de se perder para sempre [@HansonEtAl2011, 
+@VinesEtAl2014]. Para ajudar a mudar esse cenário, muitos governos concordaram em desenvolver políticas para 
+incentivar o gerenciamento aberto de dados produzidos através de financiamento público, incluindo dados 
+científicos. O Brasil foi um dos primeiros países a assinar tal acordo, a Parceria de Governo Aberto
+([OGP](https://www.opengovpartnership.org/)), e criar legislação específica para determinar quais são as 
+melhores práticas de gerenciamento de dados que devem ser adotadas no Brasil -- veja
+[Decreto No.~8777 de 2016](http://www.planalto.gov.br/ccivil_03/_Ato2015-2018/2016/Decreto/D8777.htm). 
+Infelizmente, devido a razões culturais -- falta de tradição, medo de perder direitos -- e operacionais -- 
+falta de financiamento, infra-estrutura e padrões --, a adesão das instituições públicas à Política Brasileira 
+de Dados Abertos tem sido pequena, especialmente no caso dos detentores de dados científicos.
+
+Em resumo, as estratégias empregadas para organizar, armazenar e compartilhar dados do solo estão em desacordo 
+com as demandas atuais da sociedade pós-moderna porque limitam a descoberta e reutilização dos dados do solo e,
+portanto, impedem a reprodutibilidade da pesquisa do solo. Olhando para o caso específico do Brasil, no curto 
+prazo, isso representa um uso ineficiente dos já escassos investimentos feitos na ciência do solo. A longo 
+prazo, isso retém o avanço do conhecimento do solo, as consequências refletindo no modo como os recursos 
+naturais serão geridos nas próximas décadas e pelas gerações futuras.
+
+
+
+
+
+
+
 Nós acreditamos que o uso sustentável do solo para aplicações ambientais no Brasil exige o conhecimento da distribuição horizontal e vertical do conteúdo de ferro no solo. Por quê? Porque, em alguns locais, os óxidos de ferro podem perfazer até 80% da massa do solo!
 
 Os óxidos de ferro são bem conhecidos por sua forte interação com a matéria orgânica do solo, influenciando assim a quantidade de carbono que o solo consegue armazenar de forma estável. Os óxidos de ferro também são bem conhecidos pela sua forte afinidade com íons fosfato, determinando assim a disponibilidade de fósforo para as plantas. A intrincada relação entre fósforo e matéria orgânica reforça a necessidade do conhecimento da variação tridimensional do teor de ferro do solo em todo o território brasileiro. Tal conhecimento poderia ajudar, por exemplo, na melhoria dos sistemas de classificação do solo, no desenvolvimento de sistemas avançados de recomendação que assegurem o uso mais eficiente de fertilizantes fosfatados, e na construção de políticas públicas de uso e ocupação do solo que respeitem as reais capacidades desse precioso e não-renovável bem natural.
