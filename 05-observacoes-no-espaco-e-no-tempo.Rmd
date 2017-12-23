@@ -1,7 +1,32 @@
 # Observações no espaço e no tempo
 
-Tabela *observacao*. Nessa tabela são inseridas as informações espaciais mais fundamentais sobre as 
-observações do solo.
+Diversas aplicações requerem o conhecimento da localização das observações do solo no plano geográfico, na
+linhas temporal, ou em ambos. Por exemplo, análises geoestatísticas e de séries temporais. Assim, mesmo que um
+determinado conjunto de dados não seja produzido com esse propósito, seu reuso futuro depende grandemente do 
+conhecimento das coordenadas espaciais, *x* e *y*, e temporal, *t*. No **febr**, essas informações são 
+inseridas na tabela denominada *observacao*.
+
+Além das coordenadas espaciais e temporais, à toda observação do solo estão vinculadas condições ambientais 
+específicas. Tais condições ambientais podem ser de maior ou menor interesse, controladas ou naturais, 
+determinantes ou úteis para explicar as características do solo. Estão incluídas aí informações sobre o 
+relevo local, o material de origem e a rocha subjacente, o tipo de uso da terra pretérito e presente, e assim 
+por diante. Quando registradas, tais informações são também inseridas na tabela *observacao*.
+
+As observações espaço-temporais do solo também costumam ser acompanhadas por informações pontuais sobre o 
+próprio solo e que refletem sua relação com o ambiente. Tais informações expressam as características físicas,
+químicas e (micro)biológicas das diferentes camadas do solo. Por exemplo, a condição de drenagem, a presença
+de pedregosidade e rochosidade, a classificação taxonômica, e a própria profundidade do solo. Na verdade, 
+muitos conjuntos de dados possuem apenas esse tipo de informação, geralmente quanto de cunho exploratório, 
+quando não são coletadas amostras das camadas do solo. Essas informações também são inseridas na tabela
+*observacao*.
+
+A tabela *observacao* está organizada de maneira a armazenar os dados em colunas. Assim, à cada observação do 
+solo é dedicada uma linha exclusiva, e os dados adicionados sequencialmente nas colunas. Como os dados 
+coletados durante uma observação do solo podem ser muitos e diversos, não há imposição limites quanto ao 
+número de colunas. O único requerimento é que sejam preenchidas todas as colunas obrigatórias e que seja 
+usada nomeclatura padronizada para as demais colunas. A primeira linha da tabela *observacao* contém o nome 
+das colunas. Já a segunda linha da tabela *observacao* fica reservada para registrar as unidades de medida, 
+por exemplo, para variáveis como a profundidade do solo.
 
 ## Identificação
 
@@ -13,12 +38,12 @@ torna-se `a`, `ç` torna-se `c`, e assim por diante. Exemplo: `observacao_id = P
 
 ## Coordenada temporal
 
-Data da observação (`observacao_date`) no formato dd-mm-aaaa. A data de observação é um dos atributos que,
+Data da observação (`observacao_data`) no formato dd-mm-aaaa. A data de observação é um dos atributos que,
 juntamente com as
 coordenadas espaciais, definem uma observação em um conjunto de dados. Isso significa que a observação 
 repetida, ao longo do tempo, de um mesmo local no espaço, caracteriza a constituição de uma nova observação,
 portanto, a definição de uma nova `observacao_id`. O valor padrão, para os casos em que a data de observação é
-desconhecida, é `observacao_date = xx-xx-xxxx`. Quando somente o dia e/ou o mês de observação são 
+desconhecida, é `observacao_data = xx-xx-xxxx`. Quando somente o dia e/ou o mês de observação são 
 desconhecidos, usa-se o primeiro valor da sequência, ou seja, `dd = 01` e `mm = 01`.
 
 ## Coordenadas espaciais {#coordenadas}
