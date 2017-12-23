@@ -1,24 +1,24 @@
 # Conjunto de dados
 
-A maximização da disseminação e uso de um conjunto de dados, o apropriado reconhecimento de seus autores ou 
-autoras e instituição responsável, bem como a identificação que alterações e ajustes feitos após a publicação
-da sua primeira versão, dependem da provisão de dados mínimos sobre aquele conjunto de dados. No **febr** 
-esses dados são inseridos na tabela denominada *dataset*, palavra que na língua inglesa significa 'conjunto de
-dados'.
+A maximização da disseminação e uso de um conjunto de dados, o apropriado reconhecimento das pessoas e 
+organizações autoras e/ou responsáveis, bem como a identificação de alterações e ajustes feitos após a 
+publicação da sua primeira versão, dependem da provisão de dados mínimos sobre aquele conjunto de dados. No 
+**febr**, esses dados sobre o conjunto de dados são inseridos na tabela denominada *dataset*, palavra que na 
+língua inglesa significa 'conjunto de dados'.
 
-Por conter dados essenciais sobre um conjunto de dados, a tabela *dataset* é sempre a primeira a ser revisada 
-e processada. Quaisquer dados faltantes são solicitados aos autores/responsáveis pelo conjunto de dados. Da 
-mesma forma, sempre que dados incoerentes são identificados, os autores/responsáveis pelo conjunto de dados
+Por conter dados essenciais sobre o conjunto de dados, a tabela *dataset* é sempre a primeira a ser revisada 
+e processada. Quaisquer dados faltantes são solicitados aos responsáveis pelo conjunto de dados. Da 
+mesma forma, sempre que dados incoerentes são identificados, os responsáveis pelo conjunto de dados
 são consultados iterativamente até que quaisquer dúvidas sejam completamente sanadas. O devido preenchimento
-da tabela *dataset* é essencial para o posterior processamento dos dados e metadados de um conjunto de dados.
+da tabela *dataset* é essencial para o posterior processamento dos dados e metadados do conjunto de dados.
 
-A tabela *dataset* possui cerca de vinte itens estruturados em uma sequência de linhas (Tabela
-\@ref(tab:dataset)). Os dados sobre o conjunto de dados são inseridos na segunda coluna, imediatamente ao lado
-da sua respectiva identificação e definição contidas na primeira coluna. A primeira linha é dedicada à
-identificação propriamente dita do conjunto de dados no **febr**, a segunda ao título do conjunto de dados, e
-assim por diante, até as últimas linhas, dedicadas aos termos usados para a descrição de características chave
-e indexação do conjunto de dados. Cada um dos itens da tabela *dataset* são descritos em detalhe nas próximas 
-seções.
+A tabela *dataset* possui cerca de vinte itens a serem preenchidos, os quais são estruturados em uma sequência 
+de linhas (Tabela \@ref(tab:dataset)). Especificamente, os dados sobre o conjunto de dados são inseridos na 
+segunda coluna, imediatamente ao lado da sua respectiva identificação e definição contidas na primeira coluna. 
+A primeira linha é dedicada à identificação propriamente dita do conjunto de dados no **febr**, a segunda ao 
+título do conjunto de dados, e assim por diante, até as últimas linhas, dedicadas aos termos usados para a 
+descrição de características chave e indexação do conjunto de dados. Cada um dos itens da tabela *dataset* são
+descritos em detalhe nas próximas seções.
 
 ```{r, echo=FALSE}
 dataset <- 
@@ -51,33 +51,32 @@ pander(titulo, caption = "(\\#tab:titulo) Itens utilizados para a identificaçã
 ```
 
 Em geral, o código de identificação de um novo conjunto de dados inserido no **febr** é definido pela sua
-posição (ordem das contribuições, `ctb`) em relação aos demais conjuntos de dados presentes no **febr**. Por
-exemplo, o código de identificação do primeiro conjunto de dados inserido no **febr** é 
+posição em relação aos demais conjuntos de dados (**c**on**t**ri**b**uições, `ctb`) presentes no **febr**. 
+Por exemplo, o código de identificação do primeiro conjunto de dados inserido no **febr** é 
 `dataset_id = ctb0001`, enquanto que do trigésimo terceiro conjunto de dados é `dataset_id = ctb0033`.
 
 No caso dos conjuntos de dados obtidos diretamente do SISB, o código de identificação utilizado no **febr** é 
 o mesmo usado naquele sistema, independente da sua ordem de entrada no **febr**. Por exemplo, 
 `dataset_id = ctb0770`, onde `770` é o código de identificação usado no SISB. Essa estratégia possibilita que, 
 no futuro, e em havendo interesse por parte dos mantenedores do SISB, seja estabelecida comunicação direta do
-SISB com o **febr**. Assim seria possível atualizar os dados no SISB à medida que ajustes e correções nos 
-dados forem feitos no **febr**.
+SISB com o **febr**. Assim, seria possível atualizar os dados no SISB à medida que ajustes e correções nos 
+dados forem sendo feitos no **febr**.
 
 O segundo identificador de um conjunto de dados é o seu título -- `dataset_titulo` --, geralmente relacionado
-ao título do projeto, tese, dissertação, etc que o gerou. Em geral, sugere-se que seja usado um título 
+ao título do projeto, tese, dissertação, etc que o gerou. Em geral, é mais interessante usar um título 
 específico para o conjunto de dados, o que identifica melhor o seu conteúdo, ao invés do título do trabalho ou
 projeto que o gerou. Isso é importante para aumentar as chances de o conjunto de dados ser identificado em
 ferramentas de busca e assim potencializar o seu reuso.
 
-Quanto à formatação do título, procura-se usar a mesma língua da fonte e caracteres em caixa baixa, com 
-exceção da primeira letra do título e dos nomes próprios. Por exemplo, *Conjunto de dados da tese 'Matéria 
-orgânica e características físicas, químicas, mineralógicas e espectrais de Latossolos de diferentes 
-ambientes'*.
+Quanto à formatação do título, é usada a mesma língua da fonte e caracteres em caixa baixa, com exceção da 
+primeira letra do título e dos nomes próprios. Por exemplo, *Conjunto de dados da tese 'Matéria orgânica e
+características físicas, químicas, mineralógicas e espectrais de Latossolos de diferentes ambientes'*.
 
 ## Descrição {#descricao}
 
-A descrição do conjunto de dados, contendo dados básicos para maximizar o seu reuso futuro sem que seja
-necessário entrar em contato com os seus autores e /ou responsáveis é incluída no item `dataset_descricao`. A
-descrição do conjunto de dados deve abordar aspectos como:
+A descrição do conjunto de dados, contendo dados básicos para maximizar o seu reuso futuro, sem que seja
+necessário entrar em contato com os autores ou responsáveis, é incluída no item `dataset_descricao`. A 
+descrição do conjunto de dados aborda aspectos como:
 
 1. Os motivos para a realização do estudo que levou à geração dos dados,
 2. Um resumo dos dados incluídos no conjunto de dados e dos métodos analíticos usados, e
@@ -87,7 +86,7 @@ A descrição do delineamento amostral, ou seja, a estratégia utilizada para se
 amostragem do solo, fornece os elementos necessários para determinar se -- e como -- os diferentes conjuntos 
 de dados podem -- ou devem -- ser utilizados em uma determinada aplicação.
 
-Quando for o caso, a descrição do conjunto de dados deve incluir também:
+Quando for o caso, a descrição do conjunto de dados também inclui:
 
 1. Os motivos para a presença de camadas/horizontes com dados faltantes para uma ou mais variáveis do solo, e
 2. Uma descrição das alterações/modificações realizadas quando da publicação de uma nova versão.
@@ -119,8 +118,8 @@ observações com maior volume de informações disponível, as coordenadas espa
 inferidas com precisão de cerca de 100 m (`dataset_versao = 2.1`).
 
 Sempre que uma nova versão de um conjunto de dados é preparada, uma descrição sumária das modificações é 
-incluída na descrição do conjunto de dados em `dataset_descricao`. Os responsáveis pelas modificações 
-são então identificados conforme descrito abaixo na Seção \@ref(contribuidor).
+incluída na descrição do conjunto de dados em `dataset_descricao`. Os autores das modificações são então 
+identificados conforme descrito abaixo na Seção \@ref(contribuidor).
 
 ```{r, echo=FALSE}
 versao <- 
@@ -140,8 +139,8 @@ data de publicação é a data em que essa nova versão do conjunto de dados foi
 
 A data de publicação é apresentada na sequência dia, mês e ano, usando formato numérico `dd-mm-aaaa` ou 
 `dd/mm/aaaa`, ou seja, dois dígitos para o dia e mês, e quatro dígitos para o ano. Por exemplo, `13-06-2001` 
-identifica o dia 13 do mês de junho do ano de 2001. Sempre que possível insere-se os dados de ambos dia, mês e
-ano. Contudo, dentre os três, o mais importante é aquele relativo ao ano. Quando algum dos dados não é 
+identifica o dia 13 do mês de junho do ano de 2001. Sempre que possível são inseridos os dados de ambos dia, 
+mês e ano. Contudo, dentre os três, o mais importante é aquele relativo ao ano. Quando algum dos dados não é 
 conhecido, usa-se o símbolo `xx` em substituição, por exemplo, `xx-xx-2001`. Caso a data de publicação da 
 versão atual conjunto de dados seja completamente desconhecida, usa-se a data de publicação do trabalho que o
 gerou ou utilizou pela primeira vez.
@@ -152,34 +151,34 @@ A licença de uso do conjunto de dados -- especificada usando o item `dataset_li
 conjunto de dados pode ser usado por outras pessoas a partir do momento da sua publicação no **febr**. O 
 **febr** aceita apenas conjuntos de dados com licenças de uso não-restritivas, ou seja, que permitem a 
 redistribuição, modificação, adaptação e criação a partir do conjunto de dado submetido, e que não obrigam o
-licenciamento dos trabalhos derivados sob os mesmos termos. Contudo, o autor/responsável pelo conjunto de 
-dados tem reservado o direito de decidir se os produtos derivados podem ou não ter fins comerciais, desde que
-previsto pelo órgão financiador. As licenças Creative Commons (https://br.creativecommons.org/licencas/) estão
-entre as mais apropriadas para os conjuntos de dados inseridos no **febr**, segundo as quais todos os novos
-trabalhos derivados de um conjunto de dados devem atribuir o devido crédito ao autor/responsável pelo conjunto
-de dados original.
+licenciamento dos trabalhos derivados sob os mesmos termos. Contudo, os autores ou responsáveis pelo conjunto 
+de dados tem reservado o direito de decidir se os produtos derivados podem ou não ter fins comerciais, desde
+que previsto pelo órgão financiador. As licenças Creative Commons (https://br.creativecommons.org/licencas/) 
+estão entre as mais apropriadas para os conjuntos de dados inseridos no **febr**, segundo as quais todos os 
+novos trabalhos derivados de um conjunto de dados devem atribuir o devido crédito aos autores do conjunto de 
+dados original.
 
 A legislação brasileira ainda não especifica qual deve ser a licença de uso dos conjuntos de dados gerados em
 projetos conduzidos via financiamento público. Contudo, segundo a INDA, existe consenso entre os diferentes
 órgãos da administração pública de que uma licença de uso apropriada para esse tipo de conjuntos de dados é a
 licença Creative Commons CC-BY 4.0 (https://creativecommons.org/licenses/by/4.0/). A licença CC-BY 4.0 permite
 que um conjunto de dados seja distribuido, remixado, adaptado e usado para criar outros produtos, mesmo que
-para fins comerciais, desde que seja atribuido o devido crédito aos autores/responsáveis pelo conjunto de 
-dados original. Assim, trata-se de uma das licença mais flexível dentre as licenças Creative Commons
-disponíveis, permitindo a maximização da disseminação e uso dos conjuntos de dados. Assim sendo, a licença
-CC-BY 4.0 é a licença adotada como padrão no **febr**. Maiores informações sobre as licenças de uso sugeridas
-para conjuntos de dados públicos podem ser encontradas no fórum de discussão mantido pela INDA no endereço
+para fins comerciais, desde que seja atribuido o devido crédito aos autores do conjunto de dados 
+original. Assim, trata-se de uma das licença mais flexíveis dentre as licenças Creative Commons disponíveis, 
+permitindo a maximização da disseminação e uso dos conjuntos de dados. Assim sendo, a licença CC-BY 4.0 é a 
+licença adotada como padrão no **febr**. Maiores informações sobre as licenças de uso sugeridas para conjuntos 
+de dados públicos podem ser encontradas no fórum de discussão mantido pela INDA no endereço
 https://groups.google.com/forum/#!forum/inda-br.
 
 Para os conjuntos de dados gerados em projetos conduzidos via financiamento privado, onde as partes
-envolvidas têm interesse em compartilhar os dados desde que não para fins comerciais, sugere-se usar a
+envolvidas têm interesse em compartilhar os dados desde que não para fins comerciais, pode-se usar a
 licença Creative Commons CC-BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/). A licença CC-BY-NC 
 4.0 possui praticamente os mesmos termos da licença CC-BY 4.0, exceto pelo fato de que a distribuição, 
 remixação, adaptação e derivação de outros produtos não podem ser usados para fins comerciais.
 
 As pessoas interessadas em utilizar os conjuntos de dados disponíveis no **febr** devem prestar atenção, não
 só à licença de uso especificada no item `dataset_licenca`, como também às determinações da política de uso de
-dados da organização autora/responsável pelo conjunto de dados. Um exemplo disso são os conjuntos de dados
+dados da organização autora ou responsável pelo conjunto de dados. Um exemplo disso são os conjuntos de dados
 originalmente descarregados do SISB, mantido pela Embrapa, para alimentar o **febr**. Segundo a Embrapa, o
 emprego dos dados disponíveis em seu SISB para "*finalidades profissionais e/ou comerciais deve ser precedido
 de estabelecimento de licença de uso específica por parte da Embrapa*", política essa que se extende à versão
@@ -220,11 +219,11 @@ garantir que ambos endereços físico e eletrônico sejam válidos e atuais.
 
 ## Autoria {#autor}
 
-Os autores e/ou responsáveis pela geração do conjunto de dados são identificados usando os itens `autor_nome` 
-e `autor_email` (Tabela \@ref(tab:autor)). Quando o acesso aos autores é impossível ou limitado, identifica-se
-as pessoas que atualmente detém responsabilidade técnica sobre o conjunto de dados. No caso de trabalhos
-acadêmicos, como monografias, dissertações e teses, identifica-se tanto o autor como o orientador principal do
-trabalho acadêmico.
+Os autores ou responsáveis pelo conjunto de dados são identificados usando os itens `autor_nome` 
+e `autor_email` (Tabela \@ref(tab:autor)). Quando o acesso ao autores é impossível ou limitado, 
+identifica-se as pessoas que atualmente detém responsabilidade técnica sobre o conjunto de dados. No caso de 
+trabalhos acadêmicos, como monografias, dissertações e teses, identifica-se tanto o discente como o docente 
+orientador principal do trabalho acadêmico.
 
 ```{r, echo=FALSE}
 autor <- 
@@ -237,7 +236,7 @@ pander(autor,
        caption = "(\\#tab:autor) Itens utilizados para a identificação dos autores do conjunto de dados.")
 ```
 
-Sempre que um conjunto de dados tiver dois ou mais autores, insere-se os respectivos dados de identificação 
+Sempre que um conjunto de dados possuir dois ou mais autores, insere-se os respectivos dados de identificação 
 separados por ponto e vírgula. Assim como no caso da identificação da organização responsável, é importante 
 garantir que o endereço de e-mail dos autores do conjunto de dados seja válido e atual. Isso é fundamental 
 para permitir o contato com os autores sempre que surgirem dúvidas sobre o conjunto de dados. O conhecimento 
@@ -247,12 +246,12 @@ sempre que o conjunto de dados for distribuido, remixado, adaptado ou usado para
 
 ## Contribuições {#contribuidor}
 
-Os autores de modificações no conjunto de dados são identificados usando três itens similares àqueles usados
+Os autores de modificações num conjunto de dados são identificados usando três itens similares àqueles usados
 para identificar os autores ou responsáveis pelo conjunto de dados (Tabela \@ref(tab:contribuidor)). No 
 **febr**, modificações constituem contribuições à melhoria do conjunto de dados, sendo sempre mencionadas
 na descrição do conjunto de dados (Seção \@ref(descricao)), e geralmente resultando em uma nova versão do
 do conjunto de dados (Seção \@ref(versao)). Como a inserção de um conjunto de dados no **febr** geralmente 
-requer algum tipo de modificação, por menor que seja, os integrantes da equipe do **febr** costuma figurar 
+requer algum tipo de modificação, por menor que seja, os integrantes da Equipe **febr** costuma figurar 
 como autores de contribuições à sua melhoria.
 
 ```{r, echo=FALSE}
@@ -268,7 +267,7 @@ pander(contribuidor,
                        "contribuições para o conjunto de dados."))
 ```
 
-A apropriada identificação dos autores das modificações no conjunto de dados é fundamental para permitir o 
+A apropriada identificação dos autores das modificações num conjunto de dados é fundamental para permitir o 
 contato com os mesmos sempre que surgirem dúvidas sobre as novas versões do conjunto de dados. Além disso, 
 permite atribuir o devido crédito quando se deseja referenciar uma versão específica do conjunto de dados. 
 Contudo, recomenda-se sempre dar crédito aos autores originais do conjunto de dados, independentemente da sua
@@ -277,7 +276,7 @@ versão (Seção \@ref(autor)).
 ## Referências
 
 Uma referência permanente e válida a documento ou artigo científico onde a versão original e/ou a versão atual
-do conjunto de dados foi usado, preferencialmente, pela primeira vez é informada usando o item
+do conjunto de dados foi usado, preferencialmente, pela primeira vez, é informada usando o item
 `dataset_referencia_i`. Sempre que possível usa-se um Digital Object Identifier (DOI, https://www.doi.org/),
 mas uma URL costuma ser a mais usada, especialmente para documentos antigos e trabalhos acadêmicos.
 
@@ -289,14 +288,15 @@ secundária, `dataset_referencia_2`, pode ser a um trabalho dos responsáveis at
 caso de trabalhos acadêmicos, como monografias, disserações e teses, costuma-se inserir uma referência ao
 trabalho acadêmico e ao artigo onde o conjunto de dados foi utilizado pela primeira vez. No caso de o conjunto
 de dados ter passado por modificações consideráveis, uma referência ao trabalho onde a nova versão tenha sido
-usada pela primeira vez também deve ser inserida. Para adicionar novas referências, basta inserir, na
+usada pela primeira vez também é inserida. Para adicionar novas referências, basta inserir, na
 sequência, novas linhas na tabela `dataset`, usando o índice `i` para indicar sua ordem.
 
 ## Indexação {#indexa}
 
 Três itens são usados para indexação dos conjuntos de dados e sua otimização para ferramentas de busca 
 (Tabela \@ref(tab:indexa)). O primeiro deles é a área de especialidade da Agronomia-Ciência do Solo à qual o
-conjunto de dados está relacionado. São seis as áreas de especialidade definidas pelo Conselho Nacional de Desenvolvimento Científico e Tecnológico ([CNPq][cnpq]) e a Coordenação de Aperfeiçoamento de Pessoal de Nível
+conjunto de dados está relacionado. São seis as áreas de especialidade definidas pelo Conselho Nacional de
+Desenvolvimento Científico e Tecnológico ([CNPq][cnpq]) e a Coordenação de Aperfeiçoamento de Pessoal de Nível
 Superior ([CAPES][capes]):
 
 * Gênese, Morfologia e Classificação dos Solos
