@@ -59,9 +59,7 @@ Uma observação do solo realizada no mesmo local no espaço geográfico, mas em
 
 ## Coordenadas espaciais {#coordenadas}
 
-A localização espacial de uma observação do solo é especificada usando coordenadas espaciais, também 
-conhecidas como coordenadas geográficas. Para isso são usados os cinco itens descritos na Tabela 
-\@ref(tab:coordenadas). 
+A localização de uma observação do solo no espaço geográfico é especificada usando coordenadas espaciais, também conhecidas como coordenadas geográficas. Para isso são usados os cinco itens descritos na Tabela \@ref(tab:coordenadas). 
 
 ```{r coordenadas, echo=FALSE}
 cap <- "(\\#tab:coordenadas) Itens usados para especificar a localização espacial das observações do solo."
@@ -72,21 +70,13 @@ rbind(
   c("`coord_precisao`", "precisão das coordenadas espaciais"),
   c("`coord_fonte`", "fonte das coordenadas espaciais")
   ) %>% 
-  colNames() %>% 
+  colNames(c("**campo**", "**valor**")) %>% 
   pander(caption = cap)
 ```
 
-O primeiro item, `coord_sistema`, refere-se ao sistema de referência de coordenadas (SRC) utilizado para o
-georreferenciamento das observações do solo. A especificação do SRC é fundamental para possibilitar o uso
-apropriado de dados espaciais em sistemas de informação geográfica (SIG), especialmente para fins de correlação
-e/ou cruzamento com outros dados espaciais. Tradicionalmente, a especificação do SRC é feita de diversas 
-maneiras, mas a forma mais usual é aquela no formato de texto legível por humanos. Por exemplo, WGS84 / UTM
-zona 23S, que identifica o datum geodético WGS84 e a zona 23 do hemisfério sul na projeção cartográfica UTM.
-Esse tipo de identificação não é usado do **febr** pois, não sendo padronizado, dificulta a automatização da
-manipulação computacional dos conjuntos de dados. Assim, o **febr** adota os códigos padronizados e aceitos
-internacionalmente do EPSG, os quais são legíveis por humanos e por máquinas. Os códigos dos sistemas de 
-referência de coordenadas geográficas e projetadas mais usados no Brasil são mostrados nas Tabelas
-\@ref(tab:geografica) e \@ref(tab:projetada).
+O primeiro campo, `coord_sistema`, refere-se ao sistema de referência de coordenadas (SRC) utilizado para o georreferenciamento das observações do solo. A especificação do SRC é fundamental para possibilitar o uso apropriado de dados espaciais em sistemas de informação geográfica (SIG), especialmente para fins de correlação e/ou cruzamento com outros dados espaciais. Tradicionalmente, a especificação do SRC é feita usando formato de texto legível por humanos. Por exemplo, WGS84 / zona UTM 23S, que identifica o datum geodético WGS84 e a zona 23 do hemisfério sul na projeção cartográfica UTM.
+
+A identificação do SRC mostrada acima não é padronizada, o que dificulta a automatização da manipulação computacional dos conjuntos de dados. Assim, apesar de aceito para a entrada de dados no **febr**, esse tipo de identificação não é usado para o armazenamento dos dados no **febr**. Em vez disso, o **febr** adota os códigos padronizados e aceitos internacionalmente do EPSG, os quais são legíveis por humanos e por máquinas. Os códigos dos sistemas de referência de coordenadas geográficas e projetadas mais usados no Brasil são mostrados nas Tabelas \@ref(tab:geografica) e \@ref(tab:projetada).
 
 ```{r geografica, echo=FALSE}
 cap <- "(\\#tab:geografica) Códigos EPSG dos sistemas de referência de coordenadas geográficas para o Brasil."
@@ -120,18 +110,9 @@ rbind(
   pander(caption = cap)
 ```
 
-Os valores das duas coordenadas espaciais, x e y, são especificadas usando os itens `coord_x` e `coord_y`,
-respectivamente. Aqui, x é o mesmo que longitude e y é o mesmo que latitude. A diferença fundamental entre as
-duas nomenclaturas é que, enquanto longitude/latitude refere-se a coordenadas geográficas, x/y refere-se a
-coordenadas projetadas. No caso das coordenadas geográficas, usa-se o formato decimal, sendo a unidade de 
-medida o grau (°). Já para as coordenadas projetadas, a unidade de medida é o metro (m). Em ambos os casos, 
-utiliza-se a vírgula como separador decimal, sendo esse o padrão da língua portuguesa.
+Os valores das duas coordenadas espaciais, *x* e *y*, são especificadas usando os campos `coord_x` e `coord_y`, respectivamente. No **febr**, *x* é o mesmo que longitude, e *y* é o mesmo que latitude. A diferença fundamental entre as duas nomenclaturas é que, enquanto longitude e latitude referem-se a coordenadas geográficas, *x* e *y* referem-se a coordenadas projetadas. No caso das coordenadas geográficas, usa-se o formato decimal, sendo a unidade de medida o grau (°). Já para as coordenadas projetadas, a unidade de medida é o metro (m). Em ambos os casos, utiliza-se a vírgula como separador decimal, sendo esse o padrão da língua portuguesa.
 
-Os dois 
-
-Precisão (`coord_precisao`) com que as coordenadas espaciais foram determinadas (em metros).
-
-`coord_fonte`
+Os dois últimos campos, `coord_precisao` e `coord_fonte`, servem para armazenar informações sobre a qualidade das coordenadas espaciais (Tabela \@ref(tab:coord-fonte)). O primeiro especifica a precisão (em metros) com que as coordenadas espaciais foram determinadas. Por exemplo, os equipamentos receptores de sinal do sistema de posicionamento global por satélite (GPS) mais populares costumam reportar precisão de 6-15 m, dependendo das condições locais e ambientais, bem como da configuração espacial da constelação de satélites. Enquanto isso, mapas topográficos na escala de 1:25 000, com coordenadas espaciais ao nível de segundo de arco, possuem, por definição, precisão de cerca de 30 m. Por fim, serviços de mapas online podem alcançar precisão similar aos equipamentos receptores de sinal GPS.
 
 ```{r, echo=FALSE}
 cap <- "(\\#tab:coord-fonte) Fontes de coordenadas espaciais."
@@ -143,7 +124,6 @@ rbind(
   colNames(names = c('**Código**', '**Definição**')) %>% 
   pander(caption = cap)
 ```
-
 
 ## Localização
 
