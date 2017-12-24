@@ -17,9 +17,7 @@ próprio solo e que refletem sua relação com o ambiente. Tais informações ex
 químicas e (micro)biológicas do solo. Por exemplo, a condição de drenagem, a presença de pedregosidade e
 rochosidade, a classificação taxonômica, a presença de contato lítico, e a própria profundidade do solo. Na
 verdade, muitos conjuntos de dados do solo possuem apenas esse tipo de informação, geralmente quando gerados
-em projeto de cunho mais exploratório, quando não são coletadas amostras das camadas do solo (#camadas). Assim 
-como as informações sobre as condições ambientais, essas informações locais sobre o solo também são inseridas 
-na tabela *observacao*.
+em projeto de cunho mais exploratório, quando não são coletadas amostras das camadas do solo (Capítulo \@ref(camadas)). Assim como as informações sobre as condições ambientais, essas informações locais sobre o solo também são inseridas na tabela *observacao*.
 
 Diferente da tabela *dataset*, que armazena os dados em linhas, a tabela *observacao* está organizada de 
 maneira a armazenar os dados em colunas. Assim, à cada observação do solo é dedicada uma linha exclusiva, e os
@@ -53,15 +51,11 @@ colnames(versao) <- c("**campo**", "**valor**")
 pander(versao, caption = "(\\#tab:observacao-id) Identificação das observações do solo.")
 ```
 
-## Coordenada temporal
+## Coordenada temporal {#tempo}
 
-Data da observação (`observacao_data`) no formato dd-mm-aaaa. A data de observação é um dos atributos que,
-juntamente com as
-coordenadas espaciais, definem uma observação em um conjunto de dados. Isso significa que a observação 
-repetida, ao longo do tempo, de um mesmo local no espaço, caracteriza a constituição de uma nova observação,
-portanto, a definição de uma nova `observacao_id`. O valor padrão, para os casos em que a data de observação é
-desconhecida, é `observacao_data = xx-xx-xxxx`. Quando somente o dia e/ou o mês de observação são 
-desconhecidos, usa-se o primeiro valor da sequência, ou seja, `dd = 01` e `mm = 01`.
+A data de observação do solo é um dos atributos que, juntamente com as coordenadas espaciais, definem uma observação em um conjunto de dados. Tal informação é armazenada na coluna `observacao_data`, para o que é usado o formato numérico `dd-mm-aaaa` ou `dd/mm/aaaa`, ou seja, dois dígitos para o dia e mês, e quatro dígitos para o ano. Assim como para a data de publicação do conjunto de dados, a informação mais importante é o ano da observação. O valor para os casos em que a data de observação é desconhecida é `observacao_data = xx-xx-xxxx`. Contudo, uma estimativa pode ser feita a partir da data de publicação do conjunto de dados original.
+
+Uma observação do solo realizada no mesmo local no espaço geográfico, mas em data diferente, constitui uma nova observação do solo. Isso requer a definição de uma nova `observacao_id`, a qual pode carregar alguma informação sobre a data de observação. Por exemplo, uma observação identificada no trabalho de origem como Perfil 01, observada nos anos de 2007 e 2008, pode ser identificada como `Perfil-01-2007` e `Perfil-01-2008`. Enquando as coodenadas espaciais (Seção \@ref(coordenadas)) dessa observação serão as mesmas, as datas de observação serão diferentes.
 
 ## Coordenadas espaciais {#coordenadas}
 
