@@ -2,39 +2,56 @@
 
 Diversas aplicações requerem o conhecimento da localização das observações do solo no plano geográfico, na
 linhas temporal, ou em ambos. Por exemplo, análises geoestatísticas e de séries temporais. Assim, mesmo que um
-determinado conjunto de dados não seja produzido com esse propósito, seu reuso futuro depende grandemente do 
+determinado conjunto de dados não seja produzido com esse propósito, seu reuso futuro depende, em parte, do 
 conhecimento das coordenadas espaciais, *x* e *y*, e temporal, *t*. No **febr**, essas informações são 
 inseridas na tabela denominada *observacao*.
 
 Além das coordenadas espaciais e temporais, à toda observação do solo estão vinculadas condições ambientais 
 específicas. Tais condições ambientais podem ser de maior ou menor interesse, controladas ou naturais, 
-determinantes ou úteis para explicar as características do solo. Estão incluídas aí informações sobre o 
+determinantes ou auxiliares na explicação das características do solo. Estão incluídas aí informações sobre o 
 relevo local, o material de origem e a rocha subjacente, o tipo de uso da terra pretérito e presente, e assim 
 por diante. Quando registradas, tais informações são também inseridas na tabela *observacao*.
 
-As observações espaço-temporais do solo também costumam ser acompanhadas por informações pontuais sobre o 
+As observações espaço-temporais do solo também costumam ser acompanhadas por informações locais sobre o 
 próprio solo e que refletem sua relação com o ambiente. Tais informações expressam as características físicas,
-químicas e (micro)biológicas das diferentes camadas do solo. Por exemplo, a condição de drenagem, a presença
-de pedregosidade e rochosidade, a classificação taxonômica, e a própria profundidade do solo. Na verdade, 
-muitos conjuntos de dados possuem apenas esse tipo de informação, geralmente quanto de cunho exploratório, 
-quando não são coletadas amostras das camadas do solo. Essas informações também são inseridas na tabela
-*observacao*.
+químicas e (micro)biológicas do solo. Por exemplo, a condição de drenagem, a presença de pedregosidade e
+rochosidade, a classificação taxonômica, a presença de contato lítico, e a própria profundidade do solo. Na
+verdade, muitos conjuntos de dados do solo possuem apenas esse tipo de informação, geralmente quando gerados
+em projeto de cunho mais exploratório, quando não são coletadas amostras das camadas do solo (#camadas). Assim 
+como as informações sobre as condições ambientais, essas informações locais sobre o solo também são inseridas 
+na tabela *observacao*.
 
-A tabela *observacao* está organizada de maneira a armazenar os dados em colunas. Assim, à cada observação do 
-solo é dedicada uma linha exclusiva, e os dados adicionados sequencialmente nas colunas. Como os dados 
-coletados durante uma observação do solo podem ser muitos e diversos, não há imposição limites quanto ao 
-número de colunas. O único requerimento é que sejam preenchidas todas as colunas obrigatórias e que seja 
-usada nomeclatura padronizada para as demais colunas. A primeira linha da tabela *observacao* contém o nome 
-das colunas. Já a segunda linha da tabela *observacao* fica reservada para registrar as unidades de medida, 
-por exemplo, para variáveis como a profundidade do solo.
+Diferente da tabela *dataset*, que armazena os dados em linhas, a tabela *observacao* está organizada de 
+maneira a armazenar os dados em colunas. Assim, à cada observação do solo é dedicada uma linha exclusiva, e os
+dados adicionados sequencialmente nas colunas. Como o número de observações do solo varia de conjunto de dados
+para conjunto de dados, não há limite de linhas na tabela *observacao*. Da mesma forma, como os dados coletados
+durante uma observação do solo podem ser muitos e diversos, não há imposição de limites quanto ao número máximo
+de colunas. Apenas três requerimentos precisam ser atendidos. Primeiro, devem ser preenchidas todas as colunas
+obrigatórias (destaque em vermelho) e, sempre que possível, todas as colunas recomendadas (destaque em 
+amarelo). Segundo, deve ser usado estilo de nomeclatura padronizado para as demais colunas opcionais (destaque
+em verde). Por fim, enquanto a primeira linha da tabela *observacao* contém o nome das colunas, a segunda deve
+ficar reservada para registrar as unidades de medida, por exemplo, para variáveis como a profundidade do solo.
+As próximas seções descrevem a estrutura da tabela *observacao*.
 
 ## Identificação
 
-Identificador exclusivo da observação usado no conjunto de dados de origem (`observacao_id`). Como se trata de
-um código, não 
-devem ser usados espaços ou caracteres especiais. Espaços são substituídos por um *underscore*, `_`, ou traço,
-`-`. Caracteres especiais devem ser substituídos pelo caractere correspondente simplificado, ou seja, `á`
-torna-se `a`, `ç` torna-se `c`, e assim por diante. Exemplo: `observacao_id = Perfil-01`.
+Cada observação é identificada usando um código identificador exclusivo definido conforme a identificação usada no conjunto de dados de origem. Esse código identificador, informado na coluna `observacao_id`, é a única informação de preenchimento obrigatório na tabela *observacao*. Por se tratar de um código identificador exclusivo, um mesmo conjunto de dados não terá nunca um `observacao_id` repetido. Contudo, diferentes conjuntos de dados podem, e geralmente possuem, `observacao_id` iguais entre si.
+
+Como se trata de um código de identificação, não são usados espaços ou caracteres especiais no `observacao_id`. Espaços são substituídos por um *underscore*, `_`, ou traço, `-`. Caracteres especiais são substituídos pelo caractere correspondente simplificado, ou seja, `á` torna-se `a`, `ç` torna-se `c`, e assim por diante. Por  exemplo, uma observação identificada no trabalho de origem como Perfil 01 será identificada no **febr** como `Perfil-01`.
+
+No caso dos conjuntos de dados obtidos de outros repositórios ou bases de dados, como o SISB, reserva-se também uma coluna para armazenar o código identificador usado no repositório ou base de dados de origem (Tabela \@ref(tab:observacao-id)). Essa estratégia possibilita que, no futuro, e em havendo interesse por parte dos mantenedores desses repositórios e bases de dados, seja estabelecida comunicação direta com o **febr**. Assim, seria possível atualizar seus dados à medida que ajustes e correções nos dados forem sendo feitos no **febr**.
+
+```{r, echo=FALSE}
+versao <- 
+  rbind(
+    c("`observacao_id`", "identificador exclusivo no **febr**"),
+    c("`sisb_id`", "identificador exclusivo no Sistema de Informação de Solos Brasileiros"),
+    c("`ibge_id`", "identificador exclusivo na base de dados do IBGE"),
+    c("`esalq_id`", "identificador exclusivo na base de dados da Esalq")
+  )
+colnames(versao) <- c("**campo**", "**valor**")
+pander(versao, caption = "(\\#tab:observacao-id) Identificação das observações do solo.")
+```
 
 ## Coordenada temporal
 
