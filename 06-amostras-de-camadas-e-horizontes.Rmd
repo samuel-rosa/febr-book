@@ -1,4 +1,4 @@
-# Amostras de camadas e horizontes
+# Amostras de camadas e horizontes {#camadas}
 
 Tabela *camada*. 
 Nesta tabela são inseridos os dados das camadas amostradas e onde o conteúdo de ferro tenha sido determinado.
