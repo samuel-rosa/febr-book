@@ -1,7 +1,22 @@
 # Amostras de camadas e horizontes {#camadas}
 
-Tabela *camada*. 
-Nesta tabela são inseridos os dados das camadas amostradas e onde o conteúdo de ferro tenha sido determinado.
+A definição mais recente do que seja o solo estabelece que o mesmo consiste num conjunto de camadas de material mineral e/ou orgânico, geralmente solto, que é afetado por processos físicos, químicos e/ou biológicos na -- ou próximo da -- superfície planetária, e geralmente contém líquidos, gases, e biota e serve de suporte às plantas [@vanEs2017]. A quarta dimensão operacional de um observação do solo, a coordenada vertical *d*, adotada no modelo de dados do **febr**, é de fundamental importância nessa definição. É por meio dela que se descreve a sequência de camadas de material mineral e/ou orgânico que constituem o solo em um determinado local. As amostras obtidas de cada uma dessas camadas, submetidas a análises laboratoriais diversas, permitem conhecer tanto a sua constituição mineral e/ou orgânica, como compreender como são afetadas pelos processos físicos, químicos e/ou biológicos. As informações obtidas nessas análises, as variáveis do solo, são armazenadas no **febr** usando a tabela *camada*. 
+
+Assim como a tabela *observacao*, a tabela *camada* armazena os dados em colunas, e a cada camada de uma observação do solo é dedicada uma linha exclusiva (Tabela \@ref(tab:camadas)). Da mesma forma, não há limites para o número de linhas e colunas na tabela *camada*. Ainda, os mesmos três requerimentos precisam ser atendidos: preenchimento de todas as colunas obrigatórias (destaque em vermelho) e, se possível, das colunas recomendadas (destaque em amarelo); uso de nomeclatura padronizada para as colunas opcionais (destaque em verde); e informação das unidades de medida na segunda linha da tabela. A estrutura da tabela *camada* é descrita nas próximas seções.
+
+```{r, echo=FALSE}
+versao <- 
+  rbind(
+    c("perfil-01", 1, 0, 35, 30),
+    c("perfil-01", 2, 35, 86, 29),
+    c("perfil-01", 3, 86, 123, 32)
+  )
+nomes <- paste(
+  c("`observacao_id`", "`camada_numero`", "`profund_sup`", "`profund_inf`", "`fe_cloridrico_eaa`"),
+  "<br>", c("`#unidade`", "`-`", "`cm`", "`cm`", "`g/kg`"), sep = "")
+colnames(versao) <- nomes
+pander(versao, caption = "(\\#tab:camadas) Representação da estrutura da tabela *camada*.")
+```
 
 ## Identificação
 
