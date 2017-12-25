@@ -24,45 +24,25 @@ Dois grupos de identificadores são usados na tabela *camada*. O primeiro deles,
 
 Para garantir a integridade do campo `observacao_id`, a tabela *camada* da [planilha](`r model_sheet`) usada para entrada de dados no **febr** possui um sistema de validação de dados que restringe os valores que o usuário pode inserir no campo `observacao_id`. Assim, tudo que o usuário precisa fazer é selecionar o valor desejado de uma lista suspensa criada automaticamente a partir dos valores já inseridos no campo `observacao_id` da tabela *observacao*.
 
-O segundo grupo de identificadores usados na tabela *camada* é composto por três campos.
-
-`camada_numero`
-Número da camada ou horizonte na observação, atribuído consecutivamente de cima para baixo. Há alguma confusão
-com essa variável, por vezes sendo atribuído valor numérico sequencial para todo o conjunto de dados. É 
-preciso ficar claro que a numeração refere-se à ordem das camadas dentro do perfil à que pertencem, ou seja, a
-primeira camada amostrada de um perfil receberá, sempre, o número inteiro 1. O valor padrão, para o caso do
-perfil observado possuir apenas uma camada, é `camada_number = 1`.
-
-`camada_nome`
-Nome da camada ou horizonte. Exemplo: A, B, C etc. Conjuntos de dados que são produto de trabalhos 
-edafológicos raramente terão informações sobre o nome da camada amostrada. Caso essa informação esteja 
-presente, deve-se verificar com o responsável pelo conjunto de dados se a informação está correta ou foi 
-criada apenas para preencher a coluna da planilha eletrônica. O valor padrão, para o caso do perfil observado
-ser oriundo de estudo edafológico, é `camada_nome = NA`.
-
-`amostra_codigo`
-Código laboratorial da amostra. Usado para identificar as repetições de laboratório. Alguns grupos de pesquisa
-destinam suas amostras para análise em laboratórios especializados, os quais identificam as amostras com 
-códigos específicos, que chamamos de `sample_code`. Em outros casos, as análises são feitas pelo laboratório 
-do próprio grupo de pesquisa, o qual não necessariamente atribui um código de identificação único às amostras.
-Mas esses laboratórios podem realizar as análises com duas ou mais repetições, sendo então o número da 
-repetição de uma determinada amostra identificado como `sample_code`. O valor padrão, para o caso em que não 
-há código de identificação único e/ou a amostra não foi analisada com repetições, é `amostra_codigo = 1`.
-
-Tabela \@ref(tab:camada-id)
-
 ```{r, echo=FALSE}
-versao <- 
+tabela <- 
   rbind(
     c("`observacao_id`", "identificador exclusivo no conjunto de dados no **febr**"),
     c("`camada_numero`", "número sequencial da camada"),
-    c("`camada_nome`", "código da camada"),
+    c("`camada_nome`", "nome ou código da camada"),
     c("`amostra_codigo`", "código laboratorial da amostra")
   )
-colnames(versao) <- c("**campo**", "**valor**")
-pander(versao, caption = "(\\#tab:camada-id) Campos identificadores das observações e camadas do solo.")
+colnames(tabela) <- c("**campo**", "**valor**")
+pander(tabela, caption = "(\\#tab:camada-id) Campos identificadores das observações e camadas do solo.")
 ```
 
+O segundo grupo de identificadores usados na tabela *camada* é composto por três campos (Tabela \@ref(tab:camada-id)). O primeiro deles, `camada_numero`, armazena o número das camadas na respectiva observação do solo, sendo atribuído consecutivamente de cima para baixo. Em outras palavras, trata-se da numeração que identifica a ordem das camadas dentro da observação da qual fazem parte. Por exemplo, num perfil do solo, onde tenham sido amostradas três camadas (ou horizontes), a primeira receberá o número 1, a segunda, o número 2, e a terceira, o número 3. O valor padrão, para o caso em que apenas uma camada tenha sido amostrada, é `camada_numero = 1`.
+
+O segundo campo, `camada_nome`, serve para armazenar o nome ou código das camadas. Por exemplo, no caso de um perfil do solo amostrado para fins de classificaçaõ taxonômica, costumeiramente as camadas do solo são classificadas em horizontes que refletem processos pedogenéticos, tal como Ap, Bt e C. Já os conjuntos de dados que são produto de trabalhos edafológicos raramente possuem informações sobre o nome ou código da camada amostrada. Mesmo assim, podem ser atribuídos nomes às camadas de maneira a refletir alguma peculiaridade da amostragem ou do estudo. Caso essa informação não esteja disponível, então basta preencher o campo com um traço (`-`).
+
+O terceiro e último campo identificador é `amostra_codigo`. Esse campo armazena nada menos do que o código laboratorial das amostras. Muitos grupos de pesquisa destinam suas amostras para análise em laboratórios especializados, os quais identificam as amostras com códigos específicos. Da mesma forma, muitos grupos de pesquisa mantém laboratórios altamente organizados, com base de dados das análises realizadas, onde também se identifica as amostras com códigos específicos. Em ambos os casos, em sendo necessário buscar informações adicionais sobre os dados inseridos no **febr** -- por exemplo, corrigir inconsistências --, então é possível usar `amostra_codigo` para verificar a base de dados do laboratório responsável pelas análises (mais no Capítulo \@ref(metadado)).
+
+O campo `amostra_codigo` também serve o propósito de identificar as repetições de laboratório, mesmo que o laboratório responsável pelas análises não utilize códigos de identificação específicos. Nesse caso, o código de identificação das repetições de uma análise laboratorial de uma determinada amostra do solo é inserido em `amostra_codigo`. Isso permite que os conjuntos de dados sejam publicados em sua mais completa totalidade no **febr**, ao invés de apenas uma versão agregada dos mesmos (como a média das repetições). Caso não haja código de identificação único e/ou a amostra não foi analisada com repetições, então o valor padrão é `amostra_codigo = 1`.
 
 ## Coordenadas verticais
 
