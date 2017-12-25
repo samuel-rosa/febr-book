@@ -58,4 +58,40 @@ Todos os campos da tabela *camada* descritos acima são de preenchimento obrigat
 
 O nome do campo identificador de uma variável química do solo é composto de três partes separadas por um subtraço (`_`): `<elemento>_<extração>_<determinação>`. A primeira parte, `<elemento>`, consiste no código identificador do elemento em questão, geralmente o símbolo usado na tabela periódica. Por exemplo, no caso do ferro, o código identificador é `fe`.
 
-A segunda parte, `<extração>`, refere-se ao método usado para extraír o elemento em questão do material do solo e trazê-lo para a suspensão que será usada para determinar sua concentração no solo. O método usado para realizar essa determinação é identificado usando a terceira parte do nome do campo identificador, `<determinação>`. Por exemplo, `fe_cloridrico_eaa` refere-se ao conteúdo de ferro (`fe`) determinado por espectrofotometria de absorção atômica (`eaa`) no extrato de solução de ácido clorídrico (`cloridrico`).
+A segunda parte, `<extração>`, refere-se ao método usado para extraír o elemento em questão do material do solo e trazê-lo para a suspensão que será usada para determinar sua concentração no solo. O método usado para realizar essa determinação é identificado usando a terceira parte do nome do campo identificador, `<determinação>`. Por exemplo, `fe_cloridrico_eaa` refere-se ao conteúdo de ferro (`fe`) determinado por espectrofotometria de absorção atômica (`eaa`) no extrato de solução de ácido clorídrico (`cloridrico`). As Tabelas \@ref(tab:extrator) e \@ref(tab:leitura) trazem os códigos indicados para os principais extratores e complexantes e métodos de determinação do conteúdo de ferro no solo. 
+
+```{r, echo=FALSE}
+mtd <- 
+  function (symbol, method) {
+    data.frame(Código = symbol, Definição = method)
+  }
+```
+
+```{r, echo=FALSE}
+method <-
+  rbind(
+    mtd("`aquaregia`",   "Ácido clorídrico + ácido nítrico"),
+    mtd("`cloridrico`",  "Ácido clorídrico"),
+    mtd("`dtpa`",        "DTPA"),
+    mtd("`ditionito`",   "Citrato-ditionito-bicarbonato"),
+    mtd("`mehlich`",     "Mehlich"),
+    mtd("`oxalato`",     "Oxalato ácido de amônio"),
+    mtd("`pirofosfato`", "Pirofosfato de sódio"),
+    mtd("`sulfurico`",   "Ácido sulfúrico"),
+    mtd("`triacido`",    "Ácido perclórico + ácido nítrico + ácido fluorídrico")
+  )
+pander(method, caption = "(\\#tab:extrator) Códigos indicados para os principais extratores e complexantes.")
+```
+
+```{r, echo=FALSE}
+method <-
+  rbind(
+    mtd("`xxxxx`",  "Titrimetria de oxi-redução com dicromato de potássio"),
+    mtd("`eaa`",    "Espectrometria de absorção atômica"),
+    mtd("`edta`",   "Complexometria com EDTA"),
+    mtd("`eam`",    "Espectrometria de absorção molecular"),
+    mtd("`icpms`",  "Espectrometria de massa com plasma acoplado indutivamente"),
+    mtd("`icpoes`", "Espectrometria de emissão atômica com plasma acoplado indutivamente")
+  )
+pander(method, caption = "(\\#tab:leitura) Códigos indicados para os principais métodos de determinação.")
+```
