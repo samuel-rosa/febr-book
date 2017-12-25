@@ -1,3 +1,3 @@
-# Dados sobre os dados (metadados)
+# Dados sobre os dados (metadados) {#metadados}
 
 Tabela *metadado*

@@ -155,7 +155,7 @@ rbind(
   pander(caption = cap)
 ```
 
-## Variáveis ambientais
+## Variáveis ambientais {#ambvars}
 
 Diversas informações ambientais e locais sobre o solo podem ser armazenadas na tabela *observacao*. A mais comum delas é a classificação taxonômica do perfil do solo, registrada usando o campo `taxon_<sistema>_<ano>`, onde `<sistema>` identifica o sistema de classificação -- taxonomia -- utilizado para classificar a observação do solo, e `<ano>` identifica o ano de publicação do sistema de classificação. Para indicar o ano, usa-se o formato numérico `aaaa`, o mesmo usado para especificar a data da observação do solo. Já a identificação do sistema de classificação é feita usando os códigos padronizados mostrados na Tabela \@ref(tab:taxonomia). Assim, cabe ao usuário especificar o nome do campo `taxon_<sistema>_<ano>` de maneira a atender suas necessidades. Por exemplo, `taxon_sibcs_1999` refere-se à classificação taxonômica do solo conforme a edição do Sistema Brasileiro de Classificação do Solo publicada no ano de 1999.
 

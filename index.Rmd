@@ -41,6 +41,8 @@ colNames <-
 febr <- 'Repositório Brasileiro Livre para Dados Abertos do Solo'
 ```
 
+[modelo]: https://docs.google.com/spreadsheets/d/1w4LBQbLBFtnzRipFu8T4-rDszZSzahajLCyZWDkHQr0/edit?usp=sharing
+
 # Apresentação {-}
 
 <!-- \lipsum[1-2] -->
