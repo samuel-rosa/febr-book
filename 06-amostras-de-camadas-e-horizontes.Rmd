@@ -52,7 +52,10 @@ A tabela *camada* possui a flexibilidade necessária para registrar casos menos 
 
 ## Variáveis do solo
 
-`fe_<extração>_<determinação>`
+Todos os campos da tabela *camada* descritos acima são de preenchimento obrigatório ou recomendado. Dentre os campos de preenchimento opcional estão todas as variáveis do solo, cujos dados são obtidos via descrição e análise laboratorial das camadas do solo. O padrão de nomenclatura dos campos para armazenar as informações sobre as variáveis do solo é similar ao usado para as variáveis ambientais (Seção \@ref(ambvars)).
 
-O valor padrão, para o caso em que o conteúdo de ferro não está disponível, é 
-`fe_<extração>_<determinação> = NA`.
+### Variáveis químicas 
+
+O nome do campo identificador de uma variável química do solo é composto de três partes separadas por um subtraço (`_`): `<elemento>_<extração>_<determinação>`. A primeira parte, `<elemento>`, consiste no código identificador do elemento em questão, geralmente o símbolo usado na tabela periódica. Por exemplo, no caso do ferro, o código identificador é `fe`.
+
+A segunda parte, `<extração>`, refere-se ao método usado para extraír o elemento em questão do material do solo e trazê-lo para a suspensão que será usada para determinar sua concentração no solo. O método usado para realizar essa determinação é identificado usando a terceira parte do nome do campo identificador, `<determinação>`. Por exemplo, `fe_cloridrico_eaa` refere-se ao conteúdo de ferro (`fe`) determinado por espectrofotometria de absorção atômica (`eaa`) no extrato de solução de ácido clorídrico (`cloridrico`).
