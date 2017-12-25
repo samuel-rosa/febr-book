@@ -2,7 +2,7 @@
 title: "Repositório Brasileiro Livre para Dados Abertos do Solo"
 subtitle: "Manual de Uso"
 author: "Alessandro Samuel-Rosa, Ricardo S. D. Dalmolin, Paulo I. Gubiani, Diego J. Gris, Nicolas A. Rosin"
-#lang: pt
+# lang: pt
 date: "`r format(Sys.time(), '%d %B %Y')`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
