@@ -20,8 +20,11 @@ pander(versao, caption = "(\\#tab:camadas) Representação da estrutura da tabel
 
 ## Identificação
 
-`observacao_id`.
-Identificador exclusivo da observação usado no conjunto de dados de origem. Refere-se à tabela *observacao*.
+Dois grupos de identificadores são usados na tabela *camada*. O primeiro deles, chamado de [chave estrangeira ou chave externa](https://pt.wikipedia.org/wiki/Chave_estrangeira), é composto por apenas um campo, qual seja, `observacao_id`. Trata-se do mesmo código identificador exclusivo da observação do solo usado na tabela *observacao*. Aqui, o campo `observacao_id` serve para estabelecer o relacionamento entre as tabelas *camada* e *observacao*, vinculando cada camada à respectiva observação do solo. Isso significa que os valores inseridos no campo `observacao_id` na tabela *camada* precisam ser exatamente idênticos aos valores inseridos no campo `observacao_id` na tabela *observacao*.
+
+Para garantir a integridade do campo `observacao_id`, a tabela *camada* da [planilha](`r model_sheet`) usada para entrada de dados no **febr** possui um sistema de validação de dados que restringe os valores que o usuário pode inserir no campo `observacao_id`. Assim, tudo que o usuário precisa fazer é selecionar o valor desejado de uma lista suspensa criada automaticamente a partir dos valores já inseridos no campo `observacao_id` da tabela *observacao*.
+
+O segundo grupo de identificadores usados na tabela *camada* é composto por três campos.
 
 `camada_numero`
 Número da camada ou horizonte na observação, atribuído consecutivamente de cima para baixo. Há alguma confusão
@@ -45,6 +48,21 @@ do próprio grupo de pesquisa, o qual não necessariamente atribui um código de
 Mas esses laboratórios podem realizar as análises com duas ou mais repetições, sendo então o número da 
 repetição de uma determinada amostra identificado como `sample_code`. O valor padrão, para o caso em que não 
 há código de identificação único e/ou a amostra não foi analisada com repetições, é `amostra_codigo = 1`.
+
+Tabela \@ref(tab:camada-id)
+
+```{r, echo=FALSE}
+versao <- 
+  rbind(
+    c("`observacao_id`", "identificador exclusivo no conjunto de dados no **febr**"),
+    c("`camada_numero`", "número sequencial da camada"),
+    c("`camada_nome`", "código da camada"),
+    c("`amostra_codigo`", "código laboratorial da amostra")
+  )
+colnames(versao) <- c("**campo**", "**valor**")
+pander(versao, caption = "(\\#tab:camada-id) Campos identificadores das observações e camadas do solo.")
+```
+
 
 ## Coordenadas verticais
 
