@@ -42,7 +42,7 @@ No caso dos conjuntos de dados obtidos de outros repositórios ou bases de dados
 ```{r, echo=FALSE}
 versao <- 
   rbind(
-    c("`observacao_id`", "identificador exclusivo no **febr**"),
+    c("`observacao_id`", "identificador exclusivo no conjunto de dados no **febr**"),
     c("`sisb_id`", "identificador exclusivo no Sistema de Informação de Solos Brasileiros"),
     c("`ibge_id`", "identificador exclusivo na base de dados do IBGE"),
     c("`esalq_id`", "identificador exclusivo na base de dados da Esalq")
@@ -125,21 +125,35 @@ rbind(
   pander(caption = cap)
 ```
 
-## Localização
+## Localização {#localizacao}
 
-Identificação do município (`municipio_id`), estado (`estado_id`) -- ou unidade federativa -- e país 
-(`pais_id`) onde a observação foi realizada. Como o **febr**  trata apenas de conjuntos de dados produzidos no
-Brasil, usa-se o código ISO 3166-1 alpha-2 do Brasil, ou seja, `BR`. No caso do estado -- ou unidade 
-federativa --, usa-se a abreviação da respectiva unidade federativa (UF). O nome do município é escrito por
-extenso, conforme encontrado na fonte.
+Além das coordenadas espaciais, no **febr**, a localização geográfica das observações do solo também é registrada usando a identificação do município (`municipio_id`), estado (`estado_id`) -- ou unidade federativa -- e país (`pais_id`) onde a observação do solo foi realizada (Tabela \@ref(tab:localizacao)). Como o **febr**  trata apenas de conjuntos de dados produzidos no Brasil, usa-se o código ISO 3166-1 alpha-2 do Brasil, ou seja, `BR`. No caso do estado -- ou unidade federativa --, usa-se a abreviação da respectiva unidade federativa (UF). O nome do município é escrito por extenso, conforme encontrado na fonte.
 
-## Amostragem
+```{r, echo=FALSE}
+cap <- "(\\#tab:localizacao) Campos usados para descrever a localização das observações do solo."
+rbind(
+  c("`municipio_id`", "nome do município"),
+  c("`estado_id`", "código do estado ou unidade federativa"),
+  c("`pais_id`", "código do país")
+  ) %>% 
+  colNames(c("**campo**", "**valor**")) %>% 
+  pander(caption = cap)
+```
 
-Tipo de amostragem (`amostra_tipo`). Opções: SIMPLES ou COMPOSTA.
+## Amostragem {#amostragem}
 
-Número de amostras (`amostra_quanti`). Um (1) quando o valor da variável anterior é SIMPLES ou mais para COMPOSTA. Expressar o valor com números inteiros.
+Informações sobre a estratégia usada para observação e amostragem do solo são necessárias para decidir sobre vários aspectos operacionais/metodológicos posteriores. Por exemplo, a fusão de conjunto de dados e o método de inferência estatística. No **febr** essas informações são armazenadas em três campos (Tabela \@ref(tab:amostragem)). O primeiro deles, `amostra_tipo`, refere-se ao tipo de amostragem empregado, podendo ser simples -- uma única observação ou amostra coletada num determinado ponto, como no caso de um perfil do solo -- ou composta -- duas ou mais observações ou amostras coletadas em uma determinada área e posteriormente agregadas. O segundo campo, `amostra_quanti`, armazena o número de observações ou amostras, sendo assim principalmente útil no caso de observação ou amostragem do tipo composta. Por fim, a área amostral, `amostra_area`, que refere-se ao tamanho da área usada para fazer a observação ou amostragem do solo, seja ela simples -- a área de uma trincheira para descrição de um perfil do solo costuma ser de 1 m^2^ -- ou composta.
 
-Área amostral (m^2^) (`amostra_area`). Por exemplo, a área de uma trincheira costuma ser de 1 m^2^.
+```{r amostragem, echo=FALSE}
+cap <- "(\\#tab:amostragem) Campos usados para descrever a estratégia de observação e amostragem do solo."
+rbind(
+  c("`amostra_tipo`", "tipo de amostragem, simples ou composta"),
+  c("`amostra_quanti`", "número de sub-amostras"),
+  c("`amostra_area`", "área amostral")
+  ) %>% 
+  colNames(c("**campo**", "**valor**")) %>% 
+  pander(caption = cap)
+```
 
 <!-- ## `taxon_<sistema>_<ano>`
 
