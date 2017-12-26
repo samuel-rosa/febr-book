@@ -2,7 +2,7 @@
 
 A definição mais recente do que seja o solo estabelece que o mesmo consiste num conjunto de camadas de material mineral e/ou orgânico, geralmente solto, que é afetado por processos físicos, químicos e/ou biológicos na -- ou próximo da -- superfície planetária, e geralmente contém líquidos, gases, e biota e serve de suporte às plantas [@vanEs2017]. A quarta dimensão operacional de um observação do solo, a coordenada vertical *d*, adotada no modelo de dados do **febr**, é de fundamental importância nessa definição. É por meio dela que se descreve a sequência de camadas de material mineral e/ou orgânico que constituem o solo em um determinado local. As amostras obtidas de cada uma dessas camadas, submetidas a análises laboratoriais diversas, permitem conhecer tanto a sua constituição mineral e/ou orgânica, como compreender como são afetadas pelos processos físicos, químicos e/ou biológicos. As informações obtidas nessas análises, as variáveis do solo, são armazenadas no **febr** usando a tabela *camada*. 
 
-Assim como a tabela *observacao*, a tabela *camada* armazena os dados em colunas, e a cada camada de uma observação do solo é dedicada uma linha exclusiva (Tabela \@ref(tab:camadas)). Da mesma forma, não há limites para o número de linhas e colunas na tabela *camada*. Ainda, os mesmos três requerimentos precisam ser atendidos: preenchimento de todas as colunas obrigatórias (destaque em vermelho) e, se possível, das colunas recomendadas (destaque em amarelo); uso de nomeclatura padronizada para as colunas opcionais (destaque em verde); e informação das unidades de medida na segunda linha da tabela. A estrutura da tabela *camada* é descrita nas próximas seções.
+Assim como a tabela *observacao*, a tabela *camada* armazena os dados em colunas, e a cada camada de uma observação do solo é dedicada uma linha exclusiva (Tabela \@ref(tab:camadas)). Da mesma forma, não há limites para o número de linhas e colunas na tabela *camada*. Ainda, os mesmos três requerimentos precisam ser atendidos: preenchimento de todas as colunas obrigatórias (destaque em vermelho) e, se possível, das colunas recomendadas (destaque em amarelo); uso de nomenclatura padronizada para as colunas opcionais (destaque em verde); e informação das unidades de medida na segunda linha da tabela. A estrutura da tabela *camada* é descrita nas próximas seções.
 
 ```{r, echo=FALSE}
 versao <- 
@@ -12,25 +12,27 @@ versao <-
     c("perfil-01", 3, 86, 123, 32)
   )
 nomes <- paste(
-  c("`observacao_id`", "`camada_numero`", "`profund_sup`", "`profund_inf`", "`fe_cloridrico_eaa`"),
-  "<br>", c("`#unidade`", "`-`", "`cm`", "`cm`", "`g/kg`"), sep = "")
+  c("observacao_id", "camada_numero", "profund_sup", "profund_inf", "fe_cloridrico_eaa"),
+  "<br>", c("#unidade", "-", "cm", "cm", "g/kg"), sep = "")
 colnames(versao) <- nomes
 pander(versao, caption = "(\\#tab:camadas) Representação da estrutura da tabela *camada*.")
 ```
 
 ## Identificação
 
-Dois grupos de identificadores são usados na tabela *camada*. O primeiro deles, chamado de [chave estrangeira ou chave externa](https://pt.wikipedia.org/wiki/Chave_estrangeira), é composto por apenas um campo, qual seja, `observacao_id`. Trata-se do mesmo código identificador exclusivo da observação do solo usado na tabela *observacao*. Aqui, o campo `observacao_id` serve para estabelecer o relacionamento entre as tabelas *camada* e *observacao*, vinculando cada camada à respectiva observação do solo. Isso significa que os valores inseridos no campo `observacao_id` na tabela *camada* precisam ser exatamente idênticos aos valores inseridos no campo `observacao_id` na tabela *observacao*.
+Dois grupos de identificadores são usados na tabela *camada*. O primeiro deles, chamado de chave estrangeira ou [chave externa][extkey], é composto por apenas um campo, qual seja, `observacao_id`. Trata-se do mesmo código identificador exclusivo da observação do solo usado na tabela *observacao*. Aqui, o campo `observacao_id` serve para estabelecer o relacionamento entre as tabelas *camada* e *observacao*, vinculando cada camada à respectiva observação do solo. Isso significa que os valores inseridos no campo `observacao_id` na tabela *camada* precisam ser exatamente idênticos aos valores inseridos no campo `observacao_id` na tabela *observacao*.
+
+[extkey]: https://pt.wikipedia.org/wiki/Chave_estrangeira
 
 Para garantir a integridade do campo `observacao_id`, a tabela *camada* da [planilha][modelo] usada para entrada de dados no **febr** possui um sistema de validação de dados que restringe os valores que o usuário pode inserir no campo `observacao_id`. Assim, tudo que o usuário precisa fazer é selecionar o valor desejado de uma lista suspensa criada automaticamente a partir dos valores já inseridos no campo `observacao_id` da tabela *observacao*.
 
 ```{r, echo=FALSE}
 tabela <- 
   rbind(
-    c("`observacao_id`", "identificador exclusivo no conjunto de dados no **febr**"),
-    c("`camada_numero`", "número sequencial da camada"),
-    c("`camada_nome`", "nome ou código da camada"),
-    c("`amostra_codigo`", "código laboratorial da amostra")
+    c("observacao_id", "identificador exclusivo no conjunto de dados no **febr**"),
+    c("camada_numero", "número sequencial da camada"),
+    c("camada_nome", "nome ou código da camada"),
+    c("amostra_codigo", "código laboratorial da amostra")
   )
 colnames(tabela) <- c("**campo**", "**valor**")
 pander(tabela, caption = "(\\#tab:camada-id) Campos identificadores das observações e camadas do solo.")
@@ -38,7 +40,7 @@ pander(tabela, caption = "(\\#tab:camada-id) Campos identificadores das observa�
 
 O segundo grupo de identificadores usados na tabela *camada* é composto por três campos (Tabela \@ref(tab:camada-id)). O primeiro deles, `camada_numero`, armazena o número das camadas na respectiva observação do solo, sendo atribuído consecutivamente de cima para baixo. Em outras palavras, trata-se da numeração que identifica a ordem das camadas dentro da observação da qual fazem parte. Por exemplo, num perfil do solo, onde tenham sido amostradas três camadas (ou horizontes), a primeira receberá o número 1, a segunda, o número 2, e a terceira, o número 3. O valor padrão, para o caso em que apenas uma camada tenha sido amostrada, é `camada_numero = 1`.
 
-O segundo campo, `camada_nome`, serve para armazenar o nome ou código das camadas. Por exemplo, no caso de um perfil do solo amostrado para fins de classificaçaõ taxonômica, costumeiramente as camadas do solo são classificadas em horizontes que refletem processos pedogenéticos, tal como Ap, Bt e C. Já os conjuntos de dados que são produto de trabalhos edafológicos raramente possuem informações sobre o nome ou código da camada amostrada. Mesmo assim, podem ser atribuídos nomes às camadas de maneira a refletir alguma peculiaridade da amostragem ou do estudo. Caso essa informação não esteja disponível, então basta preencher o campo com um traço (`-`).
+O segundo campo, `camada_nome`, serve para armazenar o nome ou código das camadas. Por exemplo, no caso de um perfil do solo amostrado para fins de classificação taxonômica, costumeiramente as camadas do solo são classificadas em horizontes que refletem processos pedogenéticos, tal como Ap, Bt e C. Já os conjuntos de dados que são produto de trabalhos edafológicos raramente possuem informações sobre o nome ou código da camada amostrada. Mesmo assim, podem ser atribuídos nomes às camadas de maneira a refletir alguma peculiaridade da amostragem ou do estudo. Caso essa informação não esteja disponível, então basta preencher o campo com um traço, `-`.
 
 O terceiro e último campo identificador é `amostra_codigo`. Esse campo armazena nada menos do que o código laboratorial das amostras. Muitos grupos de pesquisa destinam suas amostras para análise em laboratórios especializados, os quais identificam as amostras com códigos específicos. Da mesma forma, muitos grupos de pesquisa mantém laboratórios altamente organizados, com base de dados das análises realizadas, onde também se identifica as amostras com códigos específicos. Em ambos os casos, em sendo necessário buscar informações adicionais sobre os dados inseridos no **febr** -- por exemplo, corrigir inconsistências --, então é possível usar `amostra_codigo` para verificar a base de dados do laboratório responsável pelas análises (mais no Capítulo \@ref(metadados)).
 
@@ -56,9 +58,9 @@ Todos os campos da tabela *camada* descritos acima são de preenchimento obrigat
 
 ### Variáveis químicas 
 
-O nome do campo identificador de uma variável química do solo é composto de três partes separadas por um subtraço (`_`): `<elemento>_<extração>_<determinação>`. A primeira parte, `<elemento>`, consiste no código identificador do elemento em questão, geralmente o símbolo usado na tabela periódica. Por exemplo, no caso do ferro, o código identificador é `fe`.
+O nome do campo identificador de uma variável química do solo é composto de três partes separadas por um subtraço, `_`: `<elemento>_<extração>_<determinação>`. A primeira parte, `<elemento>`, consiste no código identificador do elemento em questão, geralmente o símbolo usado na tabela periódica. Por exemplo, no caso do ferro, o código identificador é `fe`.
 
-A segunda parte, `<extração>`, refere-se ao método usado para extraír o elemento em questão do material do solo e trazê-lo para a suspensão que será usada para determinar sua concentração no solo. O método usado para realizar essa determinação é identificado usando a terceira parte do nome do campo identificador, `<determinação>`. Por exemplo, `fe_cloridrico_eaa` refere-se ao conteúdo de ferro (`fe`) determinado por espectrofotometria de absorção atômica (`eaa`) no extrato de solução de ácido clorídrico (`cloridrico`). As Tabelas \@ref(tab:extrator) e \@ref(tab:leitura) trazem os códigos indicados para os principais extratores e complexantes e métodos de determinação do conteúdo de ferro no solo. 
+A segunda parte, `<extração>`, refere-se ao método usado para extrair o elemento em questão do material do solo e trazê-lo para a suspensão que será usada para determinar sua concentração no solo. O método usado para realizar essa determinação é identificado usando a terceira parte do nome do campo identificador, `<determinação>`. Por exemplo, `fe_cloridrico_eaa` refere-se ao conteúdo de ferro (`fe`) determinado por espectrofotometria de absorção atômica (`eaa`) no extrato de solução de ácido clorídrico (`cloridrico`). As Tabelas \@ref(tab:extrator) e \@ref(tab:leitura) trazem os códigos indicados para os principais extratores e complexantes e métodos de determinação do conteúdo de ferro no solo. 
 
 ```{r, echo=FALSE}
 mtd <- 
@@ -70,15 +72,15 @@ mtd <-
 ```{r, echo=FALSE}
 method <-
   rbind(
-    mtd("`aquaregia`",   "Ácido clorídrico + ácido nítrico"),
-    mtd("`cloridrico`",  "Ácido clorídrico"),
-    mtd("`dtpa`",        "DTPA"),
-    mtd("`ditionito`",   "Citrato-ditionito-bicarbonato"),
-    mtd("`mehlich`",     "Mehlich"),
-    mtd("`oxalato`",     "Oxalato ácido de amônio"),
-    mtd("`pirofosfato`", "Pirofosfato de sódio"),
-    mtd("`sulfurico`",   "Ácido sulfúrico"),
-    mtd("`triacido`",    "Ácido perclórico + ácido nítrico + ácido fluorídrico")
+    mtd("aquaregia",   "Ácido clorídrico + ácido nítrico"),
+    mtd("cloridrico",  "Ácido clorídrico"),
+    mtd("dtpa",        "DTPA"),
+    mtd("ditionito",   "Citrato-ditionito-bicarbonato"),
+    mtd("mehlich",     "Mehlich"),
+    mtd("oxalato",     "Oxalato ácido de amônio"),
+    mtd("pirofosfato", "Pirofosfato de sódio"),
+    mtd("sulfurico",   "Ácido sulfúrico"),
+    mtd("triacido",    "Ácido perclórico + ácido nítrico + ácido fluorídrico")
   )
 pander(method, caption = "(\\#tab:extrator) Códigos indicados para os principais extratores e complexantes.")
 ```
@@ -86,12 +88,12 @@ pander(method, caption = "(\\#tab:extrator) Códigos indicados para os principai
 ```{r, echo=FALSE}
 method <-
   rbind(
-    mtd("`xxxxx`",  "Titrimetria de oxi-redução com dicromato de potássio"),
-    mtd("`eaa`",    "Espectrometria de absorção atômica"),
-    mtd("`edta`",   "Complexometria com EDTA"),
-    mtd("`eam`",    "Espectrometria de absorção molecular"),
-    mtd("`icpms`",  "Espectrometria de massa com plasma acoplado indutivamente"),
-    mtd("`icpoes`", "Espectrometria de emissão atômica com plasma acoplado indutivamente")
+    mtd("xxxxx",  "Titrimetria de oxi-redução com dicromato de potássio"),
+    mtd("eaa",    "Espectrometria de absorção atômica"),
+    mtd("edta",   "Complexometria com EDTA"),
+    mtd("eam",    "Espectrometria de absorção molecular"),
+    mtd("icpms",  "Espectrometria de massa com plasma acoplado indutivamente"),
+    mtd("icpoes", "Espectrometria de emissão atômica com plasma acoplado indutivamente")
   )
 pander(method, caption = "(\\#tab:leitura) Códigos indicados para os principais métodos de determinação.")
 ```
