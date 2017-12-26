@@ -1,53 +1,37 @@
 # Conjunto de dados
 
-A maximização da disseminação e uso de um conjunto de dados, o apropriado reconhecimento das pessoas e 
-organizações autoras e/ou responsáveis, bem como a identificação de alterações e ajustes feitos após a 
-publicação da sua primeira versão, dependem da provisão de dados mínimos sobre aquele conjunto de dados. No 
-**febr**, esses dados sobre o conjunto de dados são inseridos na tabela denominada *dataset*, palavra que na 
-língua inglesa significa 'conjunto de dados'.
+A maximização da disseminação e uso de um conjunto de dados, o apropriado reconhecimento das pessoas e organizações autoras e/ou responsáveis, bem como a identificação de alterações e ajustes feitos após a publicação da sua primeira versão, dependem da provisão de dados mínimos sobre aquele conjunto de dados. No **febr**, esses dados sobre o conjunto de dados são inseridos na tabela denominada *dataset*, palavra que na língua inglesa significa 'conjunto de dados'.
 
-Por conter dados essenciais sobre o conjunto de dados, a tabela *dataset* é sempre a primeira a ser revisada 
-e processada. Quaisquer dados faltantes são solicitados aos responsáveis pelo conjunto de dados. Da 
-mesma forma, sempre que dados incoerentes são identificados, os responsáveis pelo conjunto de dados
-são consultados iterativamente até que quaisquer dúvidas sejam completamente sanadas. O devido preenchimento
-da tabela *dataset* é essencial para o posterior processamento dos dados e metadados do conjunto de dados.
+Por conter dados essenciais sobre o conjunto de dados, a tabela *dataset* é sempre a primeira a ser revisada e processada. Quaisquer dados faltantes são solicitados aos responsáveis pelo conjunto de dados. Da mesma forma, sempre que dados incoerentes são identificados, os responsáveis pelo conjunto de dados são consultados iterativamente até que quaisquer dúvidas sejam completamente sanadas. O devido preenchimento da tabela *dataset* é essencial para o posterior processamento dos dados e metadados do conjunto de dados.
 
-A tabela *dataset* possui cerca de vinte itens a serem preenchidos, os quais são estruturados em uma sequência 
-de linhas (Tabela \@ref(tab:dataset)). Especificamente, os dados sobre o conjunto de dados são inseridos na 
-segunda coluna, imediatamente ao lado da sua respectiva identificação e definição contidas na primeira coluna. 
-A primeira linha é dedicada à identificação propriamente dita do conjunto de dados no **febr**, a segunda ao 
-título do conjunto de dados, e assim por diante, até as últimas linhas, dedicadas aos termos usados para a 
-descrição de características chave e indexação do conjunto de dados. Cada um dos itens da tabela *dataset* são
-descritos em detalhe nas próximas seções.
+A tabela *dataset* possui cerca de vinte campos a serem preenchidos, os quais são estruturados em uma sequência de linhas (Tabela \@ref(tab:dataset)). Especificamente, os dados sobre o conjunto de dados são inseridos na segunda coluna, imediatamente ao lado da sua respectiva identificação e definição contidas na primeira coluna. A primeira linha é dedicada à identificação propriamente dita do conjunto de dados no **febr**, a segunda ao título do conjunto de dados, e assim por diante, até as últimas linhas, dedicadas aos termos usados para a descrição de características chave e indexação do conjunto de dados. Cada um dos campos da tabela *dataset* são descritos em detalhe nas próximas seções.
 
 ```{r, echo=FALSE}
 dataset <- 
   rbind(
-    c("`dataset_id`", "<???>"),
-    c("`dataset_titulo`", "<???>"),
-    c("`dataset_descricao`", "<???>"),
-    c("`...` ", "<???>"),
-    c("`palavras_chave`", "<???>"),
-    c("`categoria_vcge`", "<???>")
+    c("dataset_id", "<???>"),
+    c("dataset_titulo", "<???>"),
+    c("dataset_descricao", "<???>"),
+    c("... ", "<???>"),
+    c("palavras_chave", "<???>"),
+    c("categoria_vcge", "<???>")
   )
-colnames(dataset) <- c("**item**", "**dado**")
+colnames(dataset) <- c("**campo**", "**valor**")
 pander(dataset, caption = "(\\#tab:dataset) Representação da estrutura da tabela *dataset*.")
 ```
 
 ## Identificação {#titulo}
 
-Um conjunto de dados no **febr** é identificado por dois itens principais (Tabela \@ref(tab:titulo)). O 
-primeiro deles, `dataset_id`, é o código identificador único do conjunto de dados, o que significa que não há
-qualquer `dataset_id` repetido no **febr**.
+Um conjunto de dados no **febr** é identificado por dois campos principais (Tabela \@ref(tab:titulo)). O primeiro deles, `dataset_id`, é o código identificador único do conjunto de dados, o que significa que não há qualquer `dataset_id` repetido no **febr**.
 
 ```{r, echo=FALSE}
 titulo <- 
   rbind(
-    c("`dataset_id`", "código de identificação do conjunto de dados"),
-    c("`dataset_titulo`", "título do conjunto de dados")
+    c("dataset_id", "código de identificação do conjunto de dados"),
+    c("dataset_titulo", "título do conjunto de dados")
   )
-colnames(titulo) <- c("**item**", "**dado**")
-pander(titulo, caption = "(\\#tab:titulo) Itens utilizados para a identificação do conjunto de dados.")
+colnames(titulo) <- c("**campo**", "**valor**")
+pander(titulo, caption = "(\\#tab:titulo) Campos utilizados para a identificação do conjunto de dados.")
 ```
 
 Em geral, o código de identificação de um novo conjunto de dados inserido no **febr** é definido pela sua
@@ -75,7 +59,7 @@ características físicas, químicas, mineralógicas e espectrais de Latossolos 
 ## Descrição {#descricao}
 
 A descrição do conjunto de dados, contendo dados básicos para maximizar o seu reuso futuro, sem que seja
-necessário entrar em contato com os autores ou responsáveis, é incluída no item `dataset_descricao`. A 
+necessário entrar em contato com os autores ou responsáveis, é incluída no campo `dataset_descricao`. A 
 descrição do conjunto de dados aborda aspectos como:
 
 1. Os motivos para a realização do estudo que levou à geração dos dados,
@@ -124,11 +108,11 @@ identificados conforme descrito abaixo na Seção \@ref(contribuidor).
 ```{r, echo=FALSE}
 versao <- 
   rbind(
-    c("`dataset_versao`", "versão atual do conjunto de dados"),
-    c("`publicacao_data`", "data de publicação da versão atual do conjunto de dados")
+    c("dataset_versao", "versão atual do conjunto de dados"),
+    c("publicacao_data", "data de publicação da versão atual do conjunto de dados")
   )
-colnames(versao) <- c("**item**", "**dado**")
-pander(versao, caption = "(\\#tab:versao) Itens utilizados para o versionamento do conjunto de dados.")
+colnames(versao) <- c("**campo**", "**valor**")
+pander(versao, caption = "(\\#tab:versao) Campos usados para o versionamento do conjunto de dados.")
 ```
 
 A data de publicação do conjunto de dados, `publicacao_data`, não é necessariamente a mesma data de publicação
@@ -147,65 +131,48 @@ gerou ou utilizou pela primeira vez.
 
 ## Licença de uso {#licenca}
 
-A licença de uso do conjunto de dados -- especificada usando o item `dataset_licenca` -- define como o 
-conjunto de dados pode ser usado por outras pessoas a partir do momento da sua publicação no **febr**. O 
-**febr** aceita apenas conjuntos de dados com licenças de uso não-restritivas, ou seja, que permitem a 
-redistribuição, modificação, adaptação e criação a partir do conjunto de dado submetido, e que não obrigam o
-licenciamento dos trabalhos derivados sob os mesmos termos. Contudo, os autores ou responsáveis pelo conjunto 
-de dados tem reservado o direito de decidir se os produtos derivados podem ou não ter fins comerciais, desde
-que previsto pelo órgão financiador. As licenças Creative Commons (https://br.creativecommons.org/licencas/) 
-estão entre as mais apropriadas para os conjuntos de dados inseridos no **febr**, segundo as quais todos os 
-novos trabalhos derivados de um conjunto de dados devem atribuir o devido crédito aos autores do conjunto de 
-dados original.
+A licença de uso do conjunto de dados -- especificada usando o campo `dataset_licenca` -- define como o conjunto de dados pode ser usado por outras pessoas a partir do momento da sua publicação no **febr**. O **febr** aceita apenas conjuntos de dados com licenças de uso não-restritivas, ou seja, que permitem a redistribuição, modificação, adaptação e criação a partir do conjunto de dado submetido, e que não obrigam o licenciamento dos trabalhos derivados sob os mesmos termos. Contudo, os autores ou responsáveis pelo conjunto de dados tem reservado o direito de decidir se os produtos derivados podem ou não ter fins comerciais, desde que previsto pelo órgão financiador. As licenças [Creative Commons][cc] estão entre as mais apropriadas para os conjuntos de dados inseridos no **febr**, segundo as quais todos os novos trabalhos derivados de um conjunto de dados devem atribuir o devido crédito aos autores do conjunto de dados original.
 
-A legislação brasileira ainda não especifica qual deve ser a licença de uso dos conjuntos de dados gerados em
-projetos conduzidos via financiamento público. Contudo, segundo a INDA, existe consenso entre os diferentes
-órgãos da administração pública de que uma licença de uso apropriada para esse tipo de conjuntos de dados é a
-licença Creative Commons CC-BY 4.0 (https://creativecommons.org/licenses/by/4.0/). A licença CC-BY 4.0 permite
-que um conjunto de dados seja distribuido, remixado, adaptado e usado para criar outros produtos, mesmo que
-para fins comerciais, desde que seja atribuido o devido crédito aos autores do conjunto de dados 
-original. Assim, trata-se de uma das licença mais flexíveis dentre as licenças Creative Commons disponíveis, 
-permitindo a maximização da disseminação e uso dos conjuntos de dados. Assim sendo, a licença CC-BY 4.0 é a 
-licença adotada como padrão no **febr**. Maiores informações sobre as licenças de uso sugeridas para conjuntos 
-de dados públicos podem ser encontradas no fórum de discussão mantido pela INDA no endereço
-https://groups.google.com/forum/#!forum/inda-br.
+[cc]: https://br.creativecommons.org/licencas/
 
-Para os conjuntos de dados gerados em projetos conduzidos via financiamento privado, onde as partes
-envolvidas têm interesse em compartilhar os dados desde que não para fins comerciais, pode-se usar a
-licença Creative Commons CC-BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/). A licença CC-BY-NC 
-4.0 possui praticamente os mesmos termos da licença CC-BY 4.0, exceto pelo fato de que a distribuição, 
-remixação, adaptação e derivação de outros produtos não podem ser usados para fins comerciais.
+A legislação brasileira ainda não especifica qual deve ser a licença de uso dos conjuntos de dados gerados em projetos conduzidos via financiamento público. Contudo, segundo a INDA, existe consenso entre os diferentes órgãos da administração pública de que uma licença de uso apropriada para esse tipo de conjuntos de dados é a licença Creative Commons [CC-BY 4.0][ccby]. A licença CC-BY 4.0 permite que um conjunto de dados seja distribuído, remixado, adaptado e usado para criar outros produtos, mesmo que para fins comerciais, desde que seja atribuído o devido crédito aos autores do conjunto de dados original. Assim, trata-se de uma das licença mais flexíveis dentre as licenças Creative Commons disponíveis, permitindo a maximização da disseminação e uso dos conjuntos de dados. Assim sendo, a licença CC-BY 4.0 é a licença adotada como padrão no **febr**. Maiores informações sobre as licenças de uso sugeridas para conjuntos de dados públicos podem ser encontradas no [fórum de discussão][indaforum] mantido pela INDA.
+
+[ccby]: https://creativecommons.org/licenses/by/4.0/
+[indaforum]: https://groups.google.com/forum/#!forum/inda-br
+
+Para os conjuntos de dados gerados em projetos conduzidos via financiamento privado, onde as partes envolvidas têm interesse em compartilhar os dados desde que não para fins comerciais, pode-se usar a licença Creative Commons [CC-BY-NC 4.0][ccbync]. A licença CC-BY-NC 4.0 possui praticamente os mesmos termos da licença CC-BY 4.0, exceto pelo fato de que a distribuição, remixação, adaptação e derivação de outros produtos não podem ser usados para fins comerciais.
+
+[ccbync]: https://creativecommons.org/licenses/by-nc/4.0/
 
 As pessoas interessadas em utilizar os conjuntos de dados disponíveis no **febr** devem prestar atenção, não
-só à licença de uso especificada no item `dataset_licenca`, como também às determinações da política de uso de
+só à licença de uso especificada no campo `dataset_licenca`, como também às determinações da política de uso de
 dados da organização autora ou responsável pelo conjunto de dados. Um exemplo disso são os conjuntos de dados
 originalmente descarregados do SISB, mantido pela Embrapa, para alimentar o **febr**. Segundo a Embrapa, o
 emprego dos dados disponíveis em seu SISB para "*finalidades profissionais e/ou comerciais deve ser precedido
-de estabelecimento de licença de uso específica por parte da Embrapa*", política essa que se extende à versão
+de estabelecimento de licença de uso específica por parte da Embrapa*", política essa que se estende à versão
 do conjunto de dados disponível no **febr**.
 
 ## Organização {#organizacao}
 
 A organização ou instituição responsável pela geração do conjunto de dados é identificada usando uma série de
 itens codificados usando o padrão `organizacao_<...>`, onde `<...>` representa um descritor da organização 
-responsável (Tabela \@ref(tab:organizacao)). Fundamentalmente, esses itens armazenam dados básicos sobre os
+responsável (Tabela \@ref(tab:organizacao)). Fundamentalmente, esses campos armazenam dados básicos sobre os
 endereços físico e eletrônico da organização.
 
 ```{r, echo=FALSE}
-organizacao <- 
+tabela <- 
   rbind(
-    c("`organizacao_nome`", "nome da organização responsável"),
-    c("`organizacao_url`", "endereço da organização responsável na Internet"),
-    c("`organizacao_pais_id`", "país da organização responsável"),
-    c("`organizacao_municipio_id`", "cidade da organização responsável"),
-    c("`organizacao_codigo_postal`", "código postal da organização responsável"),
-    c("`organizacao_rua_nome`", "rua da organização responsável"),
-    c("`organizacao_rua_numero`", "número da organização responsável em sua rua")
+    c("organizacao_nome", "nome da organização responsável"),
+    c("organizacao_url", "endereço da organização responsável na Internet"),
+    c("organizacao_pais_id", "país da organização responsável"),
+    c("organizacao_municipio_id", "cidade da organização responsável"),
+    c("organizacao_codigo_postal", "código postal da organização responsável"),
+    c("organizacao_rua_nome", "rua da organização responsável"),
+    c("organizacao_rua_numero", "número da organização responsável em sua rua")
   )
-colnames(organizacao) <- c("**item**", "**dado**")
-pander(organizacao, 
-       caption = paste("(\\#tab:organizacao) Itens utilizados para a identificação da organização ",
-                       "responsável pelo conjunto de dados."))
+colnames(tabela) <- c("**campo**", "**valor**")
+cap <- "(\\#tab:organizacao) Campos para a identificação da organização responsável pelo conjunto de dados."
+pander(tabela, caption = cap)
 ```
 
 Quando o conjunto de dados é provido por organização outra que não aquela responsável pela sua geração, 
@@ -219,21 +186,20 @@ garantir que ambos endereços físico e eletrônico sejam válidos e atuais.
 
 ## Autoria {#autor}
 
-Os autores ou responsáveis pelo conjunto de dados são identificados usando os itens `autor_nome` 
+Os autores ou responsáveis pelo conjunto de dados são identificados usando os campos `autor_nome` 
 e `autor_email` (Tabela \@ref(tab:autor)). Quando o acesso ao autores é impossível ou limitado, 
 identifica-se as pessoas que atualmente detém responsabilidade técnica sobre o conjunto de dados. No caso de 
 trabalhos acadêmicos, como monografias, dissertações e teses, identifica-se tanto o discente como o docente 
 orientador principal do trabalho acadêmico.
 
 ```{r, echo=FALSE}
-autor <- 
+tabela <- 
   rbind(
-    c("`autor_nome`", "nome completo dos autores"),
-    c("`autor_email`", "endereço de e-mail atual dos autores")
+    c("autor_nome", "nome completo dos autores"),
+    c("autor_email", "endereço de e-mail atual dos autores")
   )
-colnames(autor) <- c("**item**", "**dado**")
-pander(autor, 
-       caption = "(\\#tab:autor) Itens utilizados para a identificação dos autores do conjunto de dados.")
+colnames(tabela) <- c("**campo**", "**valor**")
+pander(tabela, caption = "(\\#tab:autor) Campos usados para identificação dos autores do conjunto de dados.")
 ```
 
 Sempre que um conjunto de dados possuir dois ou mais autores, insere-se os respectivos dados de identificação 
@@ -241,12 +207,12 @@ separados por ponto e vírgula. Assim como no caso da identificação da organiz
 garantir que o endereço de e-mail dos autores do conjunto de dados seja válido e atual. Isso é fundamental 
 para permitir o contato com os autores sempre que surgirem dúvidas sobre o conjunto de dados. O conhecimento 
 do nome completo dos autores também é fundamental para permitir que os devidos créditos lhes sejam atribuídos
-sempre que o conjunto de dados for distribuido, remixado, adaptado ou usado para criar outros produtos 
+sempre que o conjunto de dados for distribuído, remixado, adaptado ou usado para criar outros produtos 
 (Seção \@ref(licenca)).
 
 ## Contribuições {#contribuidor}
 
-Os autores de modificações num conjunto de dados são identificados usando três itens similares àqueles usados
+Os autores de modificações num conjunto de dados são identificados usando três campos similares àqueles usados
 para identificar os autores ou responsáveis pelo conjunto de dados (Tabela \@ref(tab:contribuidor)). No 
 **febr**, modificações constituem contribuições à melhoria do conjunto de dados, sendo sempre mencionadas
 na descrição do conjunto de dados (Seção \@ref(descricao)), e geralmente resultando em uma nova versão do
@@ -255,16 +221,15 @@ requer algum tipo de modificação, por menor que seja, os integrantes da Equipe
 como autores de contribuições à sua melhoria.
 
 ```{r, echo=FALSE}
-contribuidor <- 
+tabela <- 
   rbind(
-    c("`contribuidor_nome`", "nome dos autores das contribuições"),
-    c("`contribuidor_email`", "endereço de e-mail atual dos autores das contribuições"),
-    c("`contribuidor_organizacao`", "organização à qual os autores das contribuições estão afiliados")
+    c("contribuidor_nome", "nome dos autores das contribuições"),
+    c("contribuidor_email", "endereço de e-mail atual dos autores das contribuições"),
+    c("contribuidor_organizacao", "organização à qual os autores das contribuições estão afiliados")
   )
-colnames(contribuidor) <- c("**item**", "**dado**")
-pander(contribuidor,
-       caption = paste("(\\#tab:contribuidor) Itens utilizados para a identificação dos autores de ",
-                       "contribuições para o conjunto de dados."))
+colnames(tabela) <- c("**campo**", "**valor**")
+cap <- "(\\#tab:contribuidor) Campos para identificação dos autores de contribuições para o conjunto de dados."
+pander(tabela, caption = cap)
 ```
 
 A apropriada identificação dos autores das modificações num conjunto de dados é fundamental para permitir o 
@@ -275,17 +240,16 @@ versão (Seção \@ref(autor)).
 
 ## Referências
 
-Uma referência permanente e válida a documento ou artigo científico onde a versão original e/ou a versão atual
-do conjunto de dados foi usado, preferencialmente, pela primeira vez, é informada usando o item
-`dataset_referencia_i`. Sempre que possível usa-se um Digital Object Identifier (DOI, https://www.doi.org/),
-mas uma URL costuma ser a mais usada, especialmente para documentos antigos e trabalhos acadêmicos.
+Uma referência permanente e válida a documento ou artigo científico onde a versão original e/ou a versão atual do conjunto de dados foi usado, preferencialmente, pela primeira vez, é informada usando o item `dataset_referencia_i`. Sempre que possível usa-se um Digital Object Identifier ([DOI][doi]), mas uma URL costuma ser a mais usada, especialmente para documentos antigos e trabalhos acadêmicos.
+
+[doi]: https://www.doi.org/
 
 Tantas referências quantas forem julgadas pertinentes podem ser inseridas, numeradas sequencialmente em ordem
-de importância, usando-se para isso o índice `i` do item `dataset_referencia_i`. No caso de os responsáveis
+de importância, usando-se para isso o índice `i` do campo `dataset_referencia_i`. No caso de os responsáveis
 atuais pelo conjunto de dados não serem os seus autores originais, é imprescindível que a referência
 principal, `dataset_referencia_1`, seja a um trabalho dos autores do conjunto de dados. Já a referência
 secundária, `dataset_referencia_2`, pode ser a um trabalho dos responsáveis atuais pelo conjunto de dados. No
-caso de trabalhos acadêmicos, como monografias, disserações e teses, costuma-se inserir uma referência ao
+caso de trabalhos acadêmicos, como monografias, dissertações e teses, costuma-se inserir uma referência ao
 trabalho acadêmico e ao artigo onde o conjunto de dados foi utilizado pela primeira vez. No caso de o conjunto
 de dados ter passado por modificações consideráveis, uma referência ao trabalho onde a nova versão tenha sido
 usada pela primeira vez também é inserida. Para adicionar novas referências, basta inserir, na
@@ -293,7 +257,7 @@ sequência, novas linhas na tabela `dataset`, usando o índice `i` para indicar 
 
 ## Indexação {#indexa}
 
-Três itens são usados para indexação dos conjuntos de dados e sua otimização para ferramentas de busca 
+Três campos são usados para indexação dos conjuntos de dados e sua otimização para ferramentas de busca 
 (Tabela \@ref(tab:indexa)). O primeiro deles é a área de especialidade da Agronomia-Ciência do Solo à qual o
 conjunto de dados está relacionado. São seis as áreas de especialidade definidas pelo Conselho Nacional de
 Desenvolvimento Científico e Tecnológico ([CNPq][cnpq]) e a Coordenação de Aperfeiçoamento de Pessoal de Nível
@@ -310,21 +274,21 @@ Superior ([CAPES][capes]):
 [capes]: http://www.capes.gov.br/avaliacao/instrumentos-de-apoio/tabela-de-areas-do-conhecimento-avaliacao
 
 ```{r, echo=FALSE}
-indexa <- 
+tabela <- 
   rbind(
-    c("`area_conhecimento`", "área da especialidade segundo CAPES e CNPq"),
-    c("`palavras_chave`", "termos descritores do conjunto de dados"),
-    c("`categoria_vcge`", "classificação dentre as atividades de orgãos públicos")
+    c("area_conhecimento", "área da especialidade segundo CAPES e CNPq"),
+    c("palavras_chave", "termos descritores do conjunto de dados"),
+    c("categoria_vcge", "classificação dentre as atividades de orgãos públicos")
   )
-colnames(indexa) <- c("**item**", "**dado**")
-pander(indexa, caption = "(\\#tab:indexa) Itens utilizados para a indexação do conjunto de dados.")
+colnames(tabela) <- c("**campo**", "**autor**")
+pander(tabela, caption = "(\\#tab:indexa) Campos utilizados para a indexação do conjunto de dados.")
 ```
 
-O segundo item consiste de uma lista de termos que descrevem aspectos importantes do conjunto de dados, 
+O segundo campo consiste de uma lista de termos que descrevem aspectos importantes do conjunto de dados, 
 preferencialmente diferentes daqueles constantes no título, sendo separados por ponto e vírgula. Uma lista de
 termos bem elaborada aumenta o potencial de descoberta do conjunto de dados por mecanismos de busca.
 
-O terceiro item é a Categoria do Vocabulário Controlado do Governo Eletrônico ([VCGE][vcge]). O VCGE é um
+O terceiro campo é a Categoria do Vocabulário Controlado do Governo Eletrônico ([VCGE][vcge]). O VCGE é um
 esquema padronizado de assuntos e categorias usado para facilitar a apresentação e identificação dos serviços
 disponibilizados em uma estrutura de diretórios online. O objetivo do VCGE é ajudar os cidadãos a encontrar
 informações em catálogos de dados públicos sem a necessidade de conhecer a organização responsável pelo
