@@ -152,8 +152,7 @@ software da planilha eletrônica são o caminho a seguir -- como mostraremos na 
 práticas atuais são sub-ótimas e, a longo prazo, tornam desnecessariamente difíceis as tarefas relacionadas ao
 gerenciamento de dados.
 
-Os dados são organizados em tabelas bidimensionais usando planilhas eletrônicas padronizadas construídas a
-partir de experiências de iniciativas tanto locais como globais. São quatro as tabelas utilizadas, com nomes:
+No **febr**, os dados são armazenados em tabelas bidimensionais estruturadas usando planilhas eletrônicas padronizadas construídas a partir de experiências de iniciativas tanto locais como globais. São quatro as tabelas utilizadas, com nomes (`tabela_id`):
 
 1. *dataset*, para os dados sobre o conjunto de dados,
 2. *observacao*, para os dados das observações do solo,
