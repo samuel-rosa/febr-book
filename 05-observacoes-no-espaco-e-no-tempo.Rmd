@@ -26,7 +26,7 @@ para conjunto de dados, não há limite de linhas na tabela *observacao*. Da mes
 durante uma observação do solo podem ser muitos e diversos, não há imposição de limites quanto ao número máximo
 de colunas. Apenas três requerimentos precisam ser atendidos. Primeiro, devem ser preenchidas todas as colunas
 obrigatórias (destaque em vermelho) e, sempre que possível, todas as colunas recomendadas (destaque em 
-amarelo). Segundo, deve ser usado estilo de nomeclatura padronizado para as demais colunas opcionais (destaque
+amarelo). Segundo, deve ser usado estilo de nomenclatura padronizado para as demais colunas opcionais (destaque
 em verde). Por fim, enquanto a primeira linha da tabela *observacao* contém o nome das colunas, a segunda deve
 ficar reservada para registrar as unidades de medida, por exemplo, para variáveis como a profundidade do solo.
 As próximas seções descrevem a estrutura da tabela *observacao*.
@@ -35,40 +35,40 @@ As próximas seções descrevem a estrutura da tabela *observacao*.
 
 Cada observação é identificada usando um código identificador exclusivo definido conforme a identificação usada no conjunto de dados de origem. Esse código identificador, informado na coluna `observacao_id`, é a única informação de preenchimento obrigatório na tabela *observacao*. Por se tratar de um código identificador exclusivo, um mesmo conjunto de dados não terá nunca um `observacao_id` repetido. Contudo, diferentes conjuntos de dados podem, e geralmente possuem, `observacao_id` iguais entre si.
 
-Como se trata de um código de identificação, não são usados espaços ou caracteres especiais no `observacao_id`. Espaços são substituídos por um *underscore*, `_`, ou traço, `-`. Caracteres especiais são substituídos pelo caractere correspondente simplificado, ou seja, `á` torna-se `a`, `ç` torna-se `c`, e assim por diante. Por  exemplo, uma observação identificada no trabalho de origem como Perfil 01 será identificada no **febr** como `Perfil-01`.
+Como se trata de um código de identificação, não são usados espaços ou caracteres especiais no `observacao_id`. Espaços são substituídos por um subtraço, `_`, ou traço, `-`. Caracteres especiais são substituídos pelo caractere correspondente simplificado, ou seja, `á` torna-se `a`, `ç` torna-se `c`, e assim por diante. Por  exemplo, uma observação identificada no trabalho de origem como Perfil 01 será identificada no **febr** como `Perfil-01`.
 
 No caso dos conjuntos de dados obtidos de outros repositórios ou bases de dados, como o SISB, reserva-se também uma coluna para armazenar o código identificador usado no repositório ou base de dados de origem (Tabela \@ref(tab:observacao-id)). Essa estratégia possibilita que, no futuro, e em havendo interesse por parte dos mantenedores desses repositórios e bases de dados, seja estabelecida comunicação direta com o **febr**. Assim, seria possível atualizar seus dados à medida que ajustes e correções nos dados forem sendo feitos no **febr**.
 
 ```{r, echo=FALSE}
 versao <- 
   rbind(
-    c("`observacao_id`", "identificador exclusivo no conjunto de dados no **febr**"),
-    c("`sisb_id`", "identificador exclusivo no Sistema de Informação de Solos Brasileiros"),
-    c("`ibge_id`", "identificador exclusivo na base de dados do IBGE"),
-    c("`esalq_id`", "identificador exclusivo na base de dados da Esalq")
+    c("observacao_id", "identificador exclusivo no conjunto de dados no **febr**"),
+    c("sisb_id", "identificador exclusivo no Sistema de Informação de Solos Brasileiros"),
+    c("ibge_id", "identificador exclusivo na base de dados do IBGE"),
+    c("esalq_id", "identificador exclusivo na base de dados da Esalq")
   )
 colnames(versao) <- c("**campo**", "**valor**")
-pander(versao, caption = "(\\#tab:observacao-id) Identificação das observações do solo.")
+pander(versao, caption = "(\\#tab:observacao-id) Campos usados para identificação das observações do solo.")
 ```
 
 ## Coordenada temporal {#tempo}
 
 A data de observação do solo é um dos atributos que, juntamente com as coordenadas espaciais, definem uma observação em um conjunto de dados. Tal informação é armazenada na coluna `observacao_data`, para o que é usado o formato numérico `dd-mm-aaaa` ou `dd/mm/aaaa`, ou seja, dois dígitos para o dia e mês, e quatro dígitos para o ano. Assim como para a data de publicação do conjunto de dados, a informação mais importante é o ano da observação. O valor para os casos em que a data de observação é desconhecida é `observacao_data = xx-xx-xxxx`. Contudo, uma estimativa pode ser feita a partir da data de publicação do conjunto de dados original.
 
-Uma observação do solo realizada no mesmo local no espaço geográfico, mas em data diferente, constitui uma nova observação do solo. Isso requer a definição de uma nova `observacao_id`, a qual pode carregar alguma informação sobre a data de observação. Por exemplo, uma observação identificada no trabalho de origem como Perfil 01, observada nos anos de 2007 e 2008, pode ser identificada como `Perfil-01-2007` e `Perfil-01-2008`. Enquando as coodenadas espaciais (Seção \@ref(coordenadas)) dessa observação serão as mesmas, as datas de observação serão diferentes.
+Uma observação do solo realizada no mesmo local no espaço geográfico, mas em data diferente, constitui uma nova observação do solo. Isso requer a definição de uma nova `observacao_id`, a qual pode carregar alguma informação sobre a data de observação. Por exemplo, uma observação identificada no trabalho de origem como Perfil 01, observada nos anos de 2007 e 2008, pode ser identificada como `Perfil-01-2007` e `Perfil-01-2008`. Enquanto as coordenadas espaciais (Seção \@ref(coordenadas)) dessa observação serão as mesmas, as datas de observação serão diferentes.
 
 ## Coordenadas espaciais {#coordenadas}
 
-A localização de uma observação do solo no espaço geográfico é especificada usando coordenadas espaciais, também conhecidas como coordenadas geográficas. Para isso são usados os cinco itens descritos na Tabela \@ref(tab:coordenadas). 
+A localização de uma observação do solo no espaço geográfico é especificada usando coordenadas espaciais, também conhecidas como coordenadas geográficas. Para isso são usados os cinco campos descritos na Tabela \@ref(tab:coordenadas). 
 
 ```{r coordenadas, echo=FALSE}
 cap <- "(\\#tab:coordenadas) Campos usados para especificar a localização espacial das observações do solo."
 rbind(
-  c("`coord_sistema`", "sistema de referência de coordenadas"),
-  c("`coord_x`", "coordenada x ou longitude"),
-  c("`coord_y`", "coordenada y ou latitude"),
-  c("`coord_precisao`", "precisão das coordenadas espaciais"),
-  c("`coord_fonte`", "fonte das coordenadas espaciais")
+  c("coord_sistema", "sistema de referência de coordenadas"),
+  c("coord_x", "coordenada x ou longitude"),
+  c("coord_y", "coordenada y ou latitude"),
+  c("coord_precisao", "precisão das coordenadas espaciais"),
+  c("coord_fonte", "fonte das coordenadas espaciais")
   ) %>% 
   colNames(c("**campo**", "**valor**")) %>% 
   pander(caption = cap)
@@ -81,10 +81,10 @@ A identificação do SRC mostrada acima não é padronizada, o que dificulta a a
 ```{r geografica, echo=FALSE}
 cap <- "(\\#tab:geografica) Códigos EPSG dos sistemas de referência de coordenadas geográficas para o Brasil."
 rbind(
-  c("`EPSG:4326`", "WGS84"),
-  c("`EPSG:4225`", "Córrego Alegre"),
-  c("`EPSG:4618`", "SAD69"),
-  c("`EPSG:4674`", "SIRGAS2000")
+  c("EPSG:4326", "WGS84"),
+  c("EPSG:4225", "Córrego Alegre"),
+  c("EPSG:4618", "SAD69"),
+  c("EPSG:4674", "SIRGAS2000")
   ) %>% 
   colNames(names = c('**Código**', '**Definição**')) %>% 
   pander(caption = cap)
@@ -115,11 +115,11 @@ Os valores das duas coordenadas espaciais, *x* e *y*, são especificadas usando 
 Os dois últimos campos, `coord_precisao` e `coord_fonte`, servem para armazenar informações sobre a qualidade das coordenadas espaciais (Tabela \@ref(tab:coord-fonte)). O primeiro especifica a precisão (em metros) com que as coordenadas espaciais foram determinadas. Por exemplo, os equipamentos receptores de sinal do sistema de posicionamento global por satélite (GPS) mais populares costumam reportar precisão de 6-15 m, dependendo das condições locais e ambientais, bem como da configuração espacial da constelação de satélites. Enquanto isso, mapas topográficos na escala de 1:25 000, com coordenadas espaciais ao nível de segundo de arco, possuem, por definição, precisão de cerca de 30 m. Por fim, serviços de mapas online podem alcançar precisão similar aos equipamentos receptores de sinal GPS.
 
 ```{r, echo=FALSE}
-cap <- "(\\#tab:coord-fonte) Fontes de coordenadas espaciais."
+cap <- "(\\#tab:coord-fonte) Códigos para definição da fonte das coordenadas espaciais."
 rbind(
-  c("`GPS`", "aparelho GPS"),
-  c("`MAPA`", "mapa analógico ou digital"),
-  c("`WEB`", "serviço web como o Google Maps")
+  c("GPS", "aparelho GPS"),
+  c("MAPA", "mapa analógico ou digital"),
+  c("WEB", "serviço web como o Google Maps")
   ) %>% 
   colNames(names = c('**Código**', '**Definição**')) %>% 
   pander(caption = cap)
@@ -132,9 +132,9 @@ Além das coordenadas espaciais, no **febr**, a localização geográfica das ob
 ```{r, echo=FALSE}
 cap <- "(\\#tab:localizacao) Campos usados para descrever a localização das observações do solo."
 rbind(
-  c("`municipio_id`", "nome do município"),
-  c("`estado_id`", "código do estado ou unidade federativa"),
-  c("`pais_id`", "código do país")
+  c("municipio_id", "nome do município"),
+  c("estado_id", "código do estado ou unidade federativa"),
+  c("pais_id", "código do país")
   ) %>% 
   colNames(c("**campo**", "**valor**")) %>% 
   pander(caption = cap)
@@ -147,9 +147,9 @@ Informações sobre a estratégia usada para observação e amostragem do solo s
 ```{r amostragem, echo=FALSE}
 cap <- "(\\#tab:amostragem) Campos usados para descrever a estratégia de observação e amostragem do solo."
 rbind(
-  c("`amostra_tipo`", "tipo de amostragem, simples ou composta"),
-  c("`amostra_quanti`", "número de sub-amostras"),
-  c("`amostra_area`", "área amostral")
+  c("amostra_tipo", "tipo de amostragem, simples ou composta"),
+  c("amostra_quanti", "número de sub-amostras"),
+  c("amostra_area", "área amostral")
   ) %>% 
   colNames(c("**campo**", "**valor**")) %>% 
   pander(caption = cap)
@@ -160,13 +160,13 @@ rbind(
 Diversas informações ambientais e locais sobre o solo podem ser armazenadas na tabela *observacao*. A mais comum delas é a classificação taxonômica do perfil do solo, registrada usando o campo `taxon_<sistema>_<ano>`, onde `<sistema>` identifica o sistema de classificação -- taxonomia -- utilizado para classificar a observação do solo, e `<ano>` identifica o ano de publicação do sistema de classificação. Para indicar o ano, usa-se o formato numérico `aaaa`, o mesmo usado para especificar a data da observação do solo. Já a identificação do sistema de classificação é feita usando os códigos padronizados mostrados na Tabela \@ref(tab:taxonomia). Assim, cabe ao usuário especificar o nome do campo `taxon_<sistema>_<ano>` de maneira a atender suas necessidades. Por exemplo, `taxon_sibcs_1999` refere-se à classificação taxonômica do solo conforme a edição do Sistema Brasileiro de Classificação do Solo publicada no ano de 1999.
 
 ```{r, echo=FALSE}
-cap <- "(\\#tab:taxonomia) Sistemas de classificação taxonômica do solo."
+cap <- "(\\#tab:taxonomia) Códigos usados para especificação do sistema de classificação taxonômica do solo."
 rbind(
-  c("`fao`", "Legend of the World Soil Map"),
-  c("`sibcs`", "Sistema Brasileiro de Classificação do Solo"),
-  c("`st`", "Soil Taxonomy"),
-  c("`usc`", "Universal Soil Classification"),
-  c("`wrb`", "World Reference Base for Soil Resources")
+  c("fao", "Legend of the World Soil Map"),
+  c("sibcs", "Sistema Brasileiro de Classificação do Solo"),
+  c("st", "Soil Taxonomy"),
+  c("usc", "Universal Soil Classification"),
+  c("wrb", "World Reference Base for Soil Resources")
   ) %>% 
   colNames(names = c('**Código**', '**Definição**')) %>% 
   pander(caption = cap)
