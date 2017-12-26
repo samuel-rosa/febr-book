@@ -4,3 +4,5 @@
 .Ruserdata
 boletim
 docs
+.httr-oauth
+.httr-oauth-SUSPENDED
