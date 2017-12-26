@@ -4,7 +4,7 @@ Uma das partes mais importantes de um conjunto de dados são os metadados. Trata
 
 Os metadados são também necessários para a escolha de estratégias para a fusão de diferentes conjuntos de dados. Por exemplo, dois conjuntos de dados que contenham a classificação taxonômica do solo segundo a edição do Sistema Brasileiro de Classificação do Solo publicado em 2013. Ambos terão o campo `taxon_sibcs_2013` em sua respectiva tabela *observacao*. Em um primeiro momento, a fusão dos dois conjuntos de dados parece razoável. Contudo, os metadados de um dos conjuntos de dados traz a informação adicional de que a classificação do solo foi feita no campo, a partir de tradagens. Enquanto isso, para o segundo conjuntos de dados, a informação nos metadados é de que a classificação taxonômica fora realizada a partir de dados analíticos obtidos em laboratório. Como os dois métodos podem gerar resultados diferentes, a fusão dos conjuntos de dados agora passa a ser questionável.
 
-A tabela *metadado* possui estrutura diferente das demais tabelas usadas no **febr**. A primeira delas é que existe um número limitado de colunas, as quais estão organizadas em quatro grupos que serão vistos a seguir. As linhas ficam reservadas a cada um dos campos das tabelas *observacao* e *camada*. Sendo assim, cada coluna serve para descrever um atributo dos campos dessas duas tabelas. A Tabela \@ref(tab:metadado) dá uma ideia da estrutura da tabela *metadado*.
+A tabela *metadado* possui estrutura diferente das demais tabelas usadas no **febr**. A primeira delas é que existe um número limitado de colunas, as quais estão organizadas em três grupos que serão vistos a seguir. As linhas ficam reservadas a cada um dos campos das tabelas *observacao* e *camada*. Sendo assim, cada coluna serve para descrever um atributo dos campos dessas duas tabelas. A Tabela \@ref(tab:metadado) dá uma ideia da estrutura da tabela *metadado*.
 
 ```{r, echo=FALSE}
 tabela <- 
@@ -74,9 +74,19 @@ O quarto e último campo, `metodo_id`, está reservado para a identificação do
 
 ## Laboratório
 
-`lab_nome`
-`lab_pais_id`
-`lab_municipio_id`
-`lab_codigo_postal`
-`lab_rua_nome`
-`lab_rua_numero`
+O último grupo de colunas da tabela *metadado* está destinado à identificação do laboratório responsável pela geração dos dados armazenados nas tabelas *observacao* e *camada* (Tabela \@ref(tab:metadado-lab)). Essas informações são necessárias para que os usuários dos dados possam sanar quaisquer dúvidas sobre a consistência dos dados que por ventura surjam durante o sua utilização.
+
+```{r, echo=FALSE}
+tabela <- 
+  rbind(
+    c("`lab_nome`", "nome do laboratório"),
+    c("`lab_pais_id`", "código de identificação do país"),
+    c("`lab_municipio_id`", "município do laboratório"),
+    c("`lab_codigo_postal`", "código postal"),
+    c("`lab_rua_nome`", "rua do laboratório"),
+    c("`lab_rua_numero`", "número do laboratório")
+  )
+colnames(tabela) <- c("**campo**", "**valor**")
+cap <- "(\\#tab:metadado-lab) Campos para identificação do laboratório responsável pela geração dos dados."
+pander(tabela, caption = cap)
+```
