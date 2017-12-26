@@ -11,10 +11,12 @@ tabela <-
   rbind(
     c("observacao", "observacao_id", "Identificação da observação", "Texto"),
     c("observacao", "observacao_data", "Data da observação", "Data"),
+    c("...", "...", "...", "..."),
     c("camada", "observacao_id", "Identificação da observação", "Texto"),
-    c("camada", "camada_numero", "Número da camada", "Inteiro")
+    c("camada", "camada_numero", "Número da camada", "Inteiro"),
+    c("...", "...", "...", "...")
   )
-nomes <- c("`tabela_id`", "`campo_id`", "`campo_nome`", "`campo_unidade`")
+nomes <- c("tabela_id", "campo_id", "campo_nome", "campo_unidade")
 colnames(tabela) <- nomes
 pander(tabela, caption = "(\\#tab:metadado) Representação da estrutura da tabela *metadado*.")
 ```
@@ -26,15 +28,15 @@ A tabela *metadado* possui três campos identificadores (Tabela \@ref(tab:metada
 ```{r, echo=FALSE}
 tabela <- 
   rbind(
-    c("`tabela_id`", "código de identificação da tabela"),
-    c("`campo_id`", "código de identificação do campo"),
-    c("`campo_nome`", "nome do campo")
+    c("tabela_id", "código de identificação da tabela"),
+    c("campo_id", "código de identificação do campo"),
+    c("campo_nome", "nome do campo")
   )
 colnames(tabela) <- c("**campo**", "**valor**")
 pander(tabela, caption = "(\\#tab:metadado-id) Campos identificadores dos metadados.")
 ```
 
-O significado de ambos `tabela_id` e `campo_id` já foram bastante discutidos nos capítulos anteriores. Já `campo_nome` aparece aqui pela primeira vez. Mas nem por isso ser significado é menos claro. Trata-se de uma identificação textual generalista das informações inseridas nas tabelas *observacao* e *camada*, geralmente util para usuários de dados ainda não familiarizados com o padrão de nomenclatura dos campos. Por exemplo, o campo `taxon_sibcs_2009`, cujo significado pode parecer obscuro para alguém com pouca experiência no **febr**. Basta visitar a tabela *metadado* para verificar que `campo_nome = Classificação taxonômica`, tornando o seu significado evidente. Ademais, `campo_nome` pode ser usado para geração automatizada de relatórios sobre os conjuntos de dados, por exemplo, para a criação de títulos de tabelas e figuras.
+O significado de ambos `tabela_id` e `campo_id` já foram bastante discutidos nos capítulos anteriores. Já `campo_nome` aparece aqui pela primeira vez. Mas nem por isso ser significado é menos claro. Trata-se de uma identificação textual generalista das informações inseridas nas tabelas *observacao* e *camada*, geralmente útil para usuários de dados ainda não familiarizados com o padrão de nomenclatura dos campos. Por exemplo, o campo `taxon_sibcs_2009`, cujo significado pode parecer obscuro para alguém com pouca experiência no **febr**. Basta visitar a tabela *metadado* para verificar que `campo_nome = Classificação taxonômica`, tornando o seu significado evidente. Ademais, `campo_nome` pode ser usado para geração automatizada de relatórios sobre os conjuntos de dados, por exemplo, para a criação de títulos de tabelas e figuras.
 
 A definição do nome dos campos das tabelas *observacao* e *camada* é de inteira responsabilidade do autor ou responsável pelo conjunto de dados. Contudo, deve-se prezar pelo uso de nomes conhecidos e bem estabelecidos, curtos, objetivos e generalistas. Informações adicionais devem ser inseridos na área destinada à descrição dos campos das tabelas *observacao* e *camada* (Seção \@ref(metadado-desc)).
 
@@ -45,10 +47,10 @@ Os detalhes mais importantes sobre os campos das tabelas *observacao* e *camada*
 ```{r, echo=FALSE}
 tabela <- 
   rbind(
-    c("`campo_descricao`", "descrição textual do campo"),
-    c("`campo_unidade`", "unidade de medida do campo"),
-    c("`campo_tipo`", "tipo de dado do campo"),
-    c("`metodo_id`", "método analítico")
+    c("campo_descricao", "descrição textual do campo"),
+    c("campo_unidade", "unidade de medida do campo"),
+    c("campo_tipo", "tipo de dado do campo"),
+    c("metodo_id", "método analítico")
   )
 colnames(tabela) <- c("**campo**", "**valor**")
 pander(tabela, caption = "(\\#tab:metadado-desc) Campos descritores dos metadados.")
@@ -79,12 +81,12 @@ O último grupo de colunas da tabela *metadado* está destinado à identificaç�
 ```{r, echo=FALSE}
 tabela <- 
   rbind(
-    c("`lab_nome`", "nome do laboratório"),
-    c("`lab_pais_id`", "código de identificação do país"),
-    c("`lab_municipio_id`", "município do laboratório"),
-    c("`lab_codigo_postal`", "código postal"),
-    c("`lab_rua_nome`", "rua do laboratório"),
-    c("`lab_rua_numero`", "número do laboratório")
+    c("lab_nome", "nome do laboratório"),
+    c("lab_pais_id", "código de identificação do país"),
+    c("lab_municipio_id", "município do laboratório"),
+    c("lab_codigo_postal", "código postal"),
+    c("lab_rua_nome", "rua do laboratório"),
+    c("lab_rua_numero", "número do laboratório")
   )
 colnames(tabela) <- c("**campo**", "**valor**")
 cap <- "(\\#tab:metadado-lab) Campos para identificação do laboratório responsável pela geração dos dados."
