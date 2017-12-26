@@ -1,3 +1,65 @@
 # Dados sobre os dados (metadados) {#metadados}
 
-Tabela *metadado*
+Uma das partes mais importantes de um conjunto de dados são os metadados. Trata-se dos dados sobre os dados, ou seja, informações sobre como os dados foram gerados, desde os aspectos relacionados à estratégia amostral, até os menores detalhes sobre os métodos analíticos usados. Tais informações são necessárias para maximizar a possibilidade de reuso do conjunto de dados sem que seja necessário entrar em contato com os seus autores ou responsáveis. Isso é ainda mais importante no caso de conjuntos de dados produzidos há décadas e cujos autores já não podem mais ser contactados. No **febr**, os dados sobre os dados são armazenados na tabela *metadado*.
+
+Os metadados são também necessários para a escolha de estratégias para a fusão de diferentes conjuntos de dados. Por exemplo, dois conjuntos de dados que contenham a classificação taxonômica do solo segundo a edição do Sistema Brasileiro de Classificação do Solo publicado em 2013. Ambos terão o campo `taxon_sibcs_2013` em sua respectiva tabela *observacao*. Em um primeiro momento, a fusão dos dois conjuntos de dados parece razoável. Contudo, os metadados de um dos conjuntos de dados traz a informação adicional de que a classificação do solo foi feita no campo, a partir de tradagens. Enquanto isso, para o segundo conjuntos de dados, a informação nos metadados é de que a classificação taxonômica fora realizada a partir de dados analíticos obtidos em laboratório. Como os dois métodos podem gerar resultados diferentes, a fusão dos conjuntos de dados agora passa a ser questionável.
+
+A tabela *metadado* possui estrutura diferente das demais tabelas usadas no **febr**. A primeira delas é que existe um número limitado de colunas, as quais estão organizadas em quatro grupos que serão vistos a seguir. As linhas ficam reservadas a cada um dos campos das tabelas *observacao* e *camada*. Sendo assim, cada coluna serve para descrever um atributo dos campos dessas duas tabelas. A Tabela \@ref(tab:metadado) dá uma ideia da estrutura da tabela *metadado*.
+
+```{r, echo=FALSE}
+tabela <- 
+  rbind(
+    c("observacao", "observacao_id", "Identificação da observação", "Texto"),
+    c("observacao", "observacao_data", "Data da observação", "Data"),
+    c("camada", "observacao_id", "Identificação da observação", "Texto"),
+    c("camada", "camada_numero", "Número da camada", "Inteiro")
+  )
+nomes <- c("`tabela_id`", "`campo_id`", "`campo_nome`", "`campo_unidade`")
+colnames(tabela) <- nomes
+pander(tabela, caption = "(\\#tab:metadado) Representação da estrutura da tabela *metadado*.")
+```
+
+## Identificação
+
+A tabela *metadado* possui três campos identificadores (Tabela \@ref(tab:metadado-id)). O primeiro deles, `tabela_id`, identifica a qual tabela, se *observacao* ou *camada*, as informações contidas numa determinada linha se referem. Em seguida, `campo_id` identifica o campo da tabela *observacao* ou *camada*. Por fim, `campo_nome` se refere ao nome do campo da tabela *observacao* ou *camada*.
+
+```{r, echo=FALSE}
+tabela <- 
+  rbind(
+    c("`tabela_id`", "código de identificação da tabela"),
+    c("`campo_id`", "código de identificação do campo"),
+    c("`campo_nome`", "nome do campo")
+  )
+colnames(tabela) <- c("**campo**", "**valor**")
+pander(tabela, caption = "(\\#tab:metadado-id) Campos identificadores dos metadados.")
+```
+
+O significado de ambos `tabela_id` e `campo_id` já foram bastante discutidos nos capítulos anteriores. Já `campo_nome` aparece aqui pela primeira vez. Mas nem por isso ser significado é menos claro. Trata-se de uma identificação textual generalista das informações inseridas nas tabelas *observacao* e *camada*, geralmente util para usuários de dados ainda não familiarizados com o padrão de nomenclatura dos campos. Por exemplo, o campo `taxon_sibcs_2009`, cujo significado pode parecer obscuro para alguém com pouca experiência no **febr**. Basta visitar a tabela *metadado* para verificar que `campo_nome = Classificação taxonômica`, tornando o seu significado evidente. Ademais, `campo_nome` pode ser usado para geração automatizada de relatórios sobre os conjuntos de dados, por exemplo, para a criação de títulos de tabelas e figuras.
+
+A definição do nome dos campos das tabelas *observacao* e *camada* é de inteira responsabilidade do autor ou responsável pelo conjunto de dados. Contudo, deve-se prezar pelo uso de nomes conhecidos e bem estabelecidos, curtos, objetivos e generalistas. Informações adicionais devem ser inseridos na área destinada à descrição dos campos das tabelas *observacao* e *camada* (Seção \@ref(metadado-desc)).
+
+## Descrição {#metadado-desc}
+
+```{r, echo=FALSE}
+tabela <- 
+  rbind(
+    c("`campo_descricao`", "descrição textual do campo"),
+    c("`campo_unidade`", "unidade de medida do campo"),
+    c("`campo_tipo`", "tipo de dado do campo")
+  )
+colnames(tabela) <- c("**campo**", "**valor**")
+pander(tabela, caption = "(\\#tab:metadado-desc) Campos descritores dos metadados.")
+```
+
+## Métodos analíticos
+
+`metodo_id`
+
+## Laboratório
+
+`lab_nome`
+`lab_pais_id`
+`lab_municipio_id`
+`lab_codigo_postal`
+`lab_rua_nome`
+`lab_rua_numero`
