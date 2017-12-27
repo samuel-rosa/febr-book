@@ -1,9 +1,10 @@
 --- 
 title: "Repositório Brasileiro Livre para Dados Abertos do Solo"
 subtitle: "Manual de Uso"
-author: "Alessandro Samuel-Rosa, Ricardo S. D. Dalmolin, Paulo I. Gubiani, Diego J. Gris, Nicolas A. Rosin"
+author: "Alessandro Samuel-Rosa"
+# author: "Alessandro Samuel-Rosa, Ricardo S. D. Dalmolin, Paulo I. Gubiani, Diego J. Gris, Nicolas A. Rosin"
 # lang: pt
-date: "`r format(Sys.time(), '%d %B %Y')`"
+date: "`r format(Sys.time(), '%d-%m-%Y')`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -18,7 +19,10 @@ secnumdepth: 3
 bibliography: biblio.bib
 csl: abnt.csl
 link-citations: yes
-github-repo: samuel-rosa/febr-book
+github-repo: febr-team/febr-book
+nocite: |
+  @Sestoft2011, @Wickham2014, @BatjesEtAl2017, @CrowdFlower2017, @HansonEtAl2011, @VinesEtAl2014, @vanEs2017,
+  @HenglEtAl2014, @CooperEtAl2005, @OttoniEtAl2014, @ChagasEtAl2004, @SimoesEtAl2015, @ArrouaysEtAl2017
 ---
 
 ```{r, echo=FALSE}
@@ -43,12 +47,41 @@ febr <- 'Repositório Brasileiro Livre para Dados Abertos do Solo'
 
 [modelo]: https://docs.google.com/spreadsheets/d/1w4LBQbLBFtnzRipFu8T4-rDszZSzahajLCyZWDkHQr0/edit?usp=sharing
 
-# Apresentação {-}
+# Prefácio {-}
 
-<!-- \lipsum[1-2] -->
+Uma parte importante do empreendimento científico consiste em limpar e estruturar os dados que produzimos. Se decidimos usar dados produzidos por outros, então a padronização e harmonização dos dados também se tornam necessárias. Em todo caso, a organização adequada dos dados é crucial para a execução de análises e modelagem dos dados. Infelizmente, essa tarefa geralmente leva mais tempo do que gostaríamos, às vezes mais da metade do nosso tempo de trabalho. Talvez isso seja ainda pior para nós, cientistas do solo, haja vista nosso conhecimento geralmente limitado sobre tecnologia da informação (TI) e a falta generalizada de padrões. Felizmente, o número de perguntas sobre como organizar os dados do solo tende a diminuir a medida que ganhamos experiência. Mas a questão de se organizamos os dados do solo de uma maneira razoável, que pode ser verdadeiramente compreendida e efetivamente reutilizada por outros cientistas do solo -- e nós mesmos no futuro -- permanece sem resposta.
 
-<!-- \lipsum[1-2] -->
+A ciência do solo já produziu grande quantidade de dados. Ainda assim, as práticas que costumamos adotar para armazenar e compartilhar dados do solo são sub-ótimas. Sub-ótimas porque elas limitam a 'descobertabilidade' (do inglês, *discoverability*) dos dados do solo, isto é, a habilidade que um determinado conjunto de dados do solo tem de ser descoberto por outra pessoas. No Brasil, muitos conjunto de dados são difíceis de serem descobertos porque estão disponíveis somente em documentos impressos ou (mal) escanerizados. Quando os conjuntos de dados do solo são altamente 'descobríveis', talvez eles precisem ser digitalizados ou podem estar contidos em mídias protegidas por senha ou em bancos de dados que são difíceis de usar e/ou dependem de programas de computador proprietários. Quando não existem barreiras tecnológicas, então os conjuntos de dados do solo podem conter dados de apenas algumas variáveis do solo ou profundidades do solo selecionadas do conjunto original de dados do solo, ou apenas uma versão agregada dos dados do solo está disponível. E quando um conjunto de dados do solo está totalmente disponível, os metadados podem estar incompletos ou ausentes. Esses aspectos, juntamente com uma pobre organização dos dados do solo, limitam a 'reusabilidade' (do inglês, *reusability*) dos dados do solo, isto é, a habilidade que um determinado conjunto de dados do solo tem de ser usado novamente por seu produtor ou outra pessoa. Por fim, uma limitada descobertabilidade e reusabilidade dos dados do solo dificulta a observância de um dos princípios básicos do método científico, ou seja, a reprodutibilidade da pesquisa.
 
-<!-- Nome do Chefe do Departamento de Solos -->
+O cenário aqui descrito não se limita à ciência do solo brasileira ou à ciência do solo ou à atividade científica. Na verdade, fica cada vez mais claro para a sociedade pós-moderna que um volume considerável de dados produzidos via financiamento público está sendo subutilizado ou está sob o risco de se perder para sempre. Para ajudar a mudar esse cenário, muitos governos concordaram em desenvolver políticas para incentivar o gerenciamento aberto de dados, incluindo dados científicos. O Brasil foi um dos primeiros países a assinar tal acordo, a Parceria para Governo Aberto ([OGP][ogp]), e criar [legislação específica][D8777] para determinar quais são as melhores práticas de gerenciamento de dados que devem ser adotadas no Brasil. Infelizmente, devido a razões culturais -- falta de tradição, medo de perder direitos -- e operacionais -- falta de financiamento, infra-estrutura e padrões --, a adesão das instituições públicas à Política Brasileira de Dados Abertos tem sido pequena, especialmente no caso das detentoras de dados científicos.
 
-<!-- Chefe do Departamento de Solos, UFSM -->
+[ogp]: https://www.opengovpartnership.org/
+[D8777]: http://www.planalto.gov.br/ccivil_03/_Ato2015-2018/2016/Decreto/D8777.htm
+
+Muitos esforços já foram empreendidos por diversas instituições do mundo todo para compilar, organizar e distribuir gratuitamente dados do solo, principalmente aqueles coletados nas muitas décadas passadas e deixados para as próximas gerações, os chamados dados legados. Por exemplo, a [Africa Soil Profiles Database][africa], o [Archivo Digital de Perfiles de Suelo de México][mexico], o [Sistema de Información de Suelos del INTA][inta], o [Soil and Landscape Grid of Australia][csiro], e a [USA National Cooperative Soil Survey][usa]. Em nível global, atualmente, o maior mantenedor e distribuidor de dados legados do solo é o World Soil Information Service ([WoSIS][wosis]), criado e mantido pelo International Soil Reference and Information Centre ([ISRIC][isric]). Os benefícios da construção de um serviço como esse já foram demonstrados inúmeras vezes. Por exemplo, via uso de técnicas modernas de aprendizado de máquina e mineração de dados para análise e modelagem dos dados do WoSIS, o ISRIC produziu mapas globais de diversas características do solo, os quais são servidos gratuitamente via plataforma [SoilGrids][soilgrids], os quais são usados pelo Painel Intergovernamental sobre Mudanças Climáticas ([IPCC][ipcc]).
+
+[wosis]: http://www.isric.org/explore/wosis
+[isric]: http://www.isric.org
+[soilgrids]: https://www.soilgrids.org
+[africa]: http://africasoils.net/services/data/soil-databases
+[mexico]: http://www.inegi.org.mx/geo/contenidos/recnat/edafologia/PerfilesSuelo.aspx
+[inta]: http://sisinta.inta.gob.ar
+[csiro]: http://www.clw.csiro.au/aclep/soilandlandscapegrid
+[usa]: https://sdmdataaccess.nrcs.usda.gov
+[ipcc]: http://ipcc.ch/
+
+No Brasil, dois órgãos tem se dedicado de maneira mais consistente à compilação, organização e distribuição de dados do solo. São eles a Empresa Brasileira de Pesquisa Agropecuária ([Embrapa][embrapa]) e o Instituto Brasileiro de Geografia e Estatística ([IBGE][ibge]), fruto da sua ativa participação em grandes projetos de levantamento de dados e mapeamento do solo, especialmente o [Projeto Radambrasil][radam]. Grosso modo, o IBGE dedica-se aos dados dos perfil do solo coletados via Projeto Radambrasil, periodicamente atualizando a sua classificação taxonômica e adicionando dados de novos perfis para atualizar e refinar a escala dos mapas do solo. Já a Embrapa dedica-se tanto aos dados dos perfil do solo coletados via Projeto Radambrasil, como aos dados produzidos via seus outros projetos, inclusive os mais recentes. Juntos, estima-se que os dados sob salvaguarda do IBGE e da Embrapa somam cerca de 10 000 mil perfis do solo.
+
+[embrapa]: https://www.bdsolos.cnptia.embrapa.br/consulta_publica.html
+[ibge]: http://www.downloads.ibge.gov.br
+[radam]: https://pt.wikipedia.org/wiki/Projeto_Radambrasil
+
+Também houve no Brasil diversos esforços particulares para compilar, organizar e distribuir gratuitamente dados legados e recentes do solo obtidos em projetos de universidades e instituições de pesquisa, ou mesmo para aprimorar os dados sob salvaguarda do IBGE e Embrapa. Uma das primeiras iniciativas particulares consistiu na compilação parcial de dados do Projeto Radambrasil por pesquisadores da Escola Superior de Agricultura "Luiz de Queiroz" ([ESALQ][esalq]), que recuperaram as coordenadas espaciais de cerca de 6000 observações do solo a partir de mapas impressos e descrições contidas em relatórios. Enquanto isso, o Serviço Geológico do Brasil ([CPRM][cprm]) criou um banco de dados hidro-físicos de cerca de 1000 amostras do solo, dados esses compilados a partir de centenas de trabalhos encontrados na literatura científica. Mais recentemente, também na ESALQ, foi lançado o projeto de construção de uma biblioteca espectral ([BESB][besb]), que reuniu mais de 20 000 espectros, tanto de dados publicados, quanto de amostras do solo coletadas e enviadas por pesquisadores de todas as regiões do Brasil.
+
+[esalq]: http://www.esalq.usp.br/gerd
+[cprm]: http://www.cprm.gov.br/publique/Hidrologia/Hidrologia-de-Solos/Produtos-4601.html
+[besb]: http://bibliotecaespectral.wixsite.com/esalq
+
+As iniciativas de compilação e organização de dados do solo no Brasil não produziram, até agora, uma solução permanente para o problema de salvaguardar todos os tipos de dados solo. Elas também não desenvolveram uma estratégia capaz de efetivamente maximizar a descobertabilidade e reusabilidade dos conjuntos de dados do solo. Isso se deve, principalmente, à falta de padrões para compilação e organização de dados e à especificidade das metas de cada iniciativa. Assim, pode-se dizer que, em geral, as estratégias que usamos para gerenciar dados do solo no Brasil estão em desacordo com as demandas da sociedade pós-moderna e dificultam a reprodutibilidade da pesquisa do solo. No curto prazo, isso representa um uso ineficiente dos já escassos investimentos feitos na ciência do solo. No longo prazo, isso detém o avanço do conhecimento do solo, as consequências refletindo no modo como os recursos naturais serão geridos nas próximas décadas e pelas gerações futuras.
+
+O Repositório Brasileiro Livre para Dados Abertos do Solo, **febr**, foi criado com o propósito de servir de meio para a compilação, organização e publicação de todos os tipos de dados do solo no Brasil. Para isso são usados padrões baseados em experiências internacionais, principalmente uma política de dados abertos, primando pela facilidade de acesso, manutenção e uso. A meta é constituir um repositório centralizado para armazenar e servir dados do solo em formato padronizado e harmonizado para várias aplicações. Essas incluem o desenvolvimento de bases de dados especializadas, a melhoria do Sistema Brasileiro de Classificação do Solo, a criação do Sistema Universal de Classificação do Solo, a construção de sistemas inteligentes de recomendação de fertilizantes, e o recém lançado programa nacional de levantamento de solos (PronaSolos).
