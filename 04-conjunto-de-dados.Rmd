@@ -39,12 +39,9 @@ posição em relação aos demais conjuntos de dados (**c**on**t**ri**b**uiçõe
 Por exemplo, o código de identificação do primeiro conjunto de dados inserido no **febr** é 
 `dataset_id = ctb0001`, enquanto que do trigésimo terceiro conjunto de dados é `dataset_id = ctb0033`.
 
-No caso dos conjuntos de dados obtidos diretamente do SISB, o código de identificação utilizado no **febr** é 
-o mesmo usado naquele sistema, independente da sua ordem de entrada no **febr**. Por exemplo, 
-`dataset_id = ctb0770`, onde `770` é o código de identificação usado no SISB. Essa estratégia possibilita que, 
-no futuro, e em havendo interesse por parte dos mantenedores do SISB, seja estabelecida comunicação direta do
-SISB com o **febr**. Assim, seria possível atualizar os dados no SISB à medida que ajustes e correções nos 
-dados forem sendo feitos no **febr**.
+No caso dos conjuntos de dados obtidos diretamente do Sistema de Informação de Solos Brasileiros ([SISB][sisb]), o código de identificação utilizado no **febr** é o mesmo usado naquele sistema, independente da sua ordem de entrada no **febr**. Por exemplo, `dataset_id = ctb0770`, onde `770` é o código de identificação usado no SISB. Essa estratégia possibilita que, no futuro, e em havendo interesse por parte dos mantenedores do SISB, seja estabelecida comunicação direta do SISB com o **febr**. Assim, seria possível atualizar os dados no SISB à medida que ajustes e correções nos dados forem sendo feitos no **febr**.
+
+[sisb]: https://www.sisolos.cnptia.embrapa.br/
 
 O segundo identificador de um conjunto de dados é o seu título -- `dataset_titulo` --, geralmente relacionado
 ao título do projeto, tese, dissertação, etc que o gerou. Em geral, é mais interessante usar um título 
@@ -135,8 +132,9 @@ A licença de uso do conjunto de dados -- especificada usando o campo `dataset_l
 
 [cc]: https://br.creativecommons.org/licencas/
 
-A legislação brasileira ainda não especifica qual deve ser a licença de uso dos conjuntos de dados gerados em projetos conduzidos via financiamento público. Contudo, segundo a INDA, existe consenso entre os diferentes órgãos da administração pública de que uma licença de uso apropriada para esse tipo de conjuntos de dados é a licença Creative Commons [CC-BY 4.0][ccby]. A licença CC-BY 4.0 permite que um conjunto de dados seja distribuído, remixado, adaptado e usado para criar outros produtos, mesmo que para fins comerciais, desde que seja atribuído o devido crédito aos autores do conjunto de dados original. Assim, trata-se de uma das licença mais flexíveis dentre as licenças Creative Commons disponíveis, permitindo a maximização da disseminação e uso dos conjuntos de dados. Assim sendo, a licença CC-BY 4.0 é a licença adotada como padrão no **febr**. Maiores informações sobre as licenças de uso sugeridas para conjuntos de dados públicos podem ser encontradas no [fórum de discussão][indaforum] mantido pela INDA.
+A legislação brasileira ainda não especifica qual deve ser a licença de uso dos conjuntos de dados gerados em projetos conduzidos via financiamento público. Contudo, segundo a Infraestrutura Nacional de Dados Abertos ([INDA][inda]), existe consenso entre os diferentes órgãos da administração pública de que uma licença de uso apropriada para esse tipo de conjuntos de dados é a licença Creative Commons [CC-BY 4.0][ccby]. A licença CC-BY 4.0 permite que um conjunto de dados seja distribuído, remixado, adaptado e usado para criar outros produtos, mesmo que para fins comerciais, desde que seja atribuído o devido crédito aos autores do conjunto de dados original. Assim, trata-se de uma das licença mais flexíveis dentre as licenças Creative Commons disponíveis, permitindo a maximização da disseminação e uso dos conjuntos de dados. Assim sendo, a licença CC-BY 4.0 é a licença adotada como padrão no **febr**. Maiores informações sobre as licenças de uso sugeridas para conjuntos de dados públicos podem ser encontradas no [fórum de discussão][indaforum] mantido pela INDA.
 
+[inda]: http://wiki.dados.gov.br/
 [ccby]: https://creativecommons.org/licenses/by/4.0/
 [indaforum]: https://groups.google.com/forum/#!forum/inda-br
 

@@ -76,7 +76,9 @@ rbind(
 
 O primeiro campo, `coord_sistema`, refere-se ao sistema de referência de coordenadas (SRC) utilizado para o georreferenciamento das observações do solo. A especificação do SRC é fundamental para possibilitar o uso apropriado de dados espaciais em sistemas de informação geográfica (SIG), especialmente para fins de correlação e/ou cruzamento com outros dados espaciais. Tradicionalmente, a especificação do SRC é feita usando formato de texto legível por humanos. Por exemplo, WGS84 / zona UTM 23S, que identifica o datum geodético WGS84 e a zona 23 do hemisfério sul na projeção cartográfica UTM.
 
-A identificação do SRC mostrada acima não é padronizada, o que dificulta a automatização da manipulação computacional dos conjuntos de dados. Assim, apesar de aceito para a entrada de dados no **febr**, esse tipo de identificação não é usado para o armazenamento dos dados no **febr**. Em vez disso, o **febr** adota os códigos padronizados e aceitos internacionalmente do EPSG, os quais são legíveis por humanos e por máquinas. Os códigos dos sistemas de referência de coordenadas geográficas e projetadas mais usados no Brasil são mostrados nas Tabelas \@ref(tab:geografica) e \@ref(tab:projetada).
+A identificação do SRC mostrada acima não é padronizada, o que dificulta a automatização da manipulação computacional dos conjuntos de dados. Assim, apesar de aceito para a entrada de dados no **febr**, esse tipo de identificação não é usado para o armazenamento dos dados no **febr**. Em vez disso, o **febr** adota os códigos padronizados e aceitos internacionalmente da European Petroleum Survey Group ([EPSG][epsg]), os quais são legíveis por humanos e por máquinas. Os códigos dos sistemas de referência de coordenadas geográficas e projetadas mais usados no Brasil são mostrados nas Tabelas \@ref(tab:geografica) e \@ref(tab:projetada).
+
+[epsg]: http://www.spatialreference.org/ref/epsg/
 
 ```{r geografica, echo=FALSE}
 cap <- "(\\#tab:geografica) Códigos EPSG dos sistemas de referência de coordenadas geográficas para o Brasil."
