@@ -1,12 +1,8 @@
 # Observações no espaço e no tempo
 
-Diversas aplicações requerem o conhecimento da localização das observações do solo no plano geográfico, na
-linhas temporal, ou em ambos. Por exemplo, análises geoestatísticas e de séries temporais. Assim, mesmo que um
-determinado conjunto de dados não seja produzido com esse propósito, seu reuso futuro depende, em parte, do 
-conhecimento das coordenadas espaciais, *x* e *y*, e temporal, *t*. No **febr**, essas informações são 
-inseridas na tabela denominada *observacao*.
+Diversas aplicações requerem o conhecimento da localização das observações do solo no plano geográfico, na linha temporal, ou em ambos. Por exemplo, análises geoestatísticas e de séries temporais. Assim, mesmo que um determinado conjunto de dados não seja produzido com esse propósito, seu reúso futuro depende, em parte, do conhecimento das coordenadas espaciais, *x* e *y*, e temporal, *t*. No **febr**, essas informações são inseridas na tabela denominada *observacao*.
 
-Além das coordenadas espaciais e temporais, à toda observação do solo estão vinculadas condições ambientais 
+Além das coordenadas espaciais e temporais, a toda observação do solo estão vinculadas condições ambientais 
 específicas. Tais condições ambientais podem ser de maior ou menor interesse, controladas ou naturais, 
 determinantes ou auxiliares na explicação das características do solo. Estão incluídas aí informações sobre o 
 relevo local, o material de origem e a rocha subjacente, o tipo de uso da terra pretérito e presente, e assim 
@@ -20,7 +16,7 @@ verdade, muitos conjuntos de dados do solo possuem apenas esse tipo de informaç
 em projeto de cunho mais exploratório, quando não são coletadas amostras das camadas do solo (Capítulo \@ref(camadas)). Assim como as informações sobre as condições ambientais, essas informações locais sobre o solo também são inseridas na tabela *observacao*.
 
 Diferente da tabela *dataset*, que armazena os dados em linhas, a tabela *observacao* está organizada de 
-maneira a armazenar os dados em colunas. Assim, à cada observação do solo é dedicada uma linha exclusiva, e os
+maneira a armazenar os dados em colunas. Assim, a cada observação do solo é dedicada uma linha exclusiva, e os
 dados adicionados sequencialmente nas colunas. Como o número de observações do solo varia de conjunto de dados
 para conjunto de dados, não há limite de linhas na tabela *observacao*. Da mesma forma, como os dados coletados
 durante uma observação do solo podem ser muitos e diversos, não há imposição de limites quanto ao número máximo
@@ -53,7 +49,7 @@ pander(versao, caption = "(\\#tab:observacao-id) Campos usados para identificaç
 
 ## Coordenada temporal {#tempo}
 
-A data de observação do solo é um dos atributos que, juntamente com as coordenadas espaciais, definem uma observação em um conjunto de dados. Tal informação é armazenada na coluna `observacao_data`, para o que é usado o formato numérico `dd-mm-aaaa` ou `dd/mm/aaaa`, ou seja, dois dígitos para o dia e mês, e quatro dígitos para o ano. Assim como para a data de publicação do conjunto de dados, a informação mais importante é o ano da observação. O valor para os casos em que a data de observação é desconhecida é `observacao_data = xx-xx-xxxx`. Contudo, uma estimativa pode ser feita a partir da data de publicação do conjunto de dados original.
+A data de observação do solo é um dos atributos que, junto das coordenadas espaciais, definem uma observação em um conjunto de dados. Tal informação é armazenada na coluna `observacao_data`, para o que é usado o formato numérico `dd-mm-aaaa` ou `dd/mm/aaaa`, ou seja, dois dígitos para o dia e mês, e quatro dígitos para o ano. Assim como para a data de publicação do conjunto de dados, a informação mais importante é o ano da observação. O valor para os casos em que a data de observação é desconhecida é `observacao_data = xx-xx-xxxx`. Contudo, uma estimativa pode ser feita a partir da data de publicação do conjunto de dados original.
 
 Uma observação do solo realizada no mesmo local no espaço geográfico, mas em data diferente, constitui uma nova observação do solo. Isso requer a definição de uma nova `observacao_id`, a qual pode carregar alguma informação sobre a data de observação. Por exemplo, uma observação identificada no trabalho de origem como Perfil 01, observada nos anos de 2007 e 2008, pode ser identificada como `Perfil-01-2007` e `Perfil-01-2008`. Enquanto as coordenadas espaciais (Seção \@ref(coordenadas)) dessa observação serão as mesmas, as datas de observação serão diferentes.
 
@@ -144,7 +140,7 @@ rbind(
 
 ## Amostragem {#amostragem}
 
-Informações sobre a estratégia usada para observação e amostragem do solo são necessárias para decidir sobre vários aspectos operacionais/metodológicos posteriores. Por exemplo, a fusão de conjunto de dados e o método de inferência estatística. No **febr** essas informações são armazenadas em três campos (Tabela \@ref(tab:amostragem)). O primeiro deles, `amostra_tipo`, refere-se ao tipo de amostragem empregado, podendo ser simples -- uma única observação ou amostra coletada num determinado ponto, como no caso de um perfil do solo -- ou composta -- duas ou mais observações ou amostras coletadas em uma determinada área e posteriormente agregadas. O segundo campo, `amostra_quanti`, armazena o número de observações ou amostras, sendo assim principalmente útil no caso de observação ou amostragem do tipo composta. Por fim, a área amostral, `amostra_area`, que refere-se ao tamanho da área usada para fazer a observação ou amostragem do solo, seja ela simples -- a área de uma trincheira para descrição de um perfil do solo costuma ser de 1 m^2^ -- ou composta.
+Informações sobre a estratégia usada para observação e amostragem do solo são necessárias para decidir sobre vários aspectos operacionais/metodológicos posteriores. Por exemplo, a fusão de conjunto de dados e o método de inferência estatística. No **febr** essas informações são armazenadas em três campos (Tabela \@ref(tab:amostragem)). O primeiro deles, `amostra_tipo`, refere-se ao tipo de amostragem empregado, podendo ser simples -- uma única observação ou amostra coletada num determinado ponto, como no caso de um perfil do solo -- ou composta -- duas ou mais observações ou amostras coletadas em uma determinada área e posteriormente agregadas. O segundo campo, `amostra_quanti`, armazena o número de observações ou amostras, sendo assim principalmente útil no caso de observação ou amostragem do tipo composta. Por fim, a área amostral, `amostra_area`, que se refere ao tamanho da área usada para fazer a observação ou amostragem do solo, seja ela simples -- a área de uma trincheira para descrição de um perfil do solo costuma ser de 1 m^2^ -- ou composta.
 
 ```{r amostragem, echo=FALSE}
 cap <- "(\\#tab:amostragem) Campos usados para descrever a estratégia de observação e amostragem do solo."

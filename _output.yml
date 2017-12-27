@@ -18,3 +18,5 @@ bookdown::pdf_book:
   citation_package: natbib
   toc: false
 bookdown::epub_book: default
+bookdown::word_document2:
+  reference_docx: template.docx

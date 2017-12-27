@@ -22,7 +22,7 @@ pander(dataset, caption = "(\\#tab:dataset) Representação da estrutura da tabe
 
 ## Identificação {#titulo}
 
-Um conjunto de dados no **febr** é identificado por dois campos principais (Tabela \@ref(tab:titulo)). O primeiro deles, `dataset_id`, é o código identificador único do conjunto de dados, o que significa que não há qualquer `dataset_id` repetido no **febr**.
+Um conjunto de dados no **febr** é identificado por dois campos principais (Tabela \@ref(tab:titulo)). O primeiro deles, `dataset_id`, é o código identificador único do conjunto de dados, o que significa que não há nenhum `dataset_id` repetido no **febr**.
 
 ```{r, echo=FALSE}
 titulo <- 
@@ -47,7 +47,7 @@ O segundo identificador de um conjunto de dados é o seu título -- `dataset_tit
 ao título do projeto, tese, dissertação, etc que o gerou. Em geral, é mais interessante usar um título 
 específico para o conjunto de dados, o que identifica melhor o seu conteúdo, ao invés do título do trabalho ou
 projeto que o gerou. Isso é importante para aumentar as chances de o conjunto de dados ser identificado em
-ferramentas de busca e assim potencializar o seu reuso.
+ferramentas de busca e assim potencializar o seu reúso.
 
 Quanto à formatação do título, é usada a mesma língua da fonte e caracteres em caixa baixa, com exceção da 
 primeira letra do título e dos nomes próprios. Por exemplo, *Conjunto de dados da tese 'Matéria orgânica e
@@ -55,7 +55,7 @@ características físicas, químicas, mineralógicas e espectrais de Latossolos 
 
 ## Descrição {#descricao}
 
-A descrição do conjunto de dados, contendo dados básicos para maximizar o seu reuso futuro, sem que seja
+A descrição do conjunto de dados, contendo dados básicos para maximizar o seu reúso futuro, sem que seja
 necessário entrar em contato com os autores ou responsáveis, é incluída no campo `dataset_descricao`. A 
 descrição do conjunto de dados aborda aspectos como:
 
@@ -89,7 +89,7 @@ B diagnósticos foram analisados, em outros o primeiro horizonte A e um ou mais 
 ## Versionamento {#versao}
 
 O controle dos passos do processamento de um conjunto de dados é realizado usando dois itens: `dataset_versao`
-e `publicacao_data` (Tabela \@ref(tab:versao)). A versão do conjunto de dados é uma dado necessário para
+e `publicacao_data` (Tabela \@ref(tab:versao)). A versão do conjunto de dados é um dado necessário para
 identificar os casos em que o conjunto de dados foi modificado por uma razão técnica e/ou científica. Por
 exemplo, um conjunto de dados contendo inúmeras observações do solo cuja localização não foi georreferenciada 
 (`dataset_versao = 1.0`). Uma vez no **febr**, esse conjunto de dados é modificado consideravelmente de maneira
@@ -123,7 +123,7 @@ A data de publicação é apresentada na sequência dia, mês e ano, usando form
 identifica o dia 13 do mês de junho do ano de 2001. Sempre que possível são inseridos os dados de ambos dia, 
 mês e ano. Contudo, dentre os três, o mais importante é aquele relativo ao ano. Quando algum dos dados não é 
 conhecido, usa-se o símbolo `xx` em substituição, por exemplo, `xx-xx-2001`. Caso a data de publicação da 
-versão atual conjunto de dados seja completamente desconhecida, usa-se a data de publicação do trabalho que o
+versão atual conjunto de dados seja desconhecida, usa-se a data de publicação do trabalho que o
 gerou ou utilizou pela primeira vez.
 
 ## Licença de uso {#licenca}
@@ -132,7 +132,7 @@ A licença de uso do conjunto de dados -- especificada usando o campo `dataset_l
 
 [cc]: https://br.creativecommons.org/licencas/
 
-A legislação brasileira ainda não especifica qual deve ser a licença de uso dos conjuntos de dados gerados em projetos conduzidos via financiamento público. Contudo, segundo a Infraestrutura Nacional de Dados Abertos ([INDA][inda]), existe consenso entre os diferentes órgãos da administração pública de que uma licença de uso apropriada para esse tipo de conjuntos de dados é a licença Creative Commons [CC-BY 4.0][ccby]. A licença CC-BY 4.0 permite que um conjunto de dados seja distribuído, remixado, adaptado e usado para criar outros produtos, mesmo que para fins comerciais, desde que seja atribuído o devido crédito aos autores do conjunto de dados original. Assim, trata-se de uma das licença mais flexíveis dentre as licenças Creative Commons disponíveis, permitindo a maximização da disseminação e uso dos conjuntos de dados. Assim sendo, a licença CC-BY 4.0 é a licença adotada como padrão no **febr**. Maiores informações sobre as licenças de uso sugeridas para conjuntos de dados públicos podem ser encontradas no [fórum de discussão][indaforum] mantido pela INDA.
+A legislação brasileira ainda não especifica qual deve ser a licença de uso dos conjuntos de dados gerados em projetos conduzidos via financiamento público. Contudo, segundo a Infraestrutura Nacional de Dados Abertos ([INDA][inda]), existe consenso entre os diferentes órgãos da administração pública de que uma licença de uso apropriada para esse tipo de conjuntos de dados é a licença Creative Commons [CC-BY 4.0][ccby]. A licença CC-BY 4.0 permite que um conjunto de dados seja distribuído, remixado, adaptado e usado para criar outros produtos, mesmo que para fins comerciais, desde que seja atribuído o devido crédito aos autores do conjunto de dados original. Assim, trata-se de uma das licenças mais flexíveis dentre as licenças Creative Commons disponíveis, permitindo a maximização da disseminação e uso dos conjuntos de dados. Assim sendo, a licença CC-BY 4.0 é a licença adotada como padrão no **febr**. Maiores informações sobre as licenças de uso sugeridas para conjuntos de dados públicos podem ser encontradas no [fórum de discussão][indaforum] mantido pela INDA.
 
 [inda]: http://wiki.dados.gov.br/
 [ccby]: https://creativecommons.org/licenses/by/4.0/
@@ -185,7 +185,7 @@ garantir que ambos endereços físico e eletrônico sejam válidos e atuais.
 ## Autoria {#autor}
 
 Os autores ou responsáveis pelo conjunto de dados são identificados usando os campos `autor_nome` 
-e `autor_email` (Tabela \@ref(tab:autor)). Quando o acesso ao autores é impossível ou limitado, 
+e `autor_email` (Tabela \@ref(tab:autor)). Quando o acesso aos autores é impossível ou limitado, 
 identifica-se as pessoas que atualmente detém responsabilidade técnica sobre o conjunto de dados. No caso de 
 trabalhos acadêmicos, como monografias, dissertações e teses, identifica-se tanto o discente como o docente 
 orientador principal do trabalho acadêmico.
@@ -213,8 +213,7 @@ sempre que o conjunto de dados for distribuído, remixado, adaptado ou usado par
 Os autores de modificações num conjunto de dados são identificados usando três campos similares àqueles usados
 para identificar os autores ou responsáveis pelo conjunto de dados (Tabela \@ref(tab:contribuidor)). No 
 **febr**, modificações constituem contribuições à melhoria do conjunto de dados, sendo sempre mencionadas
-na descrição do conjunto de dados (Seção \@ref(descricao)), e geralmente resultando em uma nova versão do
-do conjunto de dados (Seção \@ref(versao)). Como a inserção de um conjunto de dados no **febr** geralmente 
+na descrição do conjunto de dados (Seção \@ref(descricao)), e geralmente resultando em uma nova versão do conjunto de dados (Seção \@ref(versao)). Como a inserção de um conjunto de dados no **febr** geralmente 
 requer algum tipo de modificação, por menor que seja, os integrantes da Equipe **febr** costuma figurar 
 como autores de contribuições à sua melhoria.
 
@@ -238,20 +237,11 @@ versão (Seção \@ref(autor)).
 
 ## Referências
 
-Uma referência permanente e válida a documento ou artigo científico onde a versão original e/ou a versão atual do conjunto de dados foi usado, preferencialmente, pela primeira vez, é informada usando o item `dataset_referencia_i`. Sempre que possível usa-se um Digital Object Identifier ([DOI][doi]), mas uma URL costuma ser a mais usada, especialmente para documentos antigos e trabalhos acadêmicos.
+Uma referência permanente e válida a documento ou artigo científico onde a versão original e/ou a versão atual do conjunto de dados foi usado, preferencialmente, pela primeira vez, é informada usando o item `dataset_referencia_i`. Sempre que possível se usa um Digital Object Identifier ([DOI][doi]), mas uma URL costuma ser a mais usada, especialmente para documentos antigos e trabalhos acadêmicos.
 
 [doi]: https://www.doi.org/
 
-Tantas referências quantas forem julgadas pertinentes podem ser inseridas, numeradas sequencialmente em ordem
-de importância, usando-se para isso o índice `i` do campo `dataset_referencia_i`. No caso de os responsáveis
-atuais pelo conjunto de dados não serem os seus autores originais, é imprescindível que a referência
-principal, `dataset_referencia_1`, seja a um trabalho dos autores do conjunto de dados. Já a referência
-secundária, `dataset_referencia_2`, pode ser a um trabalho dos responsáveis atuais pelo conjunto de dados. No
-caso de trabalhos acadêmicos, como monografias, dissertações e teses, costuma-se inserir uma referência ao
-trabalho acadêmico e ao artigo onde o conjunto de dados foi utilizado pela primeira vez. No caso de o conjunto
-de dados ter passado por modificações consideráveis, uma referência ao trabalho onde a nova versão tenha sido
-usada pela primeira vez também é inserida. Para adicionar novas referências, basta inserir, na
-sequência, novas linhas na tabela `dataset`, usando o índice `i` para indicar sua ordem.
+Tantas referências quantas forem julgadas pertinentes podem ser inseridas, numeradas sequencialmente em ordem de importância, usando-se para isso o índice `i` do campo `dataset_referencia_i`. No caso de os responsáveis atuais pelo conjunto de dados não serem os seus autores originais, é imprescindível que a referência principal, `dataset_referencia_1`, seja a um trabalho dos autores do conjunto de dados. Já a referência secundária, `dataset_referencia_2`, pode ser a um trabalho dos responsáveis atuais pelo conjunto de dados. No caso de trabalhos acadêmicos, como monografias, dissertações e teses, costuma-se inserir uma referência ao trabalho acadêmico e ao artigo onde o conjunto de dados foi utilizado pela primeira vez. No caso de o conjunto de dados ter passado por modificações consideráveis, uma referência ao trabalho onde a nova versão tenha sido usada pela primeira vez também é inserida. Para adicionar novas referências, basta inserir, na sequência, novas linhas na tabela `dataset`, usando o índice `i` para indicar sua ordem.
 
 ## Indexação {#indexa}
 
@@ -276,7 +266,7 @@ tabela <-
   rbind(
     c("area_conhecimento", "área da especialidade segundo CAPES e CNPq"),
     c("palavras_chave", "termos descritores do conjunto de dados"),
-    c("categoria_vcge", "classificação dentre as atividades de orgãos públicos")
+    c("categoria_vcge", "classificação dentre as atividades de órgãos públicos")
   )
 colnames(tabela) <- c("**campo**", "**autor**")
 pander(tabela, caption = "(\\#tab:indexa) Campos utilizados para a indexação do conjunto de dados.")
@@ -287,7 +277,7 @@ preferencialmente diferentes daqueles constantes no título, sendo separados por
 termos bem elaborada aumenta o potencial de descoberta do conjunto de dados por mecanismos de busca.
 
 O terceiro campo é a Categoria do Vocabulário Controlado do Governo Eletrônico ([VCGE][vcge]). O VCGE é um
-esquema padronizado de assuntos e categorias usado para facilitar a apresentação e identificação dos serviços
+esquema padronizado, de assuntos e categorias, usado para facilitar a apresentação e identificação dos serviços
 disponibilizados em uma estrutura de diretórios online. O objetivo do VCGE é ajudar os cidadãos a encontrar
 informações em catálogos de dados públicos sem a necessidade de conhecer a organização responsável pelo
 assunto ou categoria.

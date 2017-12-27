@@ -76,7 +76,7 @@ O quarto e último campo, `metodo_id`, está reservado para a identificação do
 
 ## Laboratório
 
-O último grupo de colunas da tabela *metadado* está destinado à identificação do laboratório responsável pela geração dos dados armazenados nas tabelas *observacao* e *camada* (Tabela \@ref(tab:metadado-lab)). Essas informações são necessárias para que os usuários dos dados possam sanar quaisquer dúvidas sobre a consistência dos dados que por ventura surjam durante o sua utilização.
+O último grupo de colunas da tabela *metadado* está destinado à identificação do laboratório responsável pela geração dos dados armazenados nas tabelas *observacao* e *camada* (Tabela \@ref(tab:metadado-lab)). Essas informações são necessárias para que os usuários dos dados possam sanar quaisquer dúvidas sobre a consistência dos dados que por ventura surjam durante a sua utilização.
 
 ```{r, echo=FALSE}
 tabela <- 
