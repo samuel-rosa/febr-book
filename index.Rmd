@@ -1,12 +1,11 @@
 --- 
-title: "Repositório Brasileiro Livre para Dados Abertos do Solo"
-subtitle: "Manual de Uso"
-author: "Alessandro Samuel-Rosa"
+title: "febr -- Manual de Uso"
+# subtitle: "Manual de Uso"
+# author: "Alessandro Samuel-Rosa"
 # author: "Alessandro Samuel-Rosa, Ricardo S. D. Dalmolin, Paulo I. Gubiani, Diego J. Gris, Nicolas A. Rosin"
 # lang: pt
-date: "`r format(Sys.time(), '%d-%m-%Y')`"
+# date: "`r format(Sys.time(), '%d-%m-%Y')`"
 site: bookdown::bookdown_site
-output: bookdown::gitbook
 documentclass: book
 #papersize: a5
 #fontsize: 11pt
