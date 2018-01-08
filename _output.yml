@@ -1,13 +1,15 @@
 bookdown::gitbook:
-  includes:
-    #in_header: in_header.html
-    #after_body: google_analytics.html
   css: style.css
   config:
+    fontsettings:
+      theme: white
+      family: serif
+    toolbar:
+      position: static
     code_folding: hide
     toc:
       before: |
-        <li><a href="./">Repositório Brasileiro Livre para Dados Abertos do Solo</a></li>
+        <li><a href="http://www.ufsm.br/febr/" style="font-weight: bold;font-family: Comfortaa; font-size:2em">febr</a></li>
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado com bookdown</a></li>
     edit:
@@ -18,5 +20,5 @@ bookdown::pdf_book:
   citation_package: natbib
   toc: false
 bookdown::epub_book: default
-bookdown::word_document2:
-  reference_docx: template.docx
+#bookdown::word_document2:
+  #reference_docx: template.docx
