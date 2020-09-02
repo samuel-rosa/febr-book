@@ -1,24 +1,15 @@
 bookdown::gitbook:
   css: style.css
   config:
-    fontsettings:
-      theme: white
-      family: serif
-    toolbar:
-      position: static
-    code_folding: hide
     toc:
       before: |
-        <li><a href="http://www.ufsm.br/febr/" style="font-weight: bold;font-family: Comfortaa; font-size:2em">febr</a></li>
+        <li><a href="https://www.pedometria.org/projeto/febr/" style="font-weight: bold; font-size: 2em">FEBR</a></li>
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado com bookdown</a></li>
-    edit:
-      link: https://github.com/febr-team/febr-book/edit/master/%s
+    edit: https://github.com/samuel-rosa/febr-book/edit/master/%s
+    download: ["pdf", "epub"]
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex
   citation_package: natbib
-  toc: false
 bookdown::epub_book: default
-#bookdown::word_document2:
-  #reference_docx: template.docx

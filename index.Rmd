@@ -1,26 +1,18 @@
 --- 
 title: "Repositório Brasileiro Livre para Dados Abertos do Solo"
-subtitle: "Conheça a estrutura do repositório e aprenda sobre como organizar e compartilhar seus dados abertos do solo. Veja como colaborar no desenvolvimento do repositório e na revisão dos conjuntos de dados."
+# subtitle: ""
 author: "Alessandro Samuel-Rosa"
 # author: "Alessandro Samuel-Rosa, Ricardo S. D. Dalmolin, Paulo I. Gubiani, Diego J. Gris, Nicolas A. Rosin"
 # lang: pt
 # date: "`r format(Sys.time(), '%d-%m-%Y')`"
 site: bookdown::bookdown_site
 documentclass: book
-#papersize: a5
-#fontsize: 11pt
-#classoption: twoside
-#toc: false
-#lof: true
-#lot: true
 secnumdepth: 3
 bibliography: biblio.bib
-csl: abnt.csl
+biblio-style: apalike
 link-citations: yes
 github-repo: samuel-rosa/febr-book
-url: http\://www.ufsm.br/febr/
-apple-touch-icon: "img/apple-touch-icon.png"
-favicon: "img/favicon.ico"
+url: https\://www.pedometria.org/projeto/febr/
 nocite: |
   @Sestoft2011, @Wickham2014, @BatjesEtAl2017, @CrowdFlower2017, @HansonEtAl2011, @VinesEtAl2014, @vanEs2017,
   @HenglEtAl2014, @CooperEtAl2005, @OttoniEtAl2014, @ChagasEtAl2004, @SimoesEtAl2015, @ArrouaysEtAl2017
